@@ -1,6 +1,9 @@
 name: Test a Cloudflare draft preview
 
 on:
+  push:
+    branches: [draft-preview]
+    paths: [qa/preview-target.json]
   workflow_dispatch:
     inputs:
       preview_url:

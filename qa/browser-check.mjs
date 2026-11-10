@@ -1,12 +1,13 @@
 import assert from 'node:assert/strict';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { chromium, expect } from '@playwright/test';
 import { routes, pagePath } from '../src/routes.mjs';
 import { loadContent } from '../scripts/build.mjs';
 import config from '../site.config.mjs';
 import deployment from '../cloudflare-pages.config.mjs';
 
-const target = new URL(process.env.PREVIEW_URL || 'https://missing.invalid');
+const recordedTarget = JSON.parse(await readFile(new URL('./preview-target.json', import.meta.url), 'utf8'));
+const target = new URL(process.env.PREVIEW_URL || recordedTarget.url);
 assert.equal(target.protocol, 'https:', 'Use an HTTPS Cloudflare draft preview');
 assert.ok(/^[a-z0-9-]+\.[a-z0-9-]+\.pages\.dev$/.test(target.hostname), 'Use a hash/branch preview URL, not production or the custom domain');
 assert.ok(!target.username && !target.password && target.pathname === '/' && !target.search && !target.hash, 'Supply only the preview origin, without credentials/query/path');
@@ -17,6 +18,10 @@ await mkdir(output, { recursive: true });
 const browser = await chromium.launch();
 const errors = [];
 const results = [];
+const observedHeaders = {};
+let passed = false;
+let failure = null;
+let observedCookies = [];
 try {
   const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
   const page = await context.newPage();
@@ -27,6 +32,7 @@ try {
       const c = await loadContent(route.lang);
       const response = await page.goto(origin + route.path, { waitUntil: 'networkidle' });
       assert.equal(response.status(), 200, route.path);
+      observedHeaders[route.path] = { status: response.status(), robots: response.headers()['x-robots-tag'] || null, contentSecurityPolicy: response.headers()['content-security-policy'] || null };
       assert.match(response.headers()['x-robots-tag'] || '', /noindex/i, 'Draft response must forbid indexing');
       await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
       await expect(page).toHaveTitle(route.page === 'home' ? c.title : c.pages[route.page].title);
@@ -89,8 +95,13 @@ try {
   const missing = await context.request.get(origin + '/this-page-must-not-exist-qa');
   assert.equal(missing.status(), 404, 'Unknown paths must not fall back to the landing page');
   assert.deepEqual(errors, [], 'No browser JavaScript errors');
+  observedCookies = (await context.cookies()).map(({ name, domain, secure, httpOnly, sameSite }) => ({ name, domain, secure, httpOnly, sameSite }));
+  passed = true;
   console.log(`Passed draft preview browser checks: ${results.length} route/viewport combinations, both no-JS deletion paths, language links, clipboard and 404.`);
+} catch (error) {
+  failure = error.message;
+  throw error;
 } finally {
-  await writeFile(new URL('results.json', output), JSON.stringify({ preview: origin, results, errors, completedCombinations: results.length }, null, 2) + '\n');
+  await writeFile(new URL('results.json', output), JSON.stringify({ preview: origin, expectedSourceCommit: recordedTarget.url === origin ? recordedTarget.expectedSourceCommit : null, passed, failure, results, errors, observedHeaders, observedCookies, completedCombinations: results.length }, null, 2) + '\n');
   await browser.close();
 }

@@ -8,5 +8,5 @@ export default {
   outputDirectory: 'dist',
   nodeVersion: '22',
   // Populate only with the project actually created in the Cloudflare account.
-  projectName: null,
+  projectName: 'index-landing-3yn',
 };
