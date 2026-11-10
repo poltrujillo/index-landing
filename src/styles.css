@@ -169,3 +169,5 @@ details[open] .faq-icon:after{display:none}
 .related-pages>.eyebrow{width:100%;margin-bottom:8px}
 @media(max-width:1000px){.policy-layout{grid-template-columns:180px minmax(0,1fr);gap:40px}.main-nav{flex-wrap:wrap;justify-content:flex-end;gap:8px 20px}}
 @media(max-width:760px){.policy-page{padding-top:40px;padding-bottom:56px}.policy-header{margin-bottom:32px}.policy-header h1{font-size:clamp(44px,10vw,64px)}.policy-intro{font-size:17px}.policy-layout{grid-template-columns:1fr;gap:32px}.policy-toc{position:static}.policy-toc a{font-size:15px}.policy-section{padding-block:28px 32px}.policy-section h2{font-size:28px}.draft-banner,.deletion-request{padding:20px}.footer-links{width:100%;gap:8px 20px}.footer-bottom{align-items:flex-start}.policy-section .deletion-request p{font-size:16px}.main-nav{justify-content:flex-start}.deletion-actions{flex-direction:column;align-items:stretch}}
+/* A screenshot's preferred width must not become the mobile grid minimum. */
+@media(max-width:760px){.hero,.rankings,.progress{grid-template-columns:minmax(0,1fr)}.hero-copy,.product-copy,.app-figure{min-width:0}}

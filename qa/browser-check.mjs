@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { chromium, expect } from '@playwright/test';
 import { routes, pagePath } from '../src/routes.mjs';
 import { loadContent } from '../scripts/build.mjs';
@@ -16,6 +17,7 @@ const origin = target.origin;
 const output = new URL('../artifacts/browser/', import.meta.url);
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch();
+const stylesheetHash = createHash('sha256').update(await readFile(new URL('../src/styles.css', import.meta.url))).digest('hex');
 const errors = [];
 const results = [];
 const observedHeaders = {};
@@ -24,6 +26,13 @@ let failure = null;
 let observedCookies = [];
 try {
   const context = await browser.newContext({ permissions: ['clipboard-read', 'clipboard-write'] });
+  let currentStyles = false;
+  for (let attempt = 0; attempt < 24; attempt++) {
+    const response = await context.request.get(origin + '/styles.css?qa=' + Date.now());
+    if (response.ok() && createHash('sha256').update(await response.body()).digest('hex') === stylesheetHash) { currentStyles = true; break; }
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+  }
+  assert.ok(currentStyles, 'Preview stylesheet does not match this checkout; wait for the matching draft deployment.');
   const page = await context.newPage();
   page.on('pageerror', (error) => errors.push(error.message));
   for (const width of [320, 390, 768, 1440]) {
@@ -107,6 +116,6 @@ try {
   failure = error.message;
   throw error;
 } finally {
-  await writeFile(new URL('results.json', output), JSON.stringify({ preview: origin, expectedSourceCommit: recordedTarget.url === origin ? recordedTarget.expectedSourceCommit : null, passed, failure, results, errors, observedHeaders, observedCookies, completedCombinations: results.length }, null, 2) + '\n');
+  await writeFile(new URL('results.json', output), JSON.stringify({ preview: origin, stylesheetHash, expectedSourceCommit: recordedTarget.url === origin ? recordedTarget.expectedSourceCommit : null, passed, failure, results, errors, observedHeaders, observedCookies, completedCombinations: results.length }, null, 2) + '\n');
   await browser.close();
 }

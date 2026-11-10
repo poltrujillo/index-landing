@@ -1,6 +1,6 @@
 {
-  "url": "https://deaa5164.index-landing-3yn.pages.dev",
-  "expectedSourceCommit": "6d84748499d95a4312fab3d477dc383d30f02e6c",
-  "note": "Immutable draft URL supplied by the owner for browser review. Changing this file on draft-preview triggers the browser workflow; ordinary source pushes do not silently retest this old target.",
-  "reviewAttempt": 2
+  "url": "https://draft-preview.index-landing-3yn.pages.dev",
+  "expectedSourceCommit": null,
+  "note": "Branch preview for verifying the mobile grid fix found on the owner's original deaa5164 preview. Browser checks wait for the deployed stylesheet to match the checkout before testing this moving alias.",
+  "reviewAttempt": 3
 }
