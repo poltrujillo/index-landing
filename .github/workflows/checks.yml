@@ -1,0 +1,28 @@
+name: Static site checks
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: .node-version
+      - run: npm run check
+      - name: Save draft build for review
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: draft-static-site
+          path: dist/
+          retention-days: 7
+          include-hidden-files: true

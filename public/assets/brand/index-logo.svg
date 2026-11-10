@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1254 1254" role="img" aria-label="INDEX tennis ranking vector brand mark, transparent background">
+ <title>INDEX — Tennis Mark</title>
+ 
+  <g id="index-mark">
+    <!-- Tilted monogram: meticulously redrawn as a single smooth vector silhouette -->
+    <path id="index-i" fill="#F4F2EB" d="
+      M 460 914
+      L 665 357
+      C 674 333, 686 326, 708 326
+      L 809 326
+      L 598 883
+      C 590 906, 576 914, 553 914
+      Z"/>
+    <!-- Tennis ball -->
+    <circle id="tennis-ball" cx="952" cy="473" r="70" fill="#DFFF18" />
+    <defs><clipPath id="ball-clip"><circle cx="952" cy="473" r="70"/></clipPath></defs>
+    <g id="ball-seams" clip-path="url(#ball-clip)" fill="none" stroke="#002921" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke-width="10" d="M 881 454 C 935 458, 965 442, 987 414" />
+      <path stroke-width="10" d="M 914 534 C 945 529, 951 480, 1019 489" />
+    </g>
+    <!-- Single continuous orbit/flight line, tapered at both ends -->
+    <path id="tennis-orbit" fill="#F4F2EB" d="
+      M 376 867
+      C 283 855, 228 834, 216 801
+      C 198 750, 252 696, 357 650
+      C 493 590, 707 552, 923 531
+      C 708 567, 507 608, 364 663
+      C 258 704, 219 749, 229 792
+      C 240 833, 286 852, 376 867
+      Z" />
+  </g>
+</svg>

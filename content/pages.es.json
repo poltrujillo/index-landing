@@ -1,0 +1,629 @@
+{
+  "information": {
+    "country": "España",
+    "toc": "EN ESTA PÁGINA",
+    "related": "INFORMACIÓN RELACIONADA",
+    "reviewLabel": "Antes de publicar:",
+    "draftTitle": "Borrador para revisión — aún no está en vigor",
+    "draftBody": "Estas páginas no se han aprobado para su publicación. Los puntos operativos y legales destacados aún requieren revisión. La información de contacto y las instrucciones de eliminación se incluyen para revisarlas junto con los borradores de las políticas.",
+    "draftDate": "Borrador preparado el",
+    "effectiveDate": "Entrada en vigor / última actualización:",
+    "unconfirmed": "Aún no confirmado para publicación",
+    "historyBasisReview": "Aún no aprobada; la propuesta de interés legítimo requiere revisión",
+    "historyDurationReview": "El sistema actual no aplica un plazo fijo de eliminación automática; falta aprobar una duración justificada"
+  },
+  "deletionRequest": {
+    "subject": "Index Tennis — solicitud de eliminación de cuenta",
+    "body": "Hola:\n\nSolicito la eliminación de mi cuenta de Index Tennis y de sus datos personales asociados. Siempre que sea posible, escribo desde el correo vinculado a mi cuenta.\n\nPor favor, indicadme si necesitáis verificar de forma proporcionada que soy titular de la cuenta, explicad qué información se conservará y confirmad cuándo se haya completado la solicitud.\n\nGracias.",
+    "instruction": "Puedes seleccionar la dirección de arriba. Utiliza tu servicio de correo o abre la solicitud sugerida de abajo. Enviar el correo inicia una solicitud; no elimina la cuenta al instante.",
+    "emailAction": "SOLICITAR ELIMINACIÓN POR CORREO",
+    "copyAction": "COPIAR DIRECCIÓN DE CORREO",
+    "copySuccess": "Dirección de correo copiada.",
+    "copyFailure": "No se ha podido copiar automáticamente. La dirección queda seleccionada si el navegador lo permite; cópiala manualmente o utiliza el enlace de correo.",
+    "suggestion": "Solicitud de correo sugerida"
+  },
+  "pages": {
+    "support": {
+      "nav": "Soporte",
+      "title": "Soporte — Index Tennis",
+      "heading": "ESTAMOS PARA AYUDARTE.",
+      "description": "Ayuda con el acceso, los clubs, partidos, niveles, notificaciones y eliminación de cuenta en Index Tennis. Contacta directamente por correo.",
+      "intro": "Ayuda con tu cuenta de Index Tennis, tus partidos y tu nivel. No necesitas iniciar sesión ni instalar la app para escribirnos.",
+      "sections": [
+        {
+          "id": "contact-support",
+          "title": "Contacta con Index Tennis",
+          "paragraphs": [
+            "Escribe a {{support}} para recibir ayuda. Para consultas sobre privacidad y datos personales, utiliza {{privacy}}. Ambas direcciones pueden corresponder al mismo buzón.",
+            "Para recibir ayuda con Index Tennis, utiliza el correo indicado arriba. No prometemos un plazo fijo de respuesta para consultas de soporte."
+          ],
+          "contact": "support",
+          "links": [
+            {
+              "page": "delete-account",
+              "label": "Elimina tu cuenta: desde la app o por correo"
+            },
+            {
+              "page": "privacy",
+              "label": "Cómo utiliza Index Tennis tus datos"
+            }
+          ]
+        },
+        {
+          "id": "describe-a-problem",
+          "title": "Cuéntanos qué ha ocurrido",
+          "paragraphs": [
+            "Describe la pantalla o acción, qué esperabas, qué ha sucedido y aproximadamente cuándo. Si ayuda, incluye la versión de la app, el modelo del móvil y la versión de iOS o Android. Una captura puede ser útil, pero oculta antes los datos personales que no sean necesarios.",
+            "Para un problema con tu cuenta, escribe desde el correo vinculado a ella siempre que puedas. Nunca envíes contraseñas, códigos de acceso, tokens ni documentos de identidad innecesarios. No necesitamos tu código de acceso para investigar."
+          ],
+          "items": [
+            "Problemas de acceso: método de inicio de sesión y error visible, sin incluir el código.",
+            "Problemas con un partido: fecha, rival y resultado en cuestión, compartiendo solo lo necesario.",
+            "Errores de la app: pasos breves para reproducirlos y si volver a intentarlo cambia algo."
+          ]
+        },
+        {
+          "id": "report-concerns",
+          "title": "Perfiles abusivos, fotos o problemas de privacidad",
+          "paragraphs": [
+            "Escribe a soporte sobre suplantaciones, nombres abusivos, fotos inapropiadas u otros usos indebidos. Identifica el perfil o partido y explica el problema, con una captura si procede. No envíes material sensible que no sea necesario para entender la incidencia.",
+            "Utiliza {{privacy}} para plantear un problema de protección de datos o ejercer un derecho. Index no dispone actualmente de herramientas de denuncia o bloqueo dentro de la app; el contacto se realiza por correo."
+          ],
+          "contact": "privacy",
+          "links": [
+            {
+              "page": "privacy",
+              "label": "Derechos de privacidad y contacto"
+            }
+          ]
+        },
+        {
+          "id": "support-faq",
+          "title": "Preguntas frecuentes",
+          "paragraphs": [],
+          "faqs": [
+            {
+              "q": "No llega el código de acceso. ¿Qué hago?",
+              "a": "Comprueba la dirección, la carpeta de spam y los filtros de correo. Espera a que la app permita reenviarlo y solicita un código nuevo; utiliza el último. También se admite el acceso con Apple y Google. Si sigue fallando, escribe a soporte con el método de acceso y el error visible; nunca envíes un código."
+            },
+            {
+              "q": "¿Cómo empiezo?",
+              "a": "Accede con un código por correo, Apple o Google y completa tu perfil, la valoración inicial de nivel y la elección de club. Selecciona tu club del directorio español; no necesitas que el club adopte Index para utilizarlo."
+            },
+            {
+              "q": "¿Cómo elijo o cambio de club?",
+              "a": "Elige un club por nombre o municipio durante el alta, o cambia tu club en Ajustes. Conservas tu único nivel nacional. Si falta tu club, utiliza la opción de solicitarlo en la app; una solicitud sin aprobar tiene visibilidad restringida hasta su revisión."
+            },
+            {
+              "q": "¿Por qué mi nivel es provisional?",
+              "a": "Todavía se está ajustando. Necesitas al menos cinco partidos puntuados y suficiente información sobre tu nivel; la etiqueta puede mantenerse después del quinto. Los jugadores provisionales aparecen en los rankings de club, provincia, comunidad y España con su estado indicado."
+            },
+            {
+              "q": "¿Cómo registro y confirmo un partido?",
+              "a": "Registra un partido individual, elige al rival e introduce el resultado. Tu rival puede revisarlo y confirmarlo o disputarlo. Solo los partidos confirmados por el rival afectan al nivel. Ambos jugadores deben comprobar el marcador antes de confirmarlo."
+            },
+            {
+              "q": "¿Qué ocurre con los resultados disputados o sin respuesta?",
+              "a": "Un resultado disputado no afecta al nivel. Si queda sin responder, caduca a los siete días y tampoco afecta al nivel. Los partidos pendientes, disputados y caducados solo son visibles para sus participantes. Contacta con soporte si necesitas ayuda con un resultado incorrecto; no registres otro falso para compensarlo."
+            },
+            {
+              "q": "¿Puedo jugar contra alguien de otro club?",
+              "a": "Sí. Puedes registrar un partido individual contra otro jugador de la app. Tu nivel es nacional y los rankings geográficos son distintas vistas del mismo nivel. La afiliación al club es autodeclarada y no demuestra que seas socio."
+            },
+            {
+              "q": "¿Por qué no recibo notificaciones?",
+              "a": "Las notificaciones push son opcionales. Revisa los ajustes de notificaciones de la app y los permisos del móvil, además de los modos de concentración o no molestar y la conexión. Puedes abrir Index para revisar los resultados pendientes sin permitir notificaciones push."
+            },
+            {
+              "q": "¿Cómo elimino mi cuenta?",
+              "a": "En la app, abre Jugador/Perfil → Ajustes → Borrar la cuenta. Sin la app, escribe a la dirección de la página Eliminar cuenta. Desinstalar la app no elimina la cuenta. Esa página explica la verificación, el historial que se conserva y los reintentos con proveedores."
+            },
+            {
+              "q": "¿Hay suscripciones o compras de pago?",
+              "a": "La app actual es gratuita. No hay suscripciones, publicidad ni compras integradas implementadas."
+            }
+          ],
+          "links": [
+            {
+              "page": "delete-account",
+              "label": "Instrucciones completas para eliminar la cuenta"
+            },
+            {
+              "page": "terms",
+              "label": "Condiciones de uso de Index Tennis"
+            }
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "nav": "Privacidad",
+      "title": "Política de privacidad — Index Tennis",
+      "heading": "TUS DATOS, EXPLICADOS.",
+      "description": "Política de privacidad de Index Tennis: cuentas, partidos, visibilidad de perfiles, proveedores, web, conservación, eliminación y derechos.",
+      "intro": "Esta política abarca la app móvil Index Tennis y la web indextennis.com. Explica qué información se utiliza, quién puede verla y cómo contactar con el responsable.",
+      "sections": [
+        {
+          "id": "controller",
+          "title": "1. Quién es el responsable",
+          "paragraphs": [
+            "Index Tennis lo gestiona {{operator}}, persona física que reside en {{country}} y responsable del tratamiento de los datos personales descritos en esta política.",
+            "Para consultas sobre privacidad y ejercicio de derechos, escribe a {{privacy}}. Para ayuda general, escribe a {{support}}."
+          ],
+          "contact": "privacy",
+          "reviewNote": "Confirma la información legal del operador y cualquier dirección de servicio u otro dato identificativo exigible. No se ha inventado una dirección postal ni un número de registro."
+        },
+        {
+          "id": "data-and-sources",
+          "title": "2. Información y procedencia",
+          "paragraphs": [
+            "Tú facilitas los datos de cuenta y perfil y los resultados. Tus rivales aportan información de partidos sobre ti. Apple, Google y Supabase facilitan los datos del método de acceso elegido. Al utilizar el servicio se genera información técnica."
+          ],
+          "table": {
+            "headers": [
+              "Información",
+              "Contenido y procedencia"
+            ],
+            "rows": [
+              [
+                "Cuenta y acceso",
+                "Correo electrónico, identificador de autenticación, método de acceso y registros de sesión y seguridad. Apple o Google pueden proporcionar identificador, correo y nombre cuando los compartan, incluido un correo de retransmisión privada de Apple."
+              ],
+              [
+                "Perfil de jugador",
+                "Nombre elegido, foto opcional, autoevaluación inicial, club y cambios de club, y solicitudes de clubs que envíes."
+              ],
+              [
+                "Partidos y niveles",
+                "Rival, resultado, fecha, estado de confirmación/disputa/caducidad, nivel nacional, incertidumbre/estado provisional e historial del nivel. Proceden de ambos jugadores y del cálculo del nivel."
+              ],
+              [
+                "Directorio de clubs",
+                "Nombres, municipios, provincias y comunidades autónomas del directorio español y de solicitudes o correcciones. Elegir un club no facilita la ubicación precisa del dispositivo."
+              ],
+              [
+                "Notificaciones opcionales",
+                "Token push, plataforma, idioma, actividad de registro, estado de entrega e información del partido incluida en la notificación."
+              ],
+              [
+                "Diagnóstico y seguridad",
+                "Informes de errores de app y servidor, versiones de app/dispositivo/software, fechas de peticiones y registros técnicos de conexión. Los proveedores pueden recibir direcciones IP y registros del servicio; no todos forman parte del contenido del informe de errores de la app."
+              ],
+              [
+                "Correspondencia",
+                "Dirección de correo, contenido del mensaje, datos pertinentes de la cuenta y adjuntos que decidas enviar a soporte o privacidad."
+              ],
+              [
+                "Peticiones a la web",
+                "Dirección IP e información técnica HTTP necesaria para entregar páginas, que puede aparecer en registros de acceso y seguridad según la configuración del alojamiento."
+              ]
+            ]
+          }
+        },
+        {
+          "id": "purposes-and-bases",
+          "title": "3. Finalidades y bases jurídicas",
+          "paragraphs": [
+            "No todo el tratamiento se basa en el consentimiento. La base depende de la finalidad y los permisos opcionales no autorizan usos ajenos a ella."
+          ],
+          "table": {
+            "headers": [
+              "Finalidad",
+              "Datos pertinentes",
+              "Base"
+            ],
+            "rows": [
+              [
+                "Prestar el servicio solicitado",
+                "Cuenta, acceso, perfil, club, partidos y niveles",
+                "Ejecución del contrato de servicio (art. 6.1.b RGPD); la visibilidad del perfil y los rankings forma parte del servicio descrito."
+              ],
+              [
+                "Seguridad, fiabilidad y gestión de abusos",
+                "Registros técnicos, diagnóstico e incidencias necesarios",
+                "Interés legítimo en proteger y mantener el servicio (art. 6.1.f), con minimización y ponderación."
+              ],
+              [
+                "Fotos y avisos push opcionales",
+                "Foto subida, token push y contenido de entrega si se activa",
+                "Tu elección/permiso opcional, con consentimiento cuando sea necesario (art. 6.1.a). Quitar la foto o desactivar avisos no cierra la cuenta."
+              ],
+              [
+                "Soporte y consultas de privacidad",
+                "Contacto e información necesaria para la solicitud",
+                "Soporte contractual cuando corresponda; interés legítimo para consultas generales; obligación legal al atender derechos de protección de datos (art. 6.1.c)."
+              ],
+              [
+                "Entregar y proteger esta web",
+                "Información necesaria de conexión y seguridad",
+                "Interés legítimo en entregar y proteger la web; este repositorio no añade analítica ni tratamientos publicitarios."
+              ]
+            ]
+          },
+          "reviewNote": "Aprueba las bases jurídicas y ponderaciones de interés legítimo, incluida la visibilidad del perfil. Conservar datos tras eliminar una cuenta exige una evaluación propia de finalidad, base y duración; no se presume que el antiguo contrato de la app lo justifique por sí solo."
+        },
+        {
+          "id": "visibility",
+          "title": "4. Quién ve perfiles y partidos",
+          "paragraphs": [
+            "Otros jugadores de Index que hayan iniciado sesión, incluidos los de otros clubs, pueden ver tu nombre, foto opcional, nivel, estado provisional y datos de tu club listado. Los rankings abarcan club, provincia, comunidad y España. Los jugadores provisionales aparecen con una etiqueta visible."
+          ],
+          "items": [
+            "Los partidos confirmados son visibles para otros jugadores que hayan iniciado sesión.",
+            "Los partidos pendientes, disputados y caducados solo son visibles para sus participantes en las vistas de partidos de la app.",
+            "Una solicitud de club sin aprobar tiene visibilidad restringida: su solicitante y el administrador de plataforma que la revisa pueden acceder a los datos no listados; los demás jugadores no ven la identidad de ese club no listado. Esto no convierte todo el perfil del solicitante en privado.",
+            "Las fotos se muestran en la app, pero el almacenamiento actual utiliza direcciones de foto de lectura pública. Quien obtenga una de esas direcciones puede acceder a la foto fuera de la app. No subas imágenes sensibles."
+          ],
+          "reviewNote": "El contenedor de fotos de lectura pública está documentado en el apartado 8 de la especificación móvil. Exigir acceso autenticado a las fotos requiere cambiar los controles de la app y el almacenamiento, no solo redactar otra política."
+        },
+        {
+          "id": "providers",
+          "title": "5. Proveedores y destinatarios",
+          "paragraphs": [
+            "Los proveedores reciben la información pertinente para su función, no automáticamente todos los datos. También pueden tratar registros operativos o de seguridad y datos de sus cuentas según sus condiciones aplicables. Apple y Google pueden actuar de forma independiente en sus servicios de acceso/dispositivo, además de participar en la entrega."
+          ],
+          "table": {
+            "headers": [
+              "Proveedor",
+              "Función e información implicada"
+            ],
+            "rows": [
+              [
+                "Fly.io",
+                "Alojamiento del servidor y tratamiento de peticiones; registros técnicos y de seguridad y datos tratados por la API."
+              ],
+              [
+                "Neon",
+                "Base de datos de jugadores, partidos, clubs, notificaciones y niveles; operaciones, copias de seguridad y registros técnicos."
+              ],
+              [
+                "Supabase",
+                "Autenticación, sesiones y almacenamiento de fotos opcionales; registros de los servicios correspondientes."
+              ],
+              [
+                "Brevo",
+                "Entrega de correos con códigos de acceso a través del servicio configurado: destinatario, contenido y metadatos de entrega."
+              ],
+              [
+                "Expo Push, Apple APNs, Google FCM",
+                "Entrega push opcional: identificadores, contenido de la notificación y metadatos de entrega y técnicos a lo largo de la cadena."
+              ],
+              [
+                "Acceso con Apple y Google",
+                "Identificadores de autenticación y datos de perfil/correo compartidos según el método elegido."
+              ],
+              [
+                "Sentry",
+                "Monitorización de errores de app y servidor. La integración retira el contexto del usuario, cabeceras/cookies de peticiones y datos sensibles de URL; los proveedores pueden mantener registros de conexión y del servicio."
+              ],
+              [
+                "Zoho",
+                "Correo de soporte y privacidad, remitentes y destinatarios, contenido, adjuntos y metadatos de correo y seguridad."
+              ],
+              [
+                "Cloudflare Pages",
+                "{{websiteHost}}: entrega de páginas y registros de acceso/seguridad. Región de tratamiento: {{websiteRegion}}. Conservación de registros: {{websiteLogRetention}}."
+              ]
+            ]
+          },
+          "reviewNote": "Cloudflare Pages es el alojamiento elegido; Squarespace sigue siendo el registrador del dominio. Confirma la cuenta de Pages, analítica y seguridad, registros, contrato de encargo y garantías de transferencia. Faltan revisar la región de Zoho y los proveedores de producción de la app."
+        },
+        {
+          "id": "international-transfers",
+          "title": "6. Ubicaciones y transferencias",
+          "paragraphs": [
+            "La documentación de la app describe configuraciones en Fráncfort/UE para Fly.io, Neon y Supabase y una región europea de Sentry. Se trata de entornos documentados, no de una garantía de que todo el tratamiento, registros, soporte o subencargados permanezcan en el EEE.",
+            "Cloudflare Pages utiliza una red global. Su contrato de tratamiento contempla transferencias restringidas, incluidas cláusulas contractuales tipo cuando corresponda; hay que confirmar el contrato y las garantías aplicables a la cuenta. Las notificaciones push, el acceso con Apple/Google y el soporte o subencargados de otros proveedores también pueden implicar tratamiento fuera del EEE. Puedes pedirnos información sobre las garantías aplicables."
+          ],
+          "reviewNote": "Verifica regiones de producción, contratos firmados con encargados, subencargados y mecanismos reales de transferencia. La política no debe afirmar que se ha formalizado una garantía solo porque el proveedor la ofrezca."
+        },
+        {
+          "id": "retention",
+          "title": "7. Conservación y eliminación",
+          "paragraphs": [
+            "Los datos de cuenta se utilizan mientras está activa para las finalidades anteriores. Eliminar la cuenta retira o desidentifica el nombre y el vínculo de acceso, elimina al jugador de los rankings, retira sus tokens de notificación y caduca los partidos pendientes. La foto almacenada y la identidad de acceso se eliminan mediante proveedores externos; los fallos pueden requerir reintentos.",
+            "Los partidos confirmados y el historial del nivel se conservan actualmente vinculados a un registro desidentificado de «Antiguo jugador» para preservar los resultados de los rivales y reproducir los cálculos. Pueden conservarse marcadores, fechas, rivales y referencias históricas internas. Estos datos no son necesariamente anónimos de forma irreversible y no se presenta su conservación como una obligación legal.",
+            "Plazo o criterios de conservación del historial: {{historyDuration}}. Base propuesta: {{historyBasis}}. Las solicitudes de supresión o limitación deben evaluarse, incluidos los intereses y derechos de las personas implicadas.",
+            "El identificador de acceso eliminado permanece en la cola hasta que el proveedor confirma la eliminación y durante dos días más antes de la limpieza programada, para rechazar sesiones antiguas. Las tareas externas pendientes guardan lo necesario para reintentarlas.",
+            "La correspondencia, los registros técnicos, informes de errores y copias de seguridad necesitan plazos separados y limitados. Plazo de registros de la web: {{websiteLogRetention}}."
+          ],
+          "links": [
+            {
+              "page": "delete-account",
+              "label": "Vías de eliminación, verificación y registros conservados"
+            }
+          ],
+          "reviewNote": "Aprueba e implementa límites para correspondencia, registros, copias e historial. Finalidad propuesta para el historial: preservar resultados confirmados de rivales y niveles reproducibles; valorar un interés legítimo documentado, minimización y un plazo finito de revisión/conservación. No publicar hasta resolver base, duración y aplicación efectiva."
+        },
+        {
+          "id": "website",
+          "title": "8. Esta web, cookies y mensajes",
+          "paragraphs": [
+            "Este repositorio entrega páginas estáticas con fuentes e imágenes locales. No incluye analítica, rastreadores publicitarios, contenido incrustado de terceros, acceso de usuarios en la web, servidor de envío de formularios, cookies ni seguimiento mediante almacenamiento del navegador. La página de eliminación puede copiar una dirección al portapapeles únicamente cuando activas esa acción.",
+            "Los enlaces de correo abren tu servicio de email; la web no envía la solicitud por ti ni sabe si la has enviado. Zoho gestiona la correspondencia. Cloudflare Pages es el alojamiento elegido; Cloudflare puede tratar direcciones IP e información de peticiones y red para entregar y proteger la web.",
+            "La web no añade una baliza de analítica. Cloudflare Web Analytics debe permanecer desactivado en el proyecto Pages. Según los servicios de seguridad o acceso activados, Cloudflare puede establecer cookies necesarias; su uso real debe comprobarse en la vista previa desplegada."
+          ],
+          "reviewNote": "Verifica los servicios activos y las cookies y cabeceras del despliegue. No se afirma un plazo universal de registros de Pages ni tratamiento exclusivo en la UE. Las declaraciones de conservación del resolvedor 1.1.1.1 de Cloudflare no describen los registros de esta web.",
+          "links": [
+            {
+              "url": "https://www.cloudflare.com/privacypolicy/",
+              "label": "Política de privacidad de Cloudflare"
+            },
+            {
+              "url": "https://www.cloudflare.com/cloudflare-customer-dpa/",
+              "label": "Contrato de tratamiento de Cloudflare"
+            }
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "9. Tus derechos y cómo ejercerlos",
+          "paragraphs": [
+            "Cuando corresponda, puedes pedir acceso, rectificación, supresión, limitación y portabilidad de tus datos y oponerte al tratamiento basado en interés legítimo. Puedes retirar el consentimiento para los tratamientos que lo utilicen, sin afectar a lo realizado lícitamente antes. También puedes reclamar ante la Agencia Española de Protección de Datos (AEPD) u otra autoridad competente.",
+            "Escribe a {{privacy}}. Utiliza el correo de tu cuenta cuando sea posible; solo se solicitará una verificación proporcionada si resulta necesaria. No envíes contraseñas, códigos de acceso ni documentos de identidad innecesarios.",
+            "Respondemos sin dilación indebida y normalmente en un plazo de {{responseMonths}} mes natural desde la recepción de una solicitud de derechos. Si la ley permite ampliar el plazo por la complejidad o el número de solicitudes, lo explicamos dentro de ese primer mes; la ampliación puede ser de hasta dos meses más. El plazo de respuesta no garantiza que toda eliminación externa haya finalizado. Ejercer los derechos es normalmente gratuito."
+          ],
+          "contact": "privacy",
+          "links": [
+            {
+              "url": "https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos",
+              "label": "AEPD: ejerce tus derechos de protección de datos"
+            }
+          ]
+        },
+        {
+          "id": "children",
+          "title": "10. Edad mínima",
+          "paragraphs": [
+            "Index Tennis no está pensado para menores de {{minimumAge}} años. No hay una función de consentimiento parental. Si crees que un menor de esa edad ha facilitado datos, contacta con {{privacy}} para revisar el caso y adoptar las medidas pertinentes."
+          ]
+        },
+        {
+          "id": "levels-and-automation",
+          "title": "11. Cálculo automático del nivel",
+          "paragraphs": [
+            "La app calcula una estimación del nivel de tenis a partir de resultados confirmados y reglas de cálculo. Los rankings y etiquetas provisionales reflejan esa estimación y la información disponible. Son referencias deportivas, no certificaciones oficiales de una federación. Contacta con soporte ante un resultado incorrecto o un cálculo inesperado."
+          ]
+        },
+        {
+          "id": "security",
+          "title": "12. Seguridad y límites",
+          "paragraphs": [
+            "Los controles de acceso, las conexiones cifradas y la minimización ayudan a proteger la información. Ningún servicio puede garantizar seguridad absoluta. Limita los datos que incluyas en nombres/fotos visibles o mensajes a soporte y protege el acceso a tu proveedor de inicio de sesión."
+          ]
+        },
+        {
+          "id": "policy-changes",
+          "title": "13. Cambios y contacto",
+          "paragraphs": [
+            "Una política publicada y aprobada muestra su fecha real de entrada en vigor o actualización. Los cambios importantes se explicarán cuando corresponda, sin aplicar silenciosamente una finalidad nueva. Escribe a {{privacy}} para consultas sobre esta política."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Soporte"
+            },
+            {
+              "page": "terms",
+              "label": "Condiciones de uso"
+            }
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "nav": "Condiciones",
+      "title": "Condiciones de uso — Index Tennis",
+      "heading": "JUEGA LIMPIO. TAMBIÉN EN INDEX.",
+      "description": "Condiciones de Index Tennis sobre cuentas, resultados honestos, niveles, clubs autodeclarados, conducta, contenido y derechos del consumidor.",
+      "intro": "Estas condiciones describen el uso de Index Tennis, una app de tenis amateur individual, y su web pública de información.",
+      "sections": [
+        {
+          "id": "operator-and-scope",
+          "title": "1. Operador y alcance",
+          "paragraphs": [
+            "Index Tennis lo presta {{operator}}, que opera bajo el nombre Index Tennis y reside en {{country}}. Puedes contactar con Index Tennis en {{support}}.",
+            "La app actual es gratuita y no tiene suscripciones, publicidad ni compras integradas implementadas. Estas condiciones no introducen un precio. Cualquier servicio de pago futuro exigiría información clara y un acuerdo adecuado por separado."
+          ],
+          "contact": "support",
+          "reviewNote": "Confirma la información y dirección de servicio exigibles y cómo se incorporarán válidamente las condiciones. No se ha verificado un flujo actual de aceptación en la app; publicar esta página no demuestra que los usuarios existentes la hayan aceptado."
+        },
+        {
+          "id": "eligibility-and-account",
+          "title": "2. Requisitos y responsabilidad de la cuenta",
+          "paragraphs": [
+            "Debes tener al menos {{minimumAge}} años y capacidad legal o la autorización que legalmente corresponda para utilizar el servicio. Index no está destinado a menores de {{minimumAge}} años ni ofrece un flujo de consentimiento parental.",
+            "Utiliza una cuenta que controles, protege tu proveedor de acceso y facilita información honesta. Se admite código por correo, Apple y Google. Nunca entregues tu código a otra persona. Respondes de tu propia conducta; esto no te hace responsable de cualquier acto no autorizado con independencia de las circunstancias.",
+            "Visitar esta web no crea una cuenta de la app ni registra la aceptación de condiciones. Cualquier aceptación necesaria debe obtenerse mediante un proceso adecuado."
+          ]
+        },
+        {
+          "id": "match-reporting",
+          "title": "3. Resultados honestos",
+          "paragraphs": [
+            "Registra solo partidos individuales reales, con rivales, fechas y marcadores correctos. No inventes partidos, suplantes al rival, coordines confirmaciones falsas ni manipules resultados.",
+            "El rival puede confirmar o disputar el resultado. Solo los partidos confirmados por el rival afectan al nivel. Los que quedan sin respuesta caducan a los siete días; los disputados y caducados no afectan al nivel. Contacta con soporte ante un error en vez de crear otro resultado falso para compensarlo.",
+            "Los partidos pendientes, disputados y caducados solo son visibles para sus participantes; otros jugadores con sesión iniciada pueden ver los confirmados."
+          ]
+        },
+        {
+          "id": "levels-and-rankings",
+          "title": "4. Los niveles son estimaciones",
+          "paragraphs": [
+            "Cada jugador tiene un único nivel nacional, mostrado en rankings de club, provincia, comunidad y España. El nivel estima el rendimiento con los resultados disponibles; no garantiza capacidad de juego, resultados futuros ni una condición deportiva oficial.",
+            "El nivel es provisional hasta contar con información suficiente, incluidos al menos cinco partidos puntuados. Los jugadores provisionales aparecen en todos los rankings con una etiqueta visible. El nivel y el puesto pueden cambiar al confirmar, corregir o recalcular resultados, o al evolucionar las reglas. Los partidos repetidos pueden tener menos peso."
+          ]
+        },
+        {
+          "id": "clubs",
+          "title": "5. Clubs y afiliación",
+          "paragraphs": [
+            "Eliges un club del directorio español y puedes cambiarlo sin empezar un nivel nuevo. La afiliación es autodeclarada. Estar listado, elegir un club o aparecer en su ranking no demuestra ser socio ni contar con la aprobación del club o el respaldo de una federación.",
+            "Las solicitudes de clubs no aprobadas tienen restricciones adicionales de privacidad hasta su revisión. El directorio puede contener errores; contacta con soporte o utiliza el proceso de solicitud disponible para comunicarlos."
+          ]
+        },
+        {
+          "id": "conduct",
+          "title": "6. Respeta a los demás jugadores",
+          "paragraphs": [
+            "No acoses, amenaces, discrimines, suplantes identidades ni expongas datos privados ajenos. No utilices nombres o fotos ilícitos, abusivos o inapropiados. No subas contenido sin derecho a compartirlo, perturbes el servicio, eludas controles de acceso ni extraigas información personal para usos indebidos.",
+            "Comunica por correo contenido inapropiado o abusos con contexto suficiente para investigarlos. Index no dispone actualmente de denuncia o bloqueo dentro de la app. El operador puede investigar y adoptar medidas proporcionadas con los controles disponibles y conforme a la ley; cuando proceda, debe explicar los motivos y ofrecer una vía para responder."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Contacta con soporte sobre abusos o perfiles"
+            }
+          ]
+        },
+        {
+          "id": "content-permission",
+          "title": "7. Tu contenido y permisos limitados",
+          "paragraphs": [
+            "Conservas tus derechos sobre el contenido que envías. Permites a Index y a los proveedores necesarios alojarlo, tratarlo, mostrarlo y adaptarlo técnicamente solo en lo necesario para prestar y proteger el servicio descrito en la política de privacidad.",
+            "Este permiso no autoriza publicidad ajena al servicio ni la venta de tu contenido. Quitar contenido o cerrar la cuenta pone fin a los usos que dejen de ser necesarios, con los registros limitados y procesos de eliminación explicados en las páginas de privacidad/eliminación y los derechos aplicables.",
+            "No presentes la marca Index ni contenido ajeno como propio ni sugieras un respaldo inexistente."
+          ],
+          "links": [
+            {
+              "page": "privacy",
+              "label": "Visibilidad, proveedores y conservación"
+            }
+          ]
+        },
+        {
+          "id": "support-and-closure",
+          "title": "8. Soporte y cierre de cuenta",
+          "paragraphs": [
+            "Puedes dejar de utilizar el servicio y solicitar la eliminación desde la app o por correo sin reinstalarla. Desinstalarla no cierra la cuenta. La eliminación retira datos personales de perfil/acceso, pero actualmente conserva partidos confirmados e historial del nivel desidentificados según se explica por separado; no garantiza que desaparezca todo al instante.",
+            "Escribe a {{support}} si necesitas ayuda. Los problemas de cuenta o contenido deben gestionarse de forma proporcionada y respetando los derechos aplicables."
+          ],
+          "links": [
+            {
+              "page": "delete-account",
+              "label": "Elimina tu cuenta de Index Tennis"
+            }
+          ]
+        },
+        {
+          "id": "availability-and-changes",
+          "title": "9. Disponibilidad, cambios y responsabilidad",
+          "paragraphs": [
+            "El mantenimiento, errores, interrupciones de proveedores y cambios pueden afectar al servicio. Index no promete disponibilidad continua ni estimaciones de nivel sin errores. Sigue siendo exigible la diligencia debida y este texto no excluye responsabilidades que no puedan excluirse legalmente.",
+            "Las funciones y condiciones pueden cambiar. Se explicarán los cambios importantes y las acciones necesarias cuando la ley lo exija. Los cambios no eliminan derechos adquiridos ni autorizan retroactivamente usos ajenos de datos personales. Puedes contactar con soporte o cerrar tu cuenta si no deseas continuar."
+          ]
+        },
+        {
+          "id": "law-and-rights",
+          "title": "10. Ley aplicable y tus derechos",
+          "paragraphs": [
+            "Se aplica la ley española en la medida en que pueda elegirse válidamente. Si eres consumidor, esto no elimina la protección imperativa ni el acceso a los tribunales competentes que te correspondan, incluidas las protecciones de tu residencia habitual cuando procedan.",
+            "Nada aquí supone renunciar a derechos irrenunciables de consumo o protección de datos, ni exige arbitraje o un tribunal extranjero exclusivo. Puedes plantear primero el problema al operador, sin que eso limite otras vías legales."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Soporte y reclamaciones"
+            },
+            {
+              "page": "privacy",
+              "label": "Derechos de privacidad"
+            }
+          ]
+        }
+      ]
+    },
+    "delete-account": {
+      "nav": "Eliminar cuenta",
+      "title": "Elimina tu cuenta — Index Tennis",
+      "heading": "ELIMINA TU CUENTA DE INDEX TENNIS.",
+      "description": "Elimina tu cuenta de Index Tennis desde la app o solicítalo por correo sin iniciar sesión ni reinstalarla. Qué se elimina y qué se conserva.",
+      "intro": "Dos vías para solicitar la eliminación de tu cuenta de Index Tennis. Puedes utilizar el correo sin iniciar sesión, tener instalada la app ni reinstalarla.",
+      "sections": [
+        {
+          "id": "delete-in-app",
+          "title": "1. Desde la app",
+          "paragraphs": [
+            "Abre Index Tennis y sigue estos pasos:"
+          ],
+          "ordered": true,
+          "items": [
+            "Abre la pestaña Jugador / Perfil.",
+            "Entra en Ajustes.",
+            "Elige Borrar la cuenta, revisa la explicación y confirma la eliminación."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "¿Necesitas ayuda para acceder a tu cuenta?"
+            }
+          ]
+        },
+        {
+          "id": "delete-by-email",
+          "title": "2. Sin la app: solicita la eliminación por correo",
+          "paragraphs": [
+            "Escribe a {{privacy}} desde el correo asociado a tu cuenta siempre que sea posible. Si ya no tienes acceso, indícalo para organizar una verificación proporcionada de la titularidad. No necesitas iniciar sesión ni reinstalar la app para usar esta vía."
+          ],
+          "deletionRequest": true
+        },
+        {
+          "id": "ownership-verification",
+          "title": "Verificación de la titularidad",
+          "paragraphs": [
+            "Para proteger tu cuenta, puede ser necesario comprobar que la controlas. Solo pediremos información proporcionada para ese fin, como el correo asociado o el método de acceso; no envíes contraseñas, códigos de acceso, tokens ni documentos de identidad innecesarios.",
+            "Si utilizaste Iniciar sesión con Apple y Ocultar mi correo, la cuenta puede tener una dirección de retransmisión privada de Apple. Indica que usaste ese método y, si puedes, facilita la dirección que aparece en los ajustes de acceso de tu cuenta de Apple. No tener acceso a esa dirección puede requerir otra vía proporcionada de verificación; no implica que debas reinstalar la app."
+          ]
+        },
+        {
+          "id": "deletion-effects",
+          "title": "Qué hace la eliminación",
+          "paragraphs": [
+            "Cuando se procesa la eliminación de la cuenta:"
+          ],
+          "items": [
+            "El nombre personal se sustituye por «Antiguo jugador» y la identidad de acceso se elimina mediante el proveedor de autenticación; se retira el vínculo de acceso del perfil.",
+            "El jugador desaparece de los rankings y se eliminan los tokens de notificación registrados.",
+            "Se retira la referencia a la foto y se solicita la eliminación de su archivo almacenado.",
+            "Los partidos pendientes del jugador caducan.",
+            "Los fallos al eliminar fotos o identidades externas pueden requerir reintentos. Enviar una solicitud o desinstalar la app no significa que todo registro externo desaparezca al instante."
+          ]
+        },
+        {
+          "id": "retained-records",
+          "title": "Qué se conserva actualmente",
+          "paragraphs": [
+            "Los partidos confirmados y el historial del nivel se mantienen actualmente vinculados a un registro desidentificado de «Antiguo jugador» para preservar los resultados de los rivales y la reproducibilidad de los cálculos. Pueden incluir marcadores, fechas, rivales y referencias históricas internas. Cerrar una cuenta no reinicia los niveles de los demás.",
+            "Estos registros no son necesariamente anónimos de forma irreversible: el contexto de un partido puede permitir identificar a alguien. No se afirma que conservarlos sea obligatorio por ley. Plazo o criterios: {{historyDuration}}. Base: {{historyBasis}}.",
+            "Los registros técnicos de eliminación y reintento pueden permanecer mientras se completa la limpieza externa. El identificador de acceso se conserva después durante dos días más antes de la limpieza programada para rechazar sesiones antiguas. Los registros, copias y correspondencia tienen consideraciones separadas de conservación."
+          ],
+          "reviewNote": "Proponer interés legítimo para preservar resultados de rivales y reproducibilidad exige ponderación explícita, minimización, duración justificada y un proceso efectivo de conservación/eliminación. El operador debe aprobarlo antes de publicar; la web no implementa una purga del historial del servidor.",
+          "links": [
+            {
+              "page": "privacy",
+              "label": "Política de privacidad: conservación y derechos"
+            }
+          ]
+        },
+        {
+          "id": "request-timing",
+          "title": "Qué ocurre después de escribirnos",
+          "paragraphs": [
+            "Revisamos la solicitud, verificamos la titularidad de forma proporcionada si hace falta y explicamos el resultado y la información conservada. Nuestro objetivo es tramitar la eliminación sin dilación indebida y normalmente completar solicitudes verificadas en {{responseMonths}} mes natural. Respondemos a las solicitudes de derechos en {{responseMonths}} mes natural desde su recepción, con las ampliaciones legales aplicables.",
+            "Si la complejidad o el número de solicitudes permiten una ampliación legal, explicamos el motivo dentro del primer mes; puede ser de hasta dos meses más. Los fallos externos pueden requerir reintentos y una explicación. Esto no promete que un correo elimine todos los datos al instante."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Soporte"
+            },
+            {
+              "page": "privacy",
+              "label": "Privacidad y reclamaciones"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

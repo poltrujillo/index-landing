@@ -1,0 +1,629 @@
+{
+  "information": {
+    "country": "Spain",
+    "toc": "ON THIS PAGE",
+    "related": "RELATED INFORMATION",
+    "reviewLabel": "Before publication:",
+    "draftTitle": "Draft for review — not yet in force",
+    "draftBody": "These pages have not been approved for publication. Operational and legal points highlighted below still need review. The contact and deletion instructions are provided for review alongside the draft policies.",
+    "draftDate": "Draft prepared:",
+    "effectiveDate": "Effective / last updated:",
+    "unconfirmed": "Not yet confirmed for publication",
+    "historyBasisReview": "Not yet approved; the proposed legitimate-interest basis needs review",
+    "historyDurationReview": "No fixed automatic cutoff is enforced by the current implementation; a justified duration still needs approval"
+  },
+  "deletionRequest": {
+    "subject": "Index Tennis — account deletion request",
+    "body": "Hello,\n\nI request deletion of my Index Tennis account and its associated personal data. Where possible, I am writing from the email address linked to my account.\n\nPlease let me know if proportionate account-ownership verification is needed, explain any information that will remain, and confirm when the request has been completed.\n\nThank you.",
+    "instruction": "The address above is selectable. You can use your own email service or open a suggested request below. Sending an email starts a request; it does not instantly delete your account.",
+    "emailAction": "REQUEST DELETION BY EMAIL",
+    "copyAction": "COPY EMAIL ADDRESS",
+    "copySuccess": "Email address copied.",
+    "copyFailure": "The address could not be copied automatically. It is selected where supported; copy it manually or use the email link.",
+    "suggestion": "Suggested email request"
+  },
+  "pages": {
+    "support": {
+      "nav": "Support",
+      "title": "Support — Index Tennis",
+      "heading": "HERE TO HELP.",
+      "description": "Get help with Index Tennis sign-in, clubs, matches, levels, notifications and account deletion. Contact support directly by email.",
+      "intro": "Help with your Index Tennis account, your matches and your level. No sign-in or app installation is needed to contact us.",
+      "sections": [
+        {
+          "id": "contact-support",
+          "title": "Contact Index Tennis",
+          "paragraphs": [
+            "Email {{support}} for support. Privacy and personal-data questions can be sent to {{privacy}}. These addresses may use the same inbox.",
+            "For help with Index Tennis, use the email address above. We do not promise a fixed support response time."
+          ],
+          "contact": "support",
+          "links": [
+            {
+              "page": "delete-account",
+              "label": "Delete your account — in the app or by email"
+            },
+            {
+              "page": "privacy",
+              "label": "How Index Tennis uses your data"
+            }
+          ]
+        },
+        {
+          "id": "describe-a-problem",
+          "title": "Tell us what happened",
+          "paragraphs": [
+            "Describe the screen or action involved, what you expected, what actually happened and roughly when. Include the app version, device model and iOS/Android version if useful. A screenshot can help, but hide unrelated personal information first.",
+            "For an account issue, use the email linked to your account where possible. Never send passwords, login codes, access tokens or unnecessary identity documents. We do not need your login code to investigate."
+          ],
+          "items": [
+            "Sign-in problem: your sign-in method and any visible error, without the code itself.",
+            "Match problem: date, opponent and the disputed score, sharing only what is needed.",
+            "Bug: short steps to reproduce it and whether trying again changed anything."
+          ]
+        },
+        {
+          "id": "report-concerns",
+          "title": "Abusive profiles, photos or privacy concerns",
+          "paragraphs": [
+            "Email support about impersonation, abusive names, inappropriate profile photos or other misuse. Identify the profile or match and explain the concern, with a screenshot if appropriate. Do not send sensitive material that is not needed to understand the report.",
+            "Use {{privacy}} to raise a data-protection concern or exercise a privacy right. Index does not currently offer an in-app reporting or blocking tool; email is the contact route."
+          ],
+          "contact": "privacy",
+          "links": [
+            {
+              "page": "privacy",
+              "label": "Privacy rights and contact"
+            }
+          ]
+        },
+        {
+          "id": "support-faq",
+          "title": "Common questions",
+          "paragraphs": [],
+          "faqs": [
+            {
+              "q": "My sign-in code has not arrived. What should I do?",
+              "a": "Check the email address, spam folder and email filtering. Wait until the app allows a resend, then request a fresh code and use the latest one. Apple and Google sign-in are also supported. If the issue continues, email support with your sign-in method and the visible error; never send a code."
+            },
+            {
+              "q": "How do I get started?",
+              "a": "Sign in with an email code, Apple or Google, then complete your player profile, initial level assessment and home-club choice. Select your club from the Spanish directory; you do not need the club to adopt Index before you can use it."
+            },
+            {
+              "q": "How do I choose or change my club?",
+              "a": "Choose a listed club by name or municipality during onboarding, or change your home club in Settings. You keep the same national level. If your club is missing, use the app’s club-request option; an unapproved request has restricted visibility until reviewed."
+            },
+            {
+              "q": "Why is my level provisional?",
+              "a": "It is still settling. You need at least five rated matches and enough information about your level; the label can remain after the fifth. Provisional players appear in club, province, autonomous-community and Spain rankings, clearly labelled."
+            },
+            {
+              "q": "How do I report and confirm a match?",
+              "a": "Record a singles match, choose your opponent and enter the score. Your opponent can review and confirm it or dispute it. Only opponent-confirmed matches affect levels. Both players should check the score before confirmation."
+            },
+            {
+              "q": "What happens to disputed or unanswered results?",
+              "a": "A disputed result does not affect levels. A result that remains unanswered expires after seven days and does not affect levels. Pending, disputed and expired matches are visible only to the participants. Contact support if you need help with an incorrect result; do not report a false score to offset it."
+            },
+            {
+              "q": "Can I play someone from another club?",
+              "a": "Yes. You can record a singles match against another player in the app. Your level is national; geographic rankings are different views of that same level. Club affiliation is self-declared and is not proof of membership."
+            },
+            {
+              "q": "Why am I not receiving notifications?",
+              "a": "Push notifications are optional. Check the app’s notification settings and the phone’s permission settings, as well as focus/do-not-disturb modes and connectivity. You can still open Index to review pending results without allowing push notifications."
+            },
+            {
+              "q": "How do I delete my account?",
+              "a": "In the app, open Player/Profile → Settings → Delete account. Without the app, email the address on the Delete Account page. Uninstalling the app alone does not delete your account. That page explains verification, retained match history and external deletion retries."
+            },
+            {
+              "q": "Does Index charge for subscriptions or purchases?",
+              "a": "The current app is free. There are no implemented subscriptions, advertising or in-app purchases."
+            }
+          ],
+          "links": [
+            {
+              "page": "delete-account",
+              "label": "Full account-deletion instructions"
+            },
+            {
+              "page": "terms",
+              "label": "Terms for using Index Tennis"
+            }
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "nav": "Privacy",
+      "title": "Privacy policy — Index Tennis",
+      "heading": "YOUR DATA. EXPLAINED.",
+      "description": "Index Tennis privacy policy: account and match data, profile visibility, providers, website privacy, retention, deletion and your rights.",
+      "intro": "This policy covers the Index Tennis mobile app and indextennis.com. It explains what information is used, who can see it and how to contact the operator.",
+      "sections": [
+        {
+          "id": "controller",
+          "title": "1. Who is responsible",
+          "paragraphs": [
+            "Index Tennis is operated by {{operator}}, an individual based in {{country}}, who is the controller of the personal data described in this policy.",
+            "For privacy questions and rights requests, email {{privacy}}. For general help, email {{support}}."
+          ],
+          "contact": "privacy",
+          "reviewNote": "Confirm the operator disclosures and any legally required service address or other identifying details. No postal address or registration number has been invented."
+        },
+        {
+          "id": "data-and-sources",
+          "title": "2. Information and its sources",
+          "paragraphs": [
+            "You provide account/profile details and scores. Your opponents provide match information about you. Apple, Google and Supabase provide sign-in information for the method you choose. Technical information is generated when you use the service."
+          ],
+          "table": {
+            "headers": [
+              "Information",
+              "What it includes / source"
+            ],
+            "rows": [
+              [
+                "Account and sign-in",
+                "Email address, authentication identifier, sign-in method and session/security records. Apple or Google may provide an identifier, email and name where shared, including an Apple private-relay email."
+              ],
+              [
+                "Player profile",
+                "Chosen display name, optional profile photo, initial self-assessment, home club and changes, and club requests you submit."
+              ],
+              [
+                "Matches and levels",
+                "Opponent, score, match date, confirmation/dispute/expiry status, national level, uncertainty/provisional status and rating history. Information comes from both players and the rating calculation."
+              ],
+              [
+                "Club directory",
+                "Club names, municipalities, provinces and autonomous communities from the Spanish directory and submitted corrections/requests. A home-club choice does not give precise device location."
+              ],
+              [
+                "Optional notifications",
+                "Push token, platform, language, registration activity, delivery status and the match information in a notification."
+              ],
+              [
+                "Diagnostics and security",
+                "App/backend error reports, app/device/software versions, request timestamps and technical connection records. Providers can receive IP addresses and service logs; not every such record is part of the app’s error payload."
+              ],
+              [
+                "Correspondence",
+                "Your email address, message content, relevant account details and any attachments you choose to send to support or privacy."
+              ],
+              [
+                "Website requests",
+                "IP address and technical HTTP information needed to deliver pages, which may appear in hosting/access/security logs depending on the host’s configuration."
+              ]
+            ]
+          }
+        },
+        {
+          "id": "purposes-and-bases",
+          "title": "3. Purposes and legal bases",
+          "paragraphs": [
+            "Processing is not all based on consent. The basis depends on the purpose, and optional permissions do not authorise unrelated uses."
+          ],
+          "table": {
+            "headers": [
+              "Purpose",
+              "Relevant data",
+              "Basis"
+            ],
+            "rows": [
+              [
+                "Provide the requested app service",
+                "Account, sign-in, profile, club choice, matches and ratings",
+                "Performance of the service contract (GDPR Article 6(1)(b)); profile/ranking visibility is part of the service described here."
+              ],
+              [
+                "Security, reliability and resolving misuse",
+                "Necessary technical logs, diagnostics and relevant reports",
+                "Legitimate interests in securing and maintaining the service (Article 6(1)(f)), with minimisation and a balancing assessment."
+              ],
+              [
+                "Optional photos and push alerts",
+                "Photo you upload; push token and delivery content if enabled",
+                "Your optional choice/permission, with consent where required (Article 6(1)(a)). Removing a photo or disabling alerts does not close the account."
+              ],
+              [
+                "Support and privacy correspondence",
+                "Contact details and information needed for the request",
+                "Contractual support where applicable; legitimate interests for general enquiries; legal obligations when handling data-protection rights (Article 6(1)(c))."
+              ],
+              [
+                "Deliver and secure this website",
+                "Necessary connection and security information",
+                "Legitimate interests in delivering and protecting the website; no analytics or advertising processing is added by this repository."
+              ]
+            ]
+          },
+          "reviewNote": "Approve the lawful-basis and legitimate-interest assessments, including profile visibility. Retention after account deletion needs a separate purpose, legal basis and duration assessment; the former app contract alone is not assumed to justify it."
+        },
+        {
+          "id": "visibility",
+          "title": "4. Who can see profiles and matches",
+          "paragraphs": [
+            "Other signed-in Index players, including players outside your club, can see your display name, optional photo, level, provisional status and listed home-club information. Rankings cover club, province, autonomous community and Spain. Provisional players are included with a visible label."
+          ],
+          "items": [
+            "Confirmed match information is visible to other signed-in players.",
+            "Pending, disputed and expired matches are visible only to their participants through the app’s match views.",
+            "An unapproved club request has restricted visibility: the requester and reviewing platform administrator can access its unlisted details; other players are not shown that unlisted club identity. This does not make the requester’s whole player profile private.",
+            "Profile photos are displayed in the app, but the current storage uses publicly readable photo URLs. Someone who obtains a photo URL may access it outside the app. Do not upload a sensitive image."
+          ],
+          "reviewNote": "The public-read photo bucket is documented in mobile spec §8. If photos should require sign-in, that needs an app/storage access-control change, not just different policy wording."
+        },
+        {
+          "id": "providers",
+          "title": "5. Service providers and recipients",
+          "paragraphs": [
+            "Providers receive information relevant to their role, not automatically the entire dataset. They may also process operational/security logs or account information under their own applicable terms. Apple and Google can act independently for their sign-in/device services as well as participating in delivery."
+          ],
+          "table": {
+            "headers": [
+              "Provider",
+              "Role / information involved"
+            ],
+            "rows": [
+              [
+                "Fly.io",
+                "Backend hosting and request processing; technical connection/security records and data processed by the API."
+              ],
+              [
+                "Neon",
+                "Application database holding player, match, club, notification and rating records; database operations/backups and technical logs."
+              ],
+              [
+                "Supabase",
+                "Authentication/session information and optional profile-photo storage; related service logs."
+              ],
+              [
+                "Brevo",
+                "Delivery of login-code emails through the configured mail service: recipient address, email content and delivery metadata."
+              ],
+              [
+                "Expo Push, Apple APNs, Google FCM",
+                "Optional push delivery: push identifiers, notification content and delivery/technical metadata along the delivery chain."
+              ],
+              [
+                "Apple and Google sign-in",
+                "Authentication identifiers and profile/email information shared for the sign-in method you choose."
+              ],
+              [
+                "Sentry",
+                "App/backend error monitoring. The integration strips user context, request headers/cookies and sensitive URL data; connection and service-level logs may still exist at providers."
+              ],
+              [
+                "Zoho",
+                "Support/privacy email correspondence, sender/recipient addresses, content, attachments and mail/security metadata."
+              ],
+              [
+                "Cloudflare Pages",
+                "{{websiteHost}}: page delivery and related access/security logs. Processing region: {{websiteRegion}}. Log retention: {{websiteLogRetention}}."
+              ]
+            ]
+          },
+          "reviewNote": "Cloudflare Pages is the selected website host; Squarespace remains the domain registrar. Confirm the Pages account, analytics/security settings, logging choices, applicable DPA and transfer safeguards. Zoho region and app production-provider settings still need review."
+        },
+        {
+          "id": "international-transfers",
+          "title": "6. Processing locations and transfers",
+          "paragraphs": [
+            "The app documentation describes Frankfurt/EU configurations for Fly.io, Neon and Supabase and an EU Sentry region. These describe documented environments, not a guarantee that all processing, logs, support access or subprocessors remain in the EEA.",
+            "Cloudflare Pages uses a global network. Cloudflare’s DPA addresses restricted transfers, including standard contractual clauses where applicable; the relevant account agreement and safeguards still need confirmation. Push delivery, Apple/Google sign-in and other provider support/subprocessors can also involve processing outside the EEA. Contact us for information about applicable safeguards."
+          ],
+          "reviewNote": "Verify production regions, signed processor agreements, subprocessors and the actual transfer mechanisms. The policy must not claim that a contract or safeguard has been put in place merely because a provider offers it."
+        },
+        {
+          "id": "retention",
+          "title": "7. Retention and deletion",
+          "paragraphs": [
+            "Account information is used while the account is active for the purposes above. Account deletion removes or de-identifies the profile name and sign-in link, removes the player from rankings, removes registered notification tokens and expires pending matches. Photo objects and the sign-in identity are deleted through external providers; failures can require retries.",
+            "Confirmed match records and rating history currently remain linked to a de-identified “Former player” record to preserve opponents’ results and rating reproducibility. Scores, dates, opponents and internal historical references can remain. Such records are not necessarily irreversibly anonymous, and this retention is not presented as legally required.",
+            "Retention period or criteria for match/rating history: {{historyDuration}}. Proposed basis: {{historyBasis}}. Requests to erase or restrict retained information must be assessed, including the interests and rights of the people involved.",
+            "A deleted sign-in identifier remains in the deletion queue until provider deletion succeeds and for two further days before scheduled cleanup, to reject old sessions. Pending external deletion tasks retain the information needed for retries.",
+            "Support correspondence, technical logs, error reports and backups need separate, limited schedules. Website log schedule: {{websiteLogRetention}}."
+          ],
+          "links": [
+            {
+              "page": "delete-account",
+              "label": "Deletion routes, verification and retained records"
+            }
+          ],
+          "reviewNote": "Approve and implement retention limits for correspondence, logs, backups and retained history. Proposed history purpose: preserve opponents’ confirmed results and reproducible levels; consider a documented legitimate-interest assessment, minimisation and a finite review/retention schedule. Do not publish until legal basis, duration and enforcement are resolved."
+        },
+        {
+          "id": "website",
+          "title": "8. This website, cookies and contact messages",
+          "paragraphs": [
+            "This repository serves static pages with locally hosted fonts and images. It includes no analytics, advertising trackers, third-party embeds, website login, contact-submission backend, cookies or browser-storage tracking. The deletion page can copy an email address to your clipboard only when you activate that action.",
+            "Email links open your mail service; the website does not submit a request on your behalf or know whether you sent it. Correspondence is handled through Zoho. Cloudflare Pages is the selected host; Cloudflare can process IP addresses and request/network information to deliver and protect the site.",
+            "The site adds no analytics beacon. Cloudflare Web Analytics must remain disabled in the Pages project. Depending on enabled security or access services, Cloudflare can set necessary cookies; their actual use must be checked on the deployed preview."
+          ],
+          "reviewNote": "Verify the account’s enabled services and deployed cookies/headers. No fixed universal Pages log-retention period or EU-only processing is asserted. Cloudflare’s 1.1.1.1 resolver retention statements do not describe this website’s logs.",
+          "links": [
+            {
+              "url": "https://www.cloudflare.com/privacypolicy/",
+              "label": "Cloudflare privacy policy"
+            },
+            {
+              "url": "https://www.cloudflare.com/cloudflare-customer-dpa/",
+              "label": "Cloudflare data processing addendum"
+            }
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "9. Your rights and how to use them",
+          "paragraphs": [
+            "Where applicable, you can request access, correction, erasure, restriction and portability of your personal data, and object to processing based on legitimate interests. You may withdraw consent for consent-based processing without affecting earlier lawful processing. You can also complain to the Spanish data-protection authority (AEPD) or another competent supervisory authority.",
+            "Email {{privacy}}. Use your account-associated email where possible; only proportionate verification will be requested if needed. Do not send passwords, login codes or unnecessary identity documents.",
+            "We respond without undue delay and normally within {{responseMonths}} calendar month of receiving a rights request. If the law permits an extension because of complexity or number of requests, we explain it within that first month; the extension can be up to two further months. A response deadline is not a guarantee that every external deletion has finished. Rights requests are normally free."
+          ],
+          "contact": "privacy",
+          "links": [
+            {
+              "url": "https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos",
+              "label": "AEPD: exercise your data-protection rights"
+            }
+          ]
+        },
+        {
+          "id": "children",
+          "title": "10. Minimum age",
+          "paragraphs": [
+            "Index Tennis is not intended for children under {{minimumAge}}. There is no parental-consent feature. If you believe an underage child has supplied personal data, contact {{privacy}} so the situation can be reviewed and appropriate action taken."
+          ]
+        },
+        {
+          "id": "levels-and-automation",
+          "title": "11. Automated level calculations",
+          "paragraphs": [
+            "The app calculates an estimated tennis level from confirmed results and rating rules. Rankings and provisional labels reflect that estimate and the available information. These are sporting references, not an official federation certification. Contact support about an inaccurate result or an unexpected calculation."
+          ]
+        },
+        {
+          "id": "security",
+          "title": "12. Security and limits",
+          "paragraphs": [
+            "Access controls, encrypted service connections and data minimisation help protect information. No service can guarantee absolute security. Limit what you put in public-facing names/photos or send in support messages, and keep access to your sign-in provider secure."
+          ]
+        },
+        {
+          "id": "policy-changes",
+          "title": "13. Changes and contact",
+          "paragraphs": [
+            "An approved published policy carries its actual effective/last-updated date. Material changes will be explained where required, rather than applying a new purpose silently. Contact {{privacy}} with a question about this policy."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Support"
+            },
+            {
+              "page": "terms",
+              "label": "Terms of use"
+            }
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "nav": "Terms",
+      "title": "Terms of use — Index Tennis",
+      "heading": "PLAY FAIR. USE INDEX FAIRLY.",
+      "description": "Index Tennis terms covering accounts, honest match reporting, levels, self-declared clubs, conduct, user content and consumer rights.",
+      "intro": "These terms describe use of Index Tennis, an amateur singles-tennis app, and its public information website.",
+      "sections": [
+        {
+          "id": "operator-and-scope",
+          "title": "1. Operator and scope",
+          "paragraphs": [
+            "Index Tennis is provided by {{operator}}, operating under the name Index Tennis and based in {{country}}. You can contact Index Tennis at {{support}}.",
+            "The current app is free and has no implemented subscriptions, advertising or in-app purchases. These terms do not introduce a charge. Any future paid service would need separate, clear information and an appropriate agreement."
+          ],
+          "contact": "support",
+          "reviewNote": "Confirm required operator/service-address disclosures and how terms will be validly incorporated. No existing in-app acceptance flow has been verified; publishing this page does not prove that existing users accepted it."
+        },
+        {
+          "id": "eligibility-and-account",
+          "title": "2. Eligibility and account responsibilities",
+          "paragraphs": [
+            "You must be at least {{minimumAge}} and have the legal capacity or legally required authorisation to use the service. Index is not intended for under-{{minimumAge}} users and does not provide a parental-consent flow.",
+            "Use an account you control, keep your sign-in provider secure and provide honest account information. Email-code, Apple and Google sign-in are supported. Never give another person your login code. You remain responsible for your own conduct; this does not make you liable for every unauthorised act regardless of circumstances.",
+            "Visiting this website does not create an app account or record acceptance of terms. Any required acceptance must be obtained through an appropriate process."
+          ]
+        },
+        {
+          "id": "match-reporting",
+          "title": "3. Honest match reporting",
+          "paragraphs": [
+            "Record only real singles matches with accurate opponents, dates and scores. Do not invent matches, impersonate an opponent, coordinate false confirmations or manipulate results.",
+            "The opponent can confirm or dispute the reported result. Only opponent-confirmed matches affect levels. Unanswered matches expire after seven days; disputed and expired results do not affect levels. Contact support about an error instead of creating another false result to compensate for it.",
+            "Pending, disputed and expired matches are visible only to participants; confirmed matches can be seen by other signed-in players."
+          ]
+        },
+        {
+          "id": "levels-and-rankings",
+          "title": "4. Levels are estimates",
+          "paragraphs": [
+            "Each player has one national level, viewed through club, province, autonomous-community and Spain rankings. Levels estimate tennis performance from available results; they are not guarantees of playing ability, match outcomes or official sporting status.",
+            "A level is provisional until there is sufficient information, including at least five rated matches. Provisional players appear in all rankings with a visible label. Levels and positions can change as results are confirmed, corrected or recalculated, or rating rules evolve. Repeated matches may carry less weight."
+          ]
+        },
+        {
+          "id": "clubs",
+          "title": "5. Home clubs and affiliation",
+          "paragraphs": [
+            "You choose a home club from the Spanish directory and can change it without starting a new level. Club affiliation is self-declared. A listing, home-club choice or ranking does not prove membership, club approval or federation endorsement.",
+            "Unapproved club requests have additional privacy restrictions until reviewed. Directory information can contain errors; contact support or use the available request process to raise them."
+          ]
+        },
+        {
+          "id": "conduct",
+          "title": "6. Respect other players",
+          "paragraphs": [
+            "Do not harass, threaten, discriminate, impersonate, expose others’ private information or use unlawful, abusive or inappropriate names or photos. Do not upload content you lack the right to share, disrupt the service, bypass access controls or scrape personal information for misuse.",
+            "Report inappropriate content or abuse by email with enough context to investigate. Index currently has no in-app reporting/blocking tool. The operator may investigate and take proportionate action within available controls and applicable law; where appropriate, concerns and reasons should be explained and a way to respond offered."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Contact support about abuse or a profile"
+            }
+          ]
+        },
+        {
+          "id": "content-permission",
+          "title": "7. Your content and limited permissions",
+          "paragraphs": [
+            "You keep your rights in the content you submit. You allow Index and the service providers needed to operate it to host, process, display and technically adapt that content only as necessary to provide and protect the service described in the privacy policy.",
+            "This permission does not authorise unrelated advertising or sale of your content. Removing content or closing an account ends use that is no longer necessary, subject to the limited retained records and deletion processing explained in the privacy/deletion pages and applicable rights.",
+            "Do not present Index branding or another person’s content as your own or imply an endorsement that does not exist."
+          ],
+          "links": [
+            {
+              "page": "privacy",
+              "label": "Visibility, providers and retention"
+            }
+          ]
+        },
+        {
+          "id": "support-and-closure",
+          "title": "8. Support and closing an account",
+          "paragraphs": [
+            "You can stop using the service and request account deletion in the app or by email without reinstalling it. Uninstalling alone does not close the account. Deletion removes personal profile/sign-in information but currently retains de-identified confirmed matches and rating history as described separately; it does not guarantee every record disappears instantly.",
+            "Contact {{support}} for assistance. Account or content concerns should be handled proportionately, taking account of applicable user rights."
+          ],
+          "links": [
+            {
+              "page": "delete-account",
+              "label": "Delete your Index Tennis account"
+            }
+          ]
+        },
+        {
+          "id": "availability-and-changes",
+          "title": "9. Availability, changes and responsibility",
+          "paragraphs": [
+            "Maintenance, errors, provider outages and changes can interrupt the service. Index does not promise uninterrupted availability or error-free level estimates. Reasonable care remains due, and this wording does not exclude responsibility that cannot lawfully be excluded.",
+            "Features and terms may change. Material changes and any action required from users will be explained where the law requires it. Changes do not remove accrued rights or retrospectively authorise unrelated use of personal data. You may contact support or close your account if you no longer wish to use the service."
+          ]
+        },
+        {
+          "id": "law-and-rights",
+          "title": "10. Applicable law and your rights",
+          "paragraphs": [
+            "Spanish law applies to the extent a valid choice of law can be made. If you are a consumer, this does not deprive you of mandatory protections or access to competent courts available under applicable law, including protections of your habitual residence where relevant.",
+            "Nothing here waives non-excludable consumer/data-protection rights or requires arbitration or an exclusive foreign court. Contact the operator first if you wish to raise a problem; this does not restrict your ability to seek other lawful remedies."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Support and complaints"
+            },
+            {
+              "page": "privacy",
+              "label": "Privacy rights"
+            }
+          ]
+        }
+      ]
+    },
+    "delete-account": {
+      "nav": "Delete account",
+      "title": "Delete your account — Index Tennis",
+      "heading": "DELETE YOUR INDEX TENNIS ACCOUNT.",
+      "description": "Delete an Index Tennis account in the app or request deletion by email without signing in or reinstalling. Learn what is deleted and what remains.",
+      "intro": "Two ways to request deletion of your Index Tennis account. You can use the email route without signing in, having the app installed or reinstalling it.",
+      "sections": [
+        {
+          "id": "delete-in-app",
+          "title": "1. In the app",
+          "paragraphs": [
+            "Open Index Tennis and follow these steps:"
+          ],
+          "ordered": true,
+          "items": [
+            "Open the Player / Profile tab.",
+            "Open Settings.",
+            "Choose Delete account, review the explanation and confirm the deletion."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Need help accessing your account?"
+            }
+          ]
+        },
+        {
+          "id": "delete-by-email",
+          "title": "2. Without the app: email your request",
+          "paragraphs": [
+            "Write to {{privacy}} from your account-associated email where possible. If you no longer have access to it, explain that in your message so proportionate ownership verification can be arranged. You do not need to log in or reinstall the app to use this route."
+          ],
+          "deletionRequest": true
+        },
+        {
+          "id": "ownership-verification",
+          "title": "Ownership verification",
+          "paragraphs": [
+            "To protect your account, it may be necessary to verify that you control it. We will ask only for information proportionate to that task, such as the associated email or sign-in method; do not send passwords, login codes, access tokens or unnecessary identity documents.",
+            "If you used Sign in with Apple and Hide My Email, the account may use an Apple private-relay address. Tell us you used that method and, if available, provide the relay address from your Apple account’s sign-in settings. Lack of access to a relay address can require another proportionate verification route; it does not mean you must reinstall the app."
+          ]
+        },
+        {
+          "id": "deletion-effects",
+          "title": "What deletion does",
+          "paragraphs": [
+            "After the account deletion is processed:"
+          ],
+          "items": [
+            "The personal profile name is replaced with “Former player” and the sign-in identity is deleted through the authentication provider; the profile’s sign-in link is removed.",
+            "The player disappears from rankings and registered notification tokens are removed.",
+            "The profile-photo reference is removed and its stored photo is queued for deletion.",
+            "Pending matches involving the player are expired.",
+            "External photo/sign-in deletion failures can require retries. Sending a request or uninstalling the app does not mean every external record disappears instantly."
+          ]
+        },
+        {
+          "id": "retained-records",
+          "title": "What currently remains",
+          "paragraphs": [
+            "Confirmed match records and rating history currently remain attached to a de-identified “Former player” record to preserve opponents’ results and rating reproducibility. They can include scores, dates, opponents and internal historical references. Other players’ levels are not reset just because an account closes.",
+            "These records are not necessarily irreversibly anonymous: match context can sometimes allow identification. Their retention is not claimed to be legally required. Retention period or criteria: {{historyDuration}}. Basis: {{historyBasis}}.",
+            "Technical deletion/retry records can remain while provider cleanup is pending. The deleted sign-in identifier is then retained for two further days before scheduled cleanup to reject old sessions. Logs, backups and correspondence have separate retention considerations."
+          ],
+          "reviewNote": "A proposed legitimate-interest basis for preserving opponents’ results/reproducibility needs explicit balancing, minimisation and a justified duration, with an enforceable retention/deletion process. The operator must approve this before publication; the website cannot implement a backend history purge.",
+          "links": [
+            {
+              "page": "privacy",
+              "label": "Privacy policy: retention and your rights"
+            }
+          ]
+        },
+        {
+          "id": "request-timing",
+          "title": "What happens after you contact us",
+          "paragraphs": [
+            "We review the request, carry out proportionate ownership checks if needed and explain its outcome and any retained information. We aim to handle deletion without undue delay and normally complete verified requests within {{responseMonths}} calendar month. We respond to a privacy-rights request within {{responseMonths}} calendar month of receipt, subject to lawful extensions.",
+            "If complexity or the number of requests permits a legal extension, we explain the reason within the initial month; that extension can be up to two further months. External deletion failures may require follow-up retries and an explanation. This is not a promise that an email instantly removes all data."
+          ],
+          "links": [
+            {
+              "page": "support",
+              "label": "Support"
+            },
+            {
+              "page": "privacy",
+              "label": "Privacy and complaints"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

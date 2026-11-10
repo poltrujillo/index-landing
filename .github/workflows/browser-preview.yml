@@ -1,0 +1,40 @@
+name: Test a Cloudflare draft preview
+
+on:
+  workflow_dispatch:
+    inputs:
+      preview_url:
+        description: Immutable draft preview URL from the Cloudflare Pages deployment
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: .node-version
+      - name: Install isolated browser QA tools
+        run: npm install --prefix qa --package-lock=false --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium
+        run: node qa/node_modules/@playwright/test/cli.js install --with-deps chromium
+      - name: Check deployed draft
+        env:
+          PREVIEW_URL: ${{ inputs.preview_url }}
+        run: npm run check:browser
+      - name: Save screenshots and results
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: cloudflare-preview-browser-results
+          path: artifacts/browser/
+          retention-days: 7
+          if-no-files-found: ignore

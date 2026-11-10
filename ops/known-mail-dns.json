@@ -1,0 +1,56 @@
+{
+  "domain": "indextennis.com",
+  "inventoryComplete": false,
+  "note": "Six owner-supplied Zoho EU mail/verification records from the DNS screenshots and full DKIM text. Not a complete DNS zone: website HTTPS data is truncated and other records/delegation/DNSSEC are unverified. Never import this as a replacement zone.",
+  "records": [
+    {
+      "name": "indextennis.com",
+      "type": "MX",
+      "content": "mx.zoho.eu",
+      "priority": 10,
+      "ttl": 14400,
+      "proxied": false
+    },
+    {
+      "name": "indextennis.com",
+      "type": "MX",
+      "content": "mx2.zoho.eu",
+      "priority": 20,
+      "ttl": 14400,
+      "proxied": false
+    },
+    {
+      "name": "indextennis.com",
+      "type": "MX",
+      "content": "mx3.zoho.eu",
+      "priority": 50,
+      "ttl": 14400,
+      "proxied": false
+    },
+    {
+      "name": "indextennis.com",
+      "type": "TXT",
+      "content": "v=spf1 include:zohomail.eu ~all",
+      "ttl": 14400,
+      "proxied": false
+    },
+    {
+      "name": "indextennis.com",
+      "type": "TXT",
+      "content": "zoho-verification=zb79027011.zmverify.zoho.eu",
+      "ttl": 14400,
+      "proxied": false
+    },
+    {
+      "name": "zmail._domainkey.indextennis.com",
+      "type": "TXT",
+      "content": "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCC7DEy1ceXnRsm725SFxfOq1GBMU9tqwDD1GgMMHXt6aYPaj54rIvcCKeevwwgHEfrACz06KC9gwyvQHmuyDuKddyEgAYSxXBdNEIcVJeMwvjftyZis2/1OmFxdtzw4EVIYADyRDrohK2HCmOKQDS2dyNTWdds41kIft4iM1L72wIDAQAB",
+      "proxied": false,
+      "ttl": 14400
+    }
+  ],
+  "sources": [
+    "Owner DKIM text supplied 10 November 2026",
+    "Squarespace DNS screenshots supplied 10 November 2026"
+  ]
+}

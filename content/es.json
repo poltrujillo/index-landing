@@ -1,0 +1,139 @@
+{
+  "lang": "es",
+  "locale": "es_ES",
+  "title": "Index Tennis — Tu tenis. Tu nivel.",
+  "description": "Registra tus partidos de tenis individuales, confirma los resultados y sigue tu nivel. Un único nivel y rankings por club, provincia, comunidad y España.",
+  "skip": "Saltar al contenido",
+  "nav": {
+    "label": "Navegación principal",
+    "how": "Cómo funciona",
+    "rankings": "Tu nivel",
+    "faq": "Preguntas",
+    "language": "Read in English",
+    "other": "EN"
+  },
+  "hero": {
+    "eyebrow": "TENIS AMATEUR · PARTIDOS INDIVIDUALES",
+    "line1": "TU TENIS.",
+    "line2": "TU NIVEL.",
+    "body": "Juega, registra el resultado y tu rival lo confirma. Index convierte tus partidos en un nivel que evoluciona contigo.",
+    "cta": "CÓMO FUNCIONA",
+    "coming": "Próximamente",
+    "note": "Un nivel. De tu club a toda España.",
+    "caption": "01 / TU NIVEL, DE UN VISTAZO",
+    "alt": "Pantalla real de Inicio de Index en español: nivel 7,51, evolución de los últimos partidos, un resultado pendiente de confirmar y botón Registrar partido."
+  },
+  "how": {
+    "eyebrow": "DEL PARTIDO A TU NIVEL",
+    "title": "JUEGA. EL RESTO, EN INDEX.",
+    "intro": "Tu tenis se juega en la pista. Tus resultados se quedan contigo.",
+    "steps": [
+      {
+        "title": "JUEGA",
+        "body": "Un partido individual con otro jugador de Index. En tu club o fuera de él."
+      },
+      {
+        "title": "REGISTRA",
+        "body": "Introduce el resultado del partido y envíaselo a tu rival desde la app."
+      },
+      {
+        "title": "CONFIRMA",
+        "body": "Tu rival revisa el marcador y confirma el resultado. Las dos partes cuentan."
+      },
+      {
+        "title": "SIGUE TU NIVEL",
+        "body": "Con el resultado confirmado, sigue cómo cambia tu nivel y tu posición."
+      }
+    ]
+  },
+  "rankings": {
+    "eyebrow": "EL MISMO TENIS. LA MISMA REFERENCIA.",
+    "line1": "UN NIVEL.",
+    "line2": "CUATRO RANKINGS.",
+    "body": "Tu nivel es uno, juegues donde juegues. Consulta tu posición desde tu club hasta toda España, sin empezar de cero al cambiar de club.",
+    "scopes": [
+      {
+        "title": "TU CLUB",
+        "body": "Los jugadores de tu club."
+      },
+      {
+        "title": "TU PROVINCIA",
+        "body": "Una perspectiva más amplia, cerca de ti."
+      },
+      {
+        "title": "TU COMUNIDAD",
+        "body": "Tu posición en tu comunidad autónoma."
+      },
+      {
+        "title": "ESPAÑA",
+        "body": "Todos los jugadores de Index en España."
+      }
+    ],
+    "caption": "02 / ENCUENTRA TU POSICIÓN",
+    "alt": "Ranking real de Index en español con los ámbitos Club, Provincia, Comunidad y España; John Doe aparece segundo del club con nivel 7,51."
+  },
+  "progress": {
+    "eyebrow": "CADA PARTIDO DEJA HUELLA",
+    "title": "TU EVOLUCIÓN, A LA VISTA.",
+    "body": "Vuelve a tus últimos partidos y sigue los cambios de tu nivel. Una referencia que se construye con tus resultados confirmados.",
+    "caption": "03 / SIGUE TU RECORRIDO",
+    "alt": "Perfil real de jugador en Index en español: John Doe, nivel 7,51, gráfico de evolución e historial de cambios tras los últimos partidos.",
+    "provisional": "PROVISIONAL",
+    "provisionalTitle": "Tu nivel necesita conocerte.",
+    "provisionalBody": "Al empezar, tu nivel es provisional. Se necesitan al menos cinco partidos puntuados y suficiente información para que se estabilice; puede seguir siendo provisional después del quinto.",
+    "provisionalNote": "También apareces en los rankings, con tu estado claramente indicado."
+  },
+  "screenshotsNote": "Capturas reales de la app en español. Los niveles y posiciones mostrados corresponden a esas capturas.",
+  "faq": {
+    "eyebrow": "ANTES DE SALIR A PISTA",
+    "title": "¿ALGUNA DUDA?",
+    "items": [
+      {
+        "q": "¿Qué es Index Tennis?",
+        "a": "Una app para tenistas amateurs que juegan partidos individuales. Registra tus resultados, tu rival los confirma y puedes seguir tu nivel y tus rankings."
+      },
+      {
+        "q": "¿Cuándo se actualiza mi nivel?",
+        "a": "Cuando tu rival confirma el resultado, el partido puede contar para tu nivel. Registrarlo sin confirmar no basta. No todos los partidos pesan igual: repetir muchas veces contra el mismo rival puede reducir su efecto."
+      },
+      {
+        "q": "¿Tengo un nivel diferente en cada ranking?",
+        "a": "No. Tienes un único nivel. Los rankings de club, provincia, comunidad autónoma y España son distintas vistas de ese mismo nivel. Si cambias de club, conservas tu nivel."
+      },
+      {
+        "q": "¿Qué significa «Provisional»?",
+        "a": "Que todavía falta información para que tu nivel se estabilice. Se necesitan al menos cinco partidos puntuados, aunque puede requerir más. Mientras tanto, apareces en todos los rankings con la etiqueta Provisional."
+      },
+      {
+        "q": "¿Puedo jugar contra alguien de otro club?",
+        "a": "Sí. Puedes registrar un partido individual contra otro jugador de la app, aunque tenga un club diferente al tuyo."
+      },
+      {
+        "q": "¿Dónde puedo descargarla?",
+        "a": "Próximamente. Los enlaces de descarga se publicarán aquí cuando estén disponibles."
+      }
+    ]
+  },
+  "availability": {
+    "eyebrow": "NOS VEMOS EN LA PISTA",
+    "title": "TU PRÓXIMO PARTIDO CUENTA.",
+    "body": "Index Tennis llegará pronto. Aquí encontrarás los enlaces de descarga cuando estén disponibles.",
+    "status": "PRÓXIMAMENTE",
+    "ios": "Descargar para iPhone",
+    "android": "Descargar para Android"
+  },
+  "footer": {
+    "tagline": "Tu tenis. Tu nivel.",
+    "contact": "Contacto",
+    "privacy": "Privacidad",
+    "languages": "Idioma",
+    "emailLabel": "Escribir a Index Tennis",
+    "back": "Volver al inicio"
+  },
+  "notFound": {
+    "title": "Página no encontrada — Index Tennis",
+    "heading": "FUERA DE PISTA.",
+    "body": "No encontramos esta página.",
+    "back": "VOLVER A INDEX"
+  }
+}

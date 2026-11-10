@@ -1,0 +1,6 @@
+{
+  "name": "index-tennis-browser-qa",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@playwright/test": "1.65.0" }
+}

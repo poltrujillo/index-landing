@@ -1,0 +1,80 @@
+[
+  {
+    "source": "Index_Logo_Vector(1).svg",
+    "output": "public/assets/brand/index-logo.svg",
+    "sha256": "8f7f5c167bc751f9beef56196d7b75c4b43f1adbb67c64fb76cb0cda8de4440a",
+    "transformation": "none"
+  },
+  {
+    "source": "Index_Logo_Square_Transparent.png",
+    "output": "public/assets/brand/index-logo-square.png",
+    "sha256": "315d0b1d1dfdc950d891cd464176973ddffd63c6ff1105944e313704470bd396",
+    "transformation": "none"
+  },
+  {
+    "source": "Index_App_Icon_1024.png",
+    "output": "public/assets/brand/index-app-icon.png",
+    "sha256": "d61ee798f5780aec68bbc7d0f8cfdf1a21603c2e28b4ba97ccf66c7e9995fcd6",
+    "transformation": "none"
+  },
+  {
+    "source": "Index_Logo_FullHD_Transparent.png",
+    "output": "public/assets/brand/index-logo-fullhd.png",
+    "sha256": "7e92dc17cfb1595db268108034683799ad69d168884a51bf2a6d06da745053ad",
+    "transformation": "none"
+  },
+  {
+    "source": "IMG_7161.png",
+    "locale": "es",
+    "screen": "home",
+    "original": "assets/source/screenshots/IMG_7161.png",
+    "sha256": "102686e29f39e8a60d90e153dd696981828e4f03ee799a46147a65b7a9e41d4c",
+    "output": "public/assets/screenshots/es/home-[384,768].webp",
+    "transformation": "Proportional resize and WebP compression only; no cropping, retouching, recoloring or content changes."
+  },
+  {
+    "source": "IMG_7162.png",
+    "locale": "es",
+    "screen": "rankings",
+    "original": "assets/source/screenshots/IMG_7162.png",
+    "sha256": "3bb3a194196be18e92f6abf11fc74908e6a488e6973e7004d8bad8634edffb00",
+    "output": "public/assets/screenshots/es/rankings-[384,768].webp",
+    "transformation": "Proportional resize and WebP compression only; no cropping, retouching, recoloring or content changes."
+  },
+  {
+    "source": "IMG_7163.png",
+    "locale": "es",
+    "screen": "player",
+    "original": "assets/source/screenshots/IMG_7163.png",
+    "sha256": "854ec390369337d235d1ef28fe497dda15bb44cac9f0ca694eb37f9d5c6198d3",
+    "output": "public/assets/screenshots/es/player-[384,768].webp",
+    "transformation": "Proportional resize and WebP compression only; no cropping, retouching, recoloring or content changes."
+  },
+  {
+    "source": "IMG_7164.png",
+    "locale": "en",
+    "screen": "home",
+    "original": "assets/source/screenshots/IMG_7164.png",
+    "sha256": "a6ebdff07f5daac10382f8a6426494385e86c16357f65a57a205c0008608db1f",
+    "output": "public/assets/screenshots/en/home-[384,768].webp",
+    "transformation": "Proportional resize and WebP compression only; no cropping, retouching, recoloring or content changes."
+  },
+  {
+    "source": "IMG_7165.png",
+    "locale": "en",
+    "screen": "rankings",
+    "original": "assets/source/screenshots/IMG_7165.png",
+    "sha256": "9758d11c17cf083674b1848c0392a6babd4cb76869d618fb7858cb2f8478d590",
+    "output": "public/assets/screenshots/en/rankings-[384,768].webp",
+    "transformation": "Proportional resize and WebP compression only; no cropping, retouching, recoloring or content changes."
+  },
+  {
+    "source": "IMG_7166.png",
+    "locale": "en",
+    "screen": "player",
+    "original": "assets/source/screenshots/IMG_7166.png",
+    "sha256": "c3584a89be767a53f96534be4e3ff4b41ed55c2decd0662587708fb627e69741",
+    "output": "public/assets/screenshots/en/player-[384,768].webp",
+    "transformation": "Proportional resize and WebP compression only; no cropping, retouching, recoloring or content changes."
+  }
+]

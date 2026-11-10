@@ -1,0 +1,139 @@
+{
+  "lang": "en",
+  "locale": "en_GB",
+  "title": "Index Tennis — Your tennis. Your level.",
+  "description": "Record your singles tennis matches, confirm scores and follow your level. One consistent level, with rankings by club, province, autonomous community and Spain.",
+  "skip": "Skip to content",
+  "nav": {
+    "label": "Main navigation",
+    "how": "How it works",
+    "rankings": "Your level",
+    "faq": "Questions",
+    "language": "Leer en español",
+    "other": "ES"
+  },
+  "hero": {
+    "eyebrow": "AMATEUR TENNIS · SINGLES MATCHES",
+    "line1": "YOUR TENNIS.",
+    "line2": "YOUR LEVEL.",
+    "body": "Play, record the score and your opponent confirms it. Index turns your matches into a level that evolves with you.",
+    "cta": "HOW IT WORKS",
+    "coming": "Coming soon",
+    "note": "One level. From your club to all of Spain.",
+    "caption": "01 / YOUR LEVEL AT A GLANCE",
+    "alt": "Actual Index Home screen in English: level 7.51, recent match changes, a score awaiting confirmation and the Log match button."
+  },
+  "how": {
+    "eyebrow": "FROM YOUR MATCH TO YOUR LEVEL",
+    "title": "PLAY. KEEP IT IN INDEX.",
+    "intro": "Your tennis happens on court. Your results stay with you.",
+    "steps": [
+      {
+        "title": "PLAY",
+        "body": "A singles match with another Index player. At your club or somewhere new."
+      },
+      {
+        "title": "RECORD",
+        "body": "Enter the match score and send it to your opponent through the app."
+      },
+      {
+        "title": "CONFIRM",
+        "body": "Your opponent reviews and confirms the score. Both players have a say."
+      },
+      {
+        "title": "FOLLOW YOUR LEVEL",
+        "body": "Once the score is confirmed, follow changes to your level and position."
+      }
+    ]
+  },
+  "rankings": {
+    "eyebrow": "SAME TENNIS. SAME REFERENCE.",
+    "line1": "ONE LEVEL.",
+    "line2": "FOUR RANKINGS.",
+    "body": "Your level is the same wherever you play. See where you stand, from your club to all of Spain, without starting over when you change clubs.",
+    "scopes": [
+      {
+        "title": "YOUR CLUB",
+        "body": "The players at your club."
+      },
+      {
+        "title": "YOUR PROVINCE",
+        "body": "A wider view, close to home."
+      },
+      {
+        "title": "YOUR COMMUNITY",
+        "body": "Your place in your autonomous community."
+      },
+      {
+        "title": "SPAIN",
+        "body": "All Index players across Spain."
+      }
+    ],
+    "caption": "02 / FIND YOUR POSITION",
+    "alt": "Actual Index rankings screen in English with Club, Province, Region and Spain scopes; John Doe is second in the club with level 7.51."
+  },
+  "progress": {
+    "eyebrow": "EVERY MATCH LEAVES A MARK",
+    "title": "YOUR PROGRESS, IN VIEW.",
+    "body": "Look back at your recent matches and follow changes to your level. A reference built on your confirmed results.",
+    "caption": "03 / FOLLOW YOUR JOURNEY",
+    "alt": "Actual Index player profile in English: John Doe, level 7.51, a progress chart and recent match changes.",
+    "provisional": "PROVISIONAL",
+    "provisionalTitle": "Your level needs to get to know you.",
+    "provisionalBody": "Your level starts as provisional. It takes at least five rated matches and enough information to settle; it may stay provisional after the fifth.",
+    "provisionalNote": "You still appear in the rankings, with your status clearly labelled."
+  },
+  "screenshotsNote": "Actual app screenshots in English. The levels and positions shown belong to those captures.",
+  "faq": {
+    "eyebrow": "BEFORE YOU HIT THE COURT",
+    "title": "ANY QUESTIONS?",
+    "items": [
+      {
+        "q": "What is Index Tennis?",
+        "a": "An app for amateur tennis players who play singles matches. Record your scores, have your opponent confirm them, and follow your level and rankings."
+      },
+      {
+        "q": "When does my level update?",
+        "a": "Once your opponent confirms the score, the match can count towards your level. Recording an unconfirmed score is not enough. Matches do not all carry the same weight: repeated matches against the same opponent can have less effect."
+      },
+      {
+        "q": "Do I have a different level in each ranking?",
+        "a": "No. You have one level. Club, province, autonomous community and Spain rankings are different views of that same level. You keep your level when you change clubs."
+      },
+      {
+        "q": "What does “Provisional” mean?",
+        "a": "Your level still needs more information to settle. It takes at least five rated matches, but may take more. In the meantime, you appear in every ranking with a Provisional label."
+      },
+      {
+        "q": "Can I play someone from another club?",
+        "a": "Yes. You can record a singles match against another player in the app, even if their home club is different from yours."
+      },
+      {
+        "q": "Where can I download it?",
+        "a": "Coming soon. Download links will be published here when they are available."
+      }
+    ]
+  },
+  "availability": {
+    "eyebrow": "SEE YOU ON COURT",
+    "title": "MAKE YOUR NEXT MATCH COUNT.",
+    "body": "Index Tennis is coming soon. You’ll find the download links here when they are available.",
+    "status": "COMING SOON",
+    "ios": "Download for iPhone",
+    "android": "Download for Android"
+  },
+  "footer": {
+    "tagline": "Your tennis. Your level.",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "languages": "Language",
+    "emailLabel": "Email Index Tennis",
+    "back": "Back to the top"
+  },
+  "notFound": {
+    "title": "Page not found — Index Tennis",
+    "heading": "OFF COURT.",
+    "body": "We couldn’t find this page.",
+    "back": "BACK TO INDEX"
+  }
+}
