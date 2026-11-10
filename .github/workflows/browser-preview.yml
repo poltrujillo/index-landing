@@ -33,6 +33,10 @@ jobs:
         env:
           PREVIEW_URL: ${{ inputs.preview_url }}
         run: npm run check:browser
+      - name: Inspect public preview settings
+        env:
+          PREVIEW_URL: ${{ inputs.preview_url }}
+        run: node qa/preview-settings.mjs
       - name: Save screenshots and results
         if: always()
         uses: actions/upload-artifact@v7.0.2
