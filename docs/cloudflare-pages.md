@@ -1,6 +1,6 @@
 # GitHub → Cloudflare Pages
 
-Prepared 10 November 2026 for `https://github.com/poltrujillo/index-landing.git`. The source and checks are ready locally. No push, Pages project, preview URL, account-setting change or DNS migration has been completed from this session.
+Prepared 10 November 2026 for `https://github.com/poltrujillo/index-landing.git`. The Git-integrated Pages project is `index-landing-3yn`; `draft-preview` is deployed at https://draft-preview.index-landing-3yn.pages.dev and has passed live Chromium checks. Production remains blocked by the legal review gate. No DNS migration has been performed. See [preview-review.md](preview-review.md) for deployment evidence and limits.
 
 ## Build settings
 
@@ -20,7 +20,7 @@ Create/select a **Pages project with Git integration**, connect the existing Git
 | Web Analytics / Zaraz | Disabled; no tracking is requested |
 | Functions / databases / bindings | None; this is a static site |
 
-These values are recorded in `cloudflare-pages.config.mjs`. That file is a repository contract, **not** a manifest automatically applied by Cloudflare. Fill `projectName` only once the real project exists. Git integration builds at Cloudflare; no Cloudflare deployment token or Wrangler upload job is needed in GitHub Actions.
+These values are recorded in `cloudflare-pages.config.mjs`, including the verified project name. That file is a repository contract, **not** a manifest automatically applied by Cloudflare. Git integration builds at Cloudflare; no Cloudflare deployment token or Wrangler upload job is needed in GitHub Actions.
 
 The dispatcher uses Cloudflare’s supplied `CF_PAGES=1` and `CF_PAGES_BRANCH`, and cross-checks the environment-scoped `INDEX_DEPLOYMENT_CONTEXT`. A mismatch or missing context stops the build; changing the dashboard’s production branch cannot silently publish draft output. It runs `npm run check` first, then:
 
@@ -33,15 +33,13 @@ No dependencies are needed for the site build. Browser tooling lives separately 
 
 ## GitHub preparation and preview
 
-This managed checkout exposes an empty, read-only `.git` mount, so `git status` reports that it is not a repository. The connected GitHub app returns 404 for the supplied repo, and shell GitHub/network access is blocked. These are access limits, not evidence that the owner’s remote is incorrect. Do not initialise over the owner’s existing `.git` or create a replacement public repository.
-
-Once using the owner’s actual checkout/access, commit the prepared source, CI workflows, assets, `qa/` and documentation; leave generated `dist/`, `node_modules/` and browser artifacts ignored. Push to the existing repository, establish the `main` branch, and create/push `draft-preview` from that commit. Cloudflare’s GitHub installation must be granted access to this specific repository, independently of the Codex GitHub connector.
+The owner pushed the initial source to the existing repository. GitHub connector access subsequently became available; preview fixes and QA were committed to `draft-preview` without changing `main`. Earlier access failures are resolved for the connector. Cloudflare’s GitHub installation is independently connected to the repository, as demonstrated by successful native Pages checks. Keep generated `dist/`, `node_modules/` and browser artifacts ignored.
 
 Select the real preview deployment in Pages and record its immutable HTTPS hash URL. Cloudflare also supports moving branch aliases. Do not invent either URL before a deployment returns it. Preview URLs are normally public: `noindex` is not authentication or confidentiality. The legal drafts are visibly marked for review. If private previews are wanted later, configure Cloudflare Access deliberately and account for its authentication cookies; the final support/legal/deletion routes must remain public.
 
 ## Browser review of the deployed draft
 
-After the workflow is on the repository’s default branch, run **Actions → Test a Cloudflare draft preview → Run workflow** with the immutable preview URL. The workflow has read-only repository permissions, accepts only HTTPS hash/branch `pages.dev` origins, and does not deploy or touch DNS.
+Changes to `qa/preview-target.json` on `draft-preview` trigger **Test a Cloudflare draft preview** against the recorded URL. Once the workflow is on the default branch, **Actions → Test a Cloudflare draft preview → Run workflow** also accepts an immutable preview URL. The workflow has read-only repository permissions, accepts only HTTPS hash/branch `pages.dev` origins in the configured project, and does not deploy or touch DNS. It waits for the deployed stylesheet to match the checkout before browser assertions.
 
 It installs isolated, version-pinned Playwright QA tooling, launches Chromium and checks all ten canonical routes at 320, 390, 768 and 1440px. Checks include draft headers/metadata, no injected analytics beacon, titles/language, loaded logo/screenshots, page overflow, keyboard skip/FAQ controls, footer and counterpart links, deletion mail templates, clipboard success/denial, no-JS deletion routes and a genuine 404. Desktop/mobile screenshots and a JSON result are saved as a seven-day GitHub artifact. Review the images manually for text layout and zoom; automation is not a complete accessibility audit.
 
@@ -53,7 +51,7 @@ node qa/node_modules/@playwright/test/cli.js install --with-deps chromium
 PREVIEW_URL=https://the-actual-hash.the-actual-project.pages.dev npm run check:browser
 ```
 
-The hostname above illustrates the URL shape, not a created deployment. Test a real URL from Pages. The package version is pinned in `qa/package.json`; no browser package/tarball was downloaded or browser test run in this network-restricted session. First CI execution must verify installation and runtime behavior.
+The hostname above illustrates the URL shape; use a real URL from Pages. The package version is pinned in `qa/package.json`; installation and Chromium execution have succeeded in GitHub Actions. The separate public-settings audit runs `node qa/preview-settings.mjs` after browser checks and saves header, redirect, cookie-name and storage observations. It cannot inspect Cloudflare's internal logs or dashboard settings.
 
 ## Production publication
 

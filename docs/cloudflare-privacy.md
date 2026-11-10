@@ -1,6 +1,17 @@
 # Cloudflare hosting, logs and transfers
 
-Verified against published official material on 10 November 2026. Cloudflare Pages is the selected host. Account settings and a live deployment have not been inspected; `websiteHostingAndLogs` remains unapproved.
+Verified against published official material on 10 November 2026. Cloudflare Pages is the selected host. Public preview behavior has now been inspected with Chromium and direct HTTP requests; account-internal settings remain uninspected, so `websiteHostingAndLogs` remains unapproved.
+
+## Observed public preview behavior
+
+On 10 November 2026, [GitHub Actions run 42903346596](https://github.com/poltrujillo/index-landing/actions/runs/42903346596) checked https://draft-preview.index-landing-3yn.pages.dev, after a successful native Pages deployment for draft commit `0e49d0ebdc718cfb28a0ea13b912e01d1ab5ba1d`.
+
+- All ten canonical pages and the Spanish privacy alias returned HTTPS 200 with trusted certificate verification, Cloudflare edge headers and `X-Robots-Tag: noindex, nofollow`. Nine non-home addresses without a trailing slash redirected to their canonical slash route.
+- The configured CSP, `nosniff`, framing restriction, referrer policy and camera/microphone/geolocation restrictions were present. A real missing route returned 404 with these headers. `robots.txt` disallowed crawling and no production sitemap was exposed.
+- No known analytics beacon was injected into the inspected HTML. Chromium observed no external HTTP resources, no cookies and no local/session-storage entries while loading all ten pages. These are observations of this run, not proof that Cloudflare collects no technical logs or that account analytics/security controls can never change them.
+- Privacy, Terms and Delete Account retained their visible draft notices. No publication date or approval flag changed.
+
+The artifact includes `settings-audit.json` with per-route headers and non-sensitive observations, alongside the existing forty route/viewport browser checks. Account dashboards, Logpush, retention, contracts and regional controls were not accessible to this audit.
 
 ## Documented facts and limits
 

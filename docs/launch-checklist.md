@@ -1,6 +1,8 @@
 # Launch checklist
 
-The site has complete local Spanish/English Support, Privacy, Terms and Delete Account drafts. Default builds are noindex. Nothing has been deployed.
+The site has complete local Spanish/English Support, Privacy, Terms and Delete Account drafts. Default builds are noindex. A draft is deployed and browser-tested; production has not been published. See `docs/preview-review.md`.
+
+Current review scope: Support is with the owner for review. Keep Privacy, Terms and Delete Account as drafts until retention and the deletion-request workflow are resolved; no approval or publication date has been recorded.
 
 ## Confirmed on 10 November 2026
 
@@ -16,12 +18,14 @@ The site has complete local Spanish/English Support, Privacy, Terms and Delete A
 - [ ] Review and approve the complete bilingual copy, including retained records and public-read photo URLs. See [legal-review.md](legal-review.md).
 - [ ] Resolve legally required operator/service-address disclosures without inventing or publishing a private address without instruction.
 - [x] Select Cloudflare Pages and prepare the GitHub build/preview workflow with `dist` output.
-- [ ] Connect the actual GitHub repository/Pages project, check Cloudflare account logging/cookies/analytics/transfer settings and run the deployed-preview browser workflow. See `docs/cloudflare-pages.md` and `docs/cloudflare-privacy.md`.
+- [x] Connect GitHub and Pages and run the deployed-preview browser workflow: 40 route/viewport combinations passed.
+- [ ] Complete the account-level Cloudflare logging, cookie/analytics configuration and transfer review; passing anonymous browser checks does not verify provider-internal settings. See `docs/cloudflare-privacy.md`.
 - [ ] Verify production app-provider regions, signed processor contracts, subprocessors/transfer safeguards, Zoho region and diagnostic settings. EU staging is not proof of all processing locations.
 - [ ] Approve and implement retention/minimisation for de-identified match/rating history, remaining player/club/request data, private match statuses, deletion queues, logs, backups, errors and correspondence. No fixed history cutoff is currently enforced.
 - [ ] Establish the verified-email deletion fulfilment workflow/tooling and retry monitoring. The mailto route requests deletion; the static website does not perform it.
 - [ ] Review valid incorporation/acceptance of Terms. Publishing a page does not prove existing users accepted it.
-- [ ] Complete browser checks on phones/desktops: layouts, 200% zoom, keyboard focus, table scrolling, clipboard denial/success, no-JS fallback and logo under host CSP.
+- [x] Complete automated Chromium route/layout checks at 320, 390, 768 and 1440px, keyboard skip/FAQ controls, clipboard denial/success, no-JS deletion and rendered assets.
+- [ ] Finish manual visual/accessibility review, including 200% zoom and any additional browser/device coverage.
 - [ ] Set the actual approved publication date, then mark only completed decisions in `legal.reviews`. Run `npm run check` and `npm run build:production`.
 - [ ] Publish the approved `main` branch through the Pages dispatcher, which must run `npm run build:production`. Connect the domain using `docs/dns-migration.md`, preserving all Zoho and unrelated DNS records. Verify HTTPS, redirects, MIME types, security headers, indexes and the real 404; no SPA fallback.
 - [ ] Verify stable URLs directly without login/app installation, language counterparts, email delivery, sitemap and robots on the deployed host. Preserve `/privacidad/` as an alias.
@@ -31,6 +35,6 @@ The site has complete local Spanish/English Support, Privacy, Terms and Delete A
 
 `npm run build` and `npm run check` pass. Checks cover generated routes/content/links/metadata and request-handler/clipboard behavior without a socket. JavaScript syntax and generated HTML nesting are checked during implementation. No lint/typecheck scripts or TypeScript toolchain are configured.
 
-Actual HTTP preview was retried, but binding `127.0.0.1:4173` failed with `EPERM`. Firefox's Snap launcher also cannot start. Browser layout, live HTTP, keyboard/clipboard and Lighthouse checks remain unverified; static/request-handler tests do not replace them.
+Actual HTTP preview was retried, but binding `127.0.0.1:4173` failed with `EPERM`. Firefox's Snap launcher also cannot start. GitHub-hosted Chromium subsequently passed live draft checks, including layouts, keyboard/clipboard and no-JS deletion. Local browser restrictions remain; manual visual/zoom review and Lighthouse measurements are still separate. See `docs/preview-review.md`.
 
 `npm run build:production` intentionally rejects the real draft configuration and reports the pending decisions. Temporary synthetic fixtures test approved production output without approving or publishing these drafts.

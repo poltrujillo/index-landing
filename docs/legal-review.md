@@ -31,7 +31,7 @@ Sources are in `/home/poltrujillo/projects/club-utr/`:
 | Staging runbook, ADR-005 | Frankfurt Fly/Neon/Supabase, EU Sentry and Brevo in documented staging; not proof of all production processing locations. |
 | Backend privacy HTML | Outdated ClubRating/per-club text, former email, minimum age and older retention assertions. |
 | Mobile settings contact and settings route | Still uses `poltrujialb@gmail.com` and `${apiUrl}/privacy`; website changes do not update them. |
-| Website source/config | Static local assets, no cookies/analytics/tracking/contact backend; clipboard enhancement only. No host/deployment configuration found. |
+| Website source/config | Static local assets, no application cookies/analytics/tracking/contact backend; clipboard enhancement only. Cloudflare Pages deployment contract and preview QA are configured. Edge behavior is checked separately. |
 
 No app/backend files were edited. Their approved policy replacement and dates require the separate approval/update process documented in that repository.
 
@@ -73,4 +73,6 @@ Also review whether the current onboarding adequately implements the confirmed a
 
 `site.config.mjs` centralises identity/contact/age, prepared/publication dates and review flags. Draft builds are visibly labelled and noindex. Production builds reject missing approvals or hosting/retention details before touching output. Set an actual approved publication date only at the approved release.
 
-Cloudflare Pages build/preview workflows are now prepared. This checkout still lacks usable Git metadata, connector access to the repo and Cloudflare account access, so nothing has been pushed/deployed and no DNS changed. Resolve account/factual/legal review before production; use the prepared workflow to test the actual draft preview once available.
+Cloudflare Pages is connected to GitHub and the `draft-preview` deployment has passed live Chromium tests. Cloudflare account-internal settings and legal review remain open; no production release or DNS migration has been performed. See `preview-review.md`.
+
+The owner's current instruction is to keep Privacy, Terms and Delete Account as drafts while the app retention policy and email-deletion fulfilment workflow are resolved. Support is available for the owner's review. No legal approval flags or publication date were changed in response to that instruction.
