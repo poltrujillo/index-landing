@@ -6,10 +6,12 @@ The owner supplied `https://deaa5164.index-landing-3yn.pages.dev`, built from th
 
 At 320px, screenshots forced a 320px intrinsic grid minimum inside a 280px content area, causing horizontal scrolling. The mobile hero, ranking and progress grids now use `minmax(0, 1fr)` and allow their children to shrink. No body overflow-hiding workaround was used.
 
-The mobile fix is on `draft-preview`, commit `9f5a7f75f5fea990bcd436f8e2863642e390e1b3`; public-settings QA was added in `0e49d0ebdc718cfb28a0ea13b912e01d1ab5ba1d`. The main branch and its legal publication checks were not changed. Support is with the owner for review; Privacy, Terms and Delete Account must stay drafts while retention and email deletion fulfilment are resolved.
+The mobile fix is on `draft-preview` at `9f5a7f7`. Public settings QA was added at `0e49d0e`. The owner approved both Support translations, which are deployed on the preview at `f1ebfda`. Privacy, Terms and Delete Account remain labelled drafts during staging deletion testing.
 
 ## Verified deployment and run
 
+- Approved bilingual Support preview: https://e7287155.index-landing-3yn.pages.dev/support/ and https://e7287155.index-landing-3yn.pages.dev/en/support/
+- Support approval, settings and public DNS audit: https://github.com/poltrujillo/index-landing/actions/runs/42919735556 (all 40 browser combinations passed)
 - Successful fixed deployment: https://e7f106ab.index-landing-3yn.pages.dev
 - Successful deployment with public-settings audit: https://a7fb50b7.index-landing-3yn.pages.dev
 - Moving draft alias: https://draft-preview.index-landing-3yn.pages.dev

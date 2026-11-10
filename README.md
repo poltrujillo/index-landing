@@ -23,7 +23,7 @@ Routes:
 
 Edit `content/es.json` and `content/en.json` for landing copy, and `content/pages.es.json` / `content/pages.en.json` for support/policy copy. The shell is in `src/page.mjs`, long-text components in `src/information.mjs`, routes/language pairs in `src/routes.mjs`, and styling in `src/styles.css`. Operator, contacts, age, dates and approval state are centralised in `site.config.mjs`. No app repository or Downloads paths are used by the build. Asset provenance is recorded in [docs/assets.md](docs/assets.md).
 
-The default build is a **noindex draft preview**. Information pages show a draft notice, preparation date and unresolved review notes, without claiming an effective date. The operator confirmed the domain, controller, working support/privacy inbox and minimum age; hosting, retention and legal approval remain open. Downloads remain Coming soon.
+The default build is a **noindex preview**. The owner approved both Support translations and confirmed the support/privacy inbox works. Privacy, Terms and Delete Account show draft notices and review notes during staging deletion testing. The account-specific hosting terms and deployed retention settings are still open. Downloads remain Coming soon.
 
 For production, complete [docs/legal-review.md](docs/legal-review.md) and [docs/launch-checklist.md](docs/launch-checklist.md). Record actual hosting/retention details, approve the bilingual copy and set the actual `approvedPublicationDate`. Only mark completed `legal.reviews` decisions approved. Region/log-retention/history-basis/history-duration fields can be `{ es: '…', en: '…' }` maps; proper names can be shared strings. Then run:
 

@@ -2,7 +2,7 @@
 
 The site has complete local Spanish/English Support, Privacy, Terms and Delete Account drafts. Default builds are noindex. A draft is deployed and browser-tested; production has not been published. See `docs/preview-review.md`.
 
-Current review scope: Support is with the owner for review. Keep Privacy, Terms and Delete Account as drafts until retention and the deletion-request workflow are resolved; no approval or publication date has been recorded.
+On 11 November 2026, the owner approved Support in both languages and confirmed that `support@indextennis.com` sends and receives mail. Support appears without a draft banner on the preview. Privacy, Terms and Delete Account await the staging deletion rehearsal and the enforced retention details before publication.
 
 ## Confirmed on 10 November 2026
 
@@ -19,6 +19,7 @@ Current review scope: Support is with the owner for review. Keep Privacy, Terms 
 - [ ] Resolve legally required operator/service-address disclosures without inventing or publishing a private address without instruction.
 - [x] Select Cloudflare Pages and prepare the GitHub build/preview workflow with `dist` output.
 - [x] Connect GitHub and Pages and run the deployed-preview browser workflow: 40 route/viewport combinations passed.
+- [x] Verify public preview security headers and query live DNS. Prepare the reviewable website cutover and Zoho preservation plan. See [DNS migration](dns-migration.md).
 - [ ] Complete the account-level Cloudflare logging, cookie/analytics configuration and transfer review; passing anonymous browser checks does not verify provider-internal settings. See `docs/cloudflare-privacy.md`.
 - [ ] Verify production app-provider regions, signed processor contracts, subprocessors/transfer safeguards, Zoho region and diagnostic settings. EU staging is not proof of all processing locations.
 - [ ] Approve and implement retention/minimisation for de-identified match/rating history, remaining player/club/request data, private match statuses, deletion queues, logs, backups, errors and correspondence. No fixed history cutoff is currently enforced.
