@@ -43,7 +43,12 @@ try {
       assert.ok(!/static\.cloudflareinsights\.com|data-cf-beacon|googletagmanager\.com|google-analytics\.com/i.test(html), 'No analytics beacon may be injected into the draft');
       await page.evaluate(() => document.fonts.ready);
       assert.ok(await page.locator('.brand-mark').first().evaluate((element) => element.getBBox().width > 0), 'Original logo must render');
-      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), `${route.path} overflows at ${width}px`);
+      const layout = await page.evaluate(() => ({ viewport: window.innerWidth, document: document.documentElement.scrollWidth, overflowing: [...document.querySelectorAll('body *')].filter((element) => element.getBoundingClientRect().right > window.innerWidth + 1).slice(0, 20).map((element) => ({ tag: element.tagName, className: element.getAttribute('class'), width: element.getBoundingClientRect().width, right: element.getBoundingClientRect().right, gridColumns: getComputedStyle(element).gridTemplateColumns, minWidth: getComputedStyle(element).minWidth })) }));
+      if (layout.document > layout.viewport + 1) {
+        console.error('Overflow diagnostics:', JSON.stringify({ path: route.path, width, ...layout }));
+        await page.screenshot({ path: new URL(`overflow-${route.lang}-${route.page}-${width}.png`, output).pathname, fullPage: true });
+      }
+      assert.ok(layout.document <= layout.viewport + 1, `${route.path} overflows at ${width}px`);
       for (const image of await page.locator('img').all()) {
         await image.scrollIntoViewIfNeeded();
         await expect(image).toHaveJSProperty('complete', true);
