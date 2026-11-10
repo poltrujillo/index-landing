@@ -19,9 +19,12 @@ export function plain(text, config, c) {
 export function informationContent(c, config, page) {
   const data = c.pages[page];
   const text = (value) => escape(plain(value, config, c));
-  const draft = !config.legal.approvedPublicationDate || !Object.values(config.legal.reviews).every(Boolean);
+  const isSupport = page === 'support';
+  const draft = isSupport
+    ? !config.supportApproved
+    : !config.legal.approvedPublicationDate || !Object.values(config.legal.reviews).every(Boolean);
   const date = draft ? config.legal.draftPreparedOn : config.legal.approvedPublicationDate;
-  const dateLabel = new Intl.DateTimeFormat(c.lang === 'es' ? 'es-ES' : 'en-GB', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(date + 'T12:00:00Z'));
+  const dateLabel = date && new Intl.DateTimeFormat(c.lang === 'es' ? 'es-ES' : 'en-GB', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(date + 'T12:00:00Z'));
   const related = Object.keys(c.pages).filter((key) => key !== page).map((key) => `<a href="${pagePath(key, c.lang)}">${escape(c.pages[key].nav)}</a>`).join('');
   const sections = data.sections.map((section) => {
     const listTag = section.ordered ? 'ol' : 'ul';
@@ -31,7 +34,8 @@ export function informationContent(c, config, page) {
     const faq = section.faqs ? `<div class="faq-list information-faq">${section.faqs.map((item) => `<details><summary>${text(item.q)}<span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>${text(item.a)}</p></div></details>`).join('')}</div>` : '';
     return `<section class="policy-section" id="${section.id}" aria-labelledby="${section.id}-title"><h2 id="${section.id}-title">${text(section.title)}</h2>${section.paragraphs.map((p) => `<p>${text(p)}</p>`).join('')}${section.items?.length ? `<${listTag}>${section.items.map((item) => `<li>${text(item)}</li>`).join('')}</${listTag}>` : ''}${contact}${request}${table}${faq}${section.links?.length ? `<div class="policy-links">${section.links.map((link) => `<a href="${link.url ? escape(link.url) : pagePath(link.page, c.lang)}">${text(link.label)}</a>`).join('')}</div>` : ''}${draft && section.reviewNote ? `<aside class="review-note"><strong>${escape(c.information.reviewLabel)}</strong> ${text(section.reviewNote)}</aside>` : ''}</section>`;
   }).join('');
-  return `<main id="main" class="container policy-page"><header class="policy-header"><p class="eyebrow">INDEX TENNIS / ${escape(data.nav)}</p><h1>${escape(data.heading)}</h1><p class="policy-intro">${text(data.intro)}</p>${page === 'delete-account' ? `<a class="button button-primary policy-quick-action" href="#delete-by-email">${escape(c.deletionRequest.emailAction)}</a>` : ''}<p class="policy-date">${escape(draft ? c.information.draftDate : c.information.effectiveDate)} <time datetime="${date}">${escape(dateLabel)}</time></p>${draft ? `<aside class="draft-banner"><strong>${escape(c.information.draftTitle)}</strong><p>${escape(c.information.draftBody)}</p></aside>` : ''}</header><div class="policy-layout"><nav class="policy-toc" aria-label="${escape(c.information.toc)}"><p class="eyebrow">${escape(c.information.toc)}</p>${data.sections.map((section) => `<a href="#${section.id}">${text(section.title)}</a>`).join('')}</nav><article class="policy-content" aria-label="${escape(data.heading)}">${sections}<nav class="related-pages" aria-label="${escape(c.information.related)}"><p class="eyebrow">${escape(c.information.related)}</p>${related}</nav></article></div></main>`;
+  const dateMarkup = isSupport && !draft ? '' : `<p class="policy-date">${escape(draft ? c.information.draftDate : c.information.effectiveDate)} <time datetime="${date}">${escape(dateLabel)}</time></p>`;
+  return `<main id="main" class="container policy-page"><header class="policy-header"><p class="eyebrow">INDEX TENNIS / ${escape(data.nav)}</p><h1>${escape(data.heading)}</h1><p class="policy-intro">${text(data.intro)}</p>${page === 'delete-account' ? `<a class="button button-primary policy-quick-action" href="#delete-by-email">${escape(c.deletionRequest.emailAction)}</a>` : ''}${dateMarkup}${draft ? `<aside class="draft-banner"><strong>${escape(c.information.draftTitle)}</strong><p>${escape(c.information.draftBody)}</p></aside>` : ''}</header><div class="policy-layout"><nav class="policy-toc" aria-label="${escape(c.information.toc)}"><p class="eyebrow">${escape(c.information.toc)}</p>${data.sections.map((section) => `<a href="#${section.id}">${text(section.title)}</a>`).join('')}</nav><article class="policy-content" aria-label="${escape(data.heading)}">${sections}<nav class="related-pages" aria-label="${escape(c.information.related)}"><p class="eyebrow">${escape(c.information.related)}</p>${related}</nav></article></div></main>`;
 }
 
 function deletionRequest(c, config) {

@@ -29,10 +29,16 @@ try {
   let currentStyles = false;
   for (let attempt = 0; attempt < 24; attempt++) {
     const response = await context.request.get(origin + '/styles.css?qa=' + Date.now());
-    if (response.ok() && createHash('sha256').update(await response.body()).digest('hex') === stylesheetHash) { currentStyles = true; break; }
+    if (response.ok() && createHash('sha256').update(await response.body()).digest('hex') === stylesheetHash) {
+      const support = await context.request.get(origin + '/support/?qa=' + Date.now());
+      if (support.ok() && (await support.text()).includes('class="draft-banner"') === !config.supportApproved) {
+        currentStyles = true;
+        break;
+      }
+    }
     await new Promise((resolve) => setTimeout(resolve, 5000));
   }
-  assert.ok(currentStyles, 'Preview stylesheet does not match this checkout; wait for the matching draft deployment.');
+  assert.ok(currentStyles, 'Preview stylesheet or Support approval does not match this checkout.');
   const page = await context.newPage();
   page.on('pageerror', (error) => errors.push(error.message));
   for (const width of [320, 390, 768, 1440]) {
@@ -47,7 +53,8 @@ try {
       await expect(page).toHaveTitle(route.page === 'home' ? c.title : c.pages[route.page].title);
       await expect(page.locator('html')).toHaveAttribute('lang', route.lang);
       await expect(page.locator('h1')).toHaveCount(1);
-      if (route.page !== 'home') await expect(page.locator('.draft-banner')).toBeVisible();
+      if (route.page === 'support' && config.supportApproved) await expect(page.locator('.draft-banner')).toHaveCount(0);
+      else if (route.page !== 'home') await expect(page.locator('.draft-banner')).toBeVisible();
       const html = await page.content();
       assert.ok(!/static\.cloudflareinsights\.com|data-cf-beacon|googletagmanager\.com|google-analytics\.com/i.test(html), 'No analytics beacon may be injected into the draft');
       await page.evaluate(() => document.fonts.ready);

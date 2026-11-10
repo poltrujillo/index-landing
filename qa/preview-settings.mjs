@@ -5,6 +5,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { chromium, request } from '@playwright/test';
 import { routes, aliases } from '../src/routes.mjs';
 import deployment from '../cloudflare-pages.config.mjs';
+import config from '../site.config.mjs';
 
 const recorded = JSON.parse(await readFile(new URL('./preview-target.json', import.meta.url), 'utf8'));
 const target = new URL(process.env.PREVIEW_URL || recorded.url);
@@ -32,6 +33,28 @@ function validateHeaders(headers, label) {
   for (const feature of ['camera', 'microphone', 'geolocation']) assert.ok(headers['permissions-policy']?.includes(feature + '=()'), `${label}: ${feature} permission`);
 }
 
+async function inspectPublicDns() {
+  const domain = new URL(config.productionOrigin).hostname;
+  const lookups = [
+    [domain, ['NS', 'SOA', 'DS', 'A', 'AAAA', 'HTTPS', 'CAA', 'MX', 'TXT']],
+    [`www.${domain}`, ['CNAME', 'A', 'AAAA', 'HTTPS']],
+    [`zmail._domainkey.${domain}`, ['TXT']],
+    [`_dmarc.${domain}`, ['TXT']],
+    [`_domainconnect.${domain}`, ['CNAME']],
+  ];
+  return Promise.all(lookups.flatMap(([name, types]) => types.map(async (type) => {
+    try {
+      const params = new URLSearchParams({ name, type });
+      const response = await fetch('https://dns.google/resolve?' + params, { signal: AbortSignal.timeout(8000) });
+      if (!response.ok) throw new Error(`Resolver HTTP ${response.status}`);
+      const result = await response.json();
+      return { name, type, status: result.Status, answers: (result.Answer || []).map(({ name, type, data }) => ({ name, type, data })) };
+    } catch (error) {
+      return { name, type, error: error.message };
+    }
+  })));
+}
+
 try {
   for (const route of [...routes, ...aliases]) {
     const response = await api.get(route.path);
@@ -42,6 +65,7 @@ try {
     const body = await response.text();
     assert.ok(!/static\.cloudflareinsights\.com|data-cf-beacon|googletagmanager\.com|google-analytics\.com/i.test(body), 'No analytics injection');
     if (['privacy', 'terms', 'delete-account'].includes(route.page)) assert.ok(body.includes('class="draft-banner"'), 'Legal pages must remain drafts');
+    if (route.page === 'support') assert.equal(body.includes('class="draft-banner"'), !config.supportApproved, 'Support approval must be reflected in both languages');
     report.responses.push({ path: route.path, status: response.status(), robots: headers['x-robots-tag'], csp: headers['content-security-policy'], referrerPolicy: headers['referrer-policy'], permissionsPolicy: headers['permissions-policy'], cacheControl: headers['cache-control'] || null, hsts: headers['strict-transport-security'] || null, server: headers.server });
     if (route.page !== 'home') {
       const bare = route.path.slice(0, -1);
@@ -77,6 +101,8 @@ try {
   report.cookieNames = [...cookieNames].sort();
   report.externalRequestHosts = [...externalHosts].sort();
   assert.deepEqual(report.externalRequestHosts, [], 'Review any unexpected external resource requests');
+  report.publicDns = await inspectPublicDns();
+  console.log('PUBLIC_DNS_BASELINE ' + JSON.stringify(report.publicDns));
   report.passed = true;
   console.log('PREVIEW_SETTINGS_SUMMARY ' + JSON.stringify({ origin, passed: true, responses: report.responses.length, slashRedirects: report.redirects.length, noindex: true, csp: true, analyticsBeaconDetected: false, cookieNames: report.cookieNames, externalRequestHosts: report.externalRequestHosts, browserStorageKeys: 0, legalPagesRemainDrafts: true }));
 } catch (error) {

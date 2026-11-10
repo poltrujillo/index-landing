@@ -81,7 +81,8 @@ for (const route of pageRoutes) {
   for (const page of ['support', 'privacy', 'terms', 'delete-account']) assert.ok(html.includes(`href="${pagePath(page, route.lang)}"`), 'Shared footer links all information pages');
   assert.ok(html.includes(`hreflang="${other}" href="${config.productionOrigin}${alternate}"`));
   if (route.page !== 'home') {
-    assert.ok(html.includes('class="draft-banner"'), 'Unapproved content must be visibly a draft');
+    const expectedDraft = route.page !== 'support' || !config.supportApproved;
+    assert.equal(html.includes('class="draft-banner"'), expectedDraft, `Draft notice must match approval: ${route.path}`);
     assert.ok(!html.includes('Effective / last updated:') && !html.includes('Entrada en vigor / última actualización:'));
   }
   if (route.page === 'delete-account') {

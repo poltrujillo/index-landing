@@ -5,6 +5,7 @@ export default {
   plannedOrigin: 'https://indextennis.com',
   productionOrigin: 'https://indextennis.com',
   contacts: { support: 'support@indextennis.com', privacy: 'support@indextennis.com' },
+  supportApproved: true,
   operator: { name: 'Pol Trujillo Albert', countryCode: 'ES', postalAddress: null },
   downloads: { ios: null, android: null },
   legal: {
