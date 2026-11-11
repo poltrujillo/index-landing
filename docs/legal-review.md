@@ -57,3 +57,7 @@ Publication review flags record operator approval of this wording and its stated
 ## Official references
 
 [Google Play deletion guidance](https://support.google.com/googleplay/android-developer/answer/13327111) · [Apple account deletion](https://developer.apple.com/help/app-review/guideline-reference/5-1-1-account-deletion/) · [AEPD rights guidance](https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos) · [Spanish information-services law](https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758) · [Spanish data-protection law](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673)
+
+## Safety update, 11 November 2026
+
+The operator approved updated Terms (§2 in-app acceptance, §6 in-app reporting and blocking, 24-hour review, name reset, photo removal and suspension, no tolerance for objectionable content or abusive users) and Privacy additions (report/block/moderation data, its legitimate-interest basis, visibility, Brevo report alerts and retention) in both languages. They describe the app's spec 05 behaviour as built in the club-utr repository.

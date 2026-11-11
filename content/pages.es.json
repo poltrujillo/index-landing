@@ -189,6 +189,10 @@
                 "Informes de errores de app y servidor, versiones de app/dispositivo/software, fechas de peticiones y registros técnicos de conexión. Los proveedores pueden recibir direcciones IP y registros del servicio; no todos forman parte del contenido del informe de errores de la app."
               ],
               [
+                "Denuncias y bloqueos",
+                "Denuncias que envías o recibes (motivo, nota opcional, jugadores implicados, fecha y resultado), los jugadores que bloqueas y las decisiones de moderación, como un nombre restablecido, una foto retirada o una suspensión."
+              ],
+              [
                 "Correspondencia",
                 "Dirección de correo, contenido del mensaje, datos pertinentes de la cuenta y adjuntos que decidas enviar a soporte o privacidad."
               ],
@@ -223,6 +227,11 @@
                 "Interés legítimo en proteger y mantener el servicio (art. 6.1.f), con minimización y ponderación."
               ],
               [
+                "Proteger a los jugadores: denuncias, bloqueos y moderación",
+                "Denuncias, bloqueos, decisiones de moderación y los perfiles implicados",
+                "Interés legítimo en proteger a los jugadores y el servicio (artículo 6.1.f) y en hacer cumplir las condiciones que aceptas."
+              ],
+              [
                 "Fotos y avisos push opcionales",
                 "Foto subida, token push y contenido de entrega si se activa",
                 "Tu elección/permiso opcional, con consentimiento cuando sea necesario (art. 6.1.a). Quitar la foto o desactivar avisos no cierra la cuenta."
@@ -250,7 +259,8 @@
             "Los partidos confirmados son visibles para otros jugadores con sesión iniciada mientras ambas cuentas estén activas. Cuando un participante elimina su cuenta, el resultado compartido que se conserve solo será visible para sus participantes.",
             "Los partidos pendientes, disputados y caducados solo son visibles para sus participantes en las vistas de partidos de la app.",
             "Las solicitudes de clubes sin aprobar tienen visibilidad restringida. El solicitante y el administrador de la plataforma que las revisa pueden acceder a los datos no publicados. Otros jugadores no ven la identidad de ese club no publicado.",
-            "Las fotos de perfil utilizan direcciones de almacenamiento de lectura pública. Quien obtenga la URL de una foto puede acceder a ella fuera de la app. Elige una imagen que quieras compartir."
+            "Las fotos de perfil utilizan direcciones de almacenamiento de lectura pública. Quien obtenga la URL de una foto puede acceder a ella fuera de la app. Elige una imagen que quieras compartir.",
+            "Solo el operador ve las denuncias; al jugador denunciado no se le dice quién lo denunció. Los bloqueos son privados: el jugador bloqueado no recibe aviso, pero deja de ver tu perfil."
           ]
         },
         {
@@ -279,7 +289,7 @@
               ],
               [
                 "Brevo",
-                "Entrega de correos con códigos de acceso a través del servicio configurado: destinatario, contenido y metadatos de entrega."
+                "Entrega de correos con códigos de acceso y de avisos de denuncias al operador: destinatario, contenido (en una denuncia: el motivo, la nota, el nombre, identificador y enlace a la foto del jugador denunciado, y el identificador de quien denuncia) y metadatos de entrega."
               ],
               [
                 "Expo Push, Apple APNs, Google FCM",
@@ -322,6 +332,7 @@
             "Criterios de conservación de estos registros: {{historyDuration}}",
             "Base jurídica de la conservación limitada del historial: {{historyBasis}}",
             "El identificador de acceso eliminado se conserva durante la limpieza externa y un periodo de dos días de bloqueo de sesiones antiguas tras eliminar correctamente la identidad de autenticación. La limpieza repetida y final de la carpeta de fotos debe completarse antes de retirar ese registro. Los fallos de proveedores o las interrupciones pueden retrasar el proceso.",
+            "Las denuncias, los bloqueos y las decisiones de moderación se conservan mientras sean necesarios para tramitar una denuncia, evitar abusos repetidos y responder preguntas sobre una decisión. Todavía no se eliminan automáticamente; puedes pedir su supresión y valoramos cada solicitud.",
             "Las solicitudes por correo se atienden manualmente, con verificación de titularidad. Los datos del expediente y la correspondencia se conservan para tramitar la solicitud, seguir la limpieza pendiente y atender consultas relacionadas u obligaciones legales. También valoramos las solicitudes de supresión y limitación de esos registros. Los registros y las copias de seguridad de proveedores siguen sus propios criterios de conservación. Los registros de esta web se describen a continuación.",
             "Una copia de seguridad realizada tras la supresión conserva el estado ya depurado. Una copia anterior puede contener datos previos. Si fuera necesario recuperarla, deben reaplicarse los registros de supresión antes de poner de nuevo el servicio a disposición de los usuarios."
           ],
@@ -429,7 +440,7 @@
           "paragraphs": [
             "Debes tener al menos {{minimumAge}} años y capacidad legal o la autorización que legalmente corresponda para utilizar el servicio. Index no está destinado a menores de {{minimumAge}} años ni ofrece un flujo de consentimiento parental.",
             "Utiliza una cuenta que controles, protege tu proveedor de acceso y facilita información honesta. Se admite código por correo, Apple y Google. Nunca entregues tu código a otra persona. Respondes de tu propia conducta; esto no te hace responsable de cualquier acto no autorizado con independencia de las circunstancias.",
-            "Visitar esta web no crea una cuenta de la app ni registra la aceptación de condiciones. Cualquier aceptación necesaria debe obtenerse mediante un proceso adecuado."
+            "Visitar esta web no crea una cuenta de la app. La app te pide aceptar estas condiciones y la política de privacidad antes de participar, y de nuevo si cambian."
           ]
         },
         {
@@ -462,7 +473,8 @@
           "title": "6. Respeta a los demás jugadores",
           "paragraphs": [
             "No acoses, amenaces, discrimines, suplantes identidades ni expongas datos privados ajenos. No utilices nombres o fotos ilícitos, abusivos o inapropiados. No subas contenido sin derecho a compartirlo, perturbes el servicio, eludas controles de acceso ni extraigas información personal para usos indebidos.",
-            "Comunica por correo contenido inapropiado o abusos con contexto suficiente para investigarlos. Index no dispone actualmente de denuncia o bloqueo dentro de la app. El operador puede investigar y adoptar medidas proporcionadas con los controles disponibles y conforme a la ley; cuando proceda, debe explicar los motivos y ofrecer una vía para responder."
+            "En el perfil de otro jugador puedes denunciarlo (nombre ofensivo, foto ofensiva, comportamiento abusivo, cuenta falsa u otro motivo) y bloquearlo. Un bloqueo os oculta mutuamente, impide nuevos partidos entre vosotros y cancela los pendientes; los dos seguís en las clasificaciones. Puedes desbloquear en Ajustes. También puedes denunciar por correo.",
+            "No se tolera el contenido inaceptable ni los usuarios abusivos. Las denuncias se revisan en menos de 24 horas. El operador puede restablecer un nombre, retirar una foto o suspender una cuenta. Una cuenta suspendida no puede usar la app y queda oculta para los demás jugadores; sus partidos confirmados y niveles se mantienen. Cuando proceda, se explican los motivos y puedes responder contactando con soporte."
           ],
           "links": [
             {

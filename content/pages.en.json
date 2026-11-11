@@ -189,6 +189,10 @@
                 "App/backend error reports, app/device/software versions, request timestamps and technical connection records. Providers can receive IP addresses and service logs; not every such record is part of the app’s error payload."
               ],
               [
+                "Reports and blocks",
+                "Reports you send or receive (reason, optional note, the players involved, date and outcome), the players you block, and moderation decisions such as a reset name, a removed photo or a suspension."
+              ],
+              [
                 "Correspondence",
                 "Your email address, message content, relevant account details and any attachments you choose to send to support or privacy."
               ],
@@ -223,6 +227,11 @@
                 "Legitimate interests in securing and maintaining the service (Article 6(1)(f)), with minimisation and a balancing assessment."
               ],
               [
+                "Keep players safe: reports, blocks and moderation",
+                "Reports, blocks, moderation decisions and the profiles involved",
+                "Legitimate interests in protecting players and the service (Article 6(1)(f)), and enforcing the terms you accept."
+              ],
+              [
                 "Optional photos and push alerts",
                 "Photo you upload; push token and delivery content if enabled",
                 "Your optional choice/permission, with consent where required (Article 6(1)(a)). Removing a photo or disabling alerts does not close the account."
@@ -250,7 +259,8 @@
             "Confirmed match information is visible to other signed-in players while both accounts are active. After a participant deletes their account, a retained shared result is visible only to its participants.",
             "Pending, disputed and expired matches are visible only to their participants through the app’s match views.",
             "An unapproved club request has restricted visibility. The requester and reviewing platform administrator can access its unlisted details. Other players are not shown that unlisted club identity.",
-            "Profile photos use publicly readable storage URLs. Someone who obtains a photo URL may access it outside the app. Choose an image you are comfortable sharing."
+            "Profile photos use publicly readable storage URLs. Someone who obtains a photo URL may access it outside the app. Choose an image you are comfortable sharing.",
+            "Reports are seen only by the operator; the reported player is not told who reported them. Blocks are private: a blocked player is not notified, but no longer sees your profile."
           ]
         },
         {
@@ -279,7 +289,7 @@
               ],
               [
                 "Brevo",
-                "Delivery of login-code emails through the configured mail service: recipient address, email content and delivery metadata."
+                "Delivery of login-code emails, and of report alerts to the operator: recipient address, email content (for a report: the reason, the note, the reported player’s name, identifier and photo link, and the reporter’s identifier) and delivery metadata."
               ],
               [
                 "Expo Push, Apple APNs, Google FCM",
@@ -322,6 +332,7 @@
             "Retention criteria for these records: {{historyDuration}}",
             "Legal basis for limited retained history: {{historyBasis}}",
             "The deleted sign-in identifier is kept during external cleanup and for a two-day stale-session refusal period after successful Auth deletion. Repeated and final photo-folder cleanup must succeed before its marker is retired. Provider failures or service interruptions can delay completion.",
+            "Reports, blocks and moderation decisions are kept while needed to handle a report, prevent repeated abuse and answer questions about a decision. They are not yet deleted automatically; you can ask for their erasure, and we assess each request.",
             "Deletion requests are handled manually through support with ownership verification. Case and correspondence information is retained to handle the request, follow up incomplete cleanup and address related questions or legal obligations. We assess erasure and restriction requests for those records too. Provider logs and backups follow their own retention criteria. Website logs are described below.",
             "A backup made after erasure preserves the erased state. An older backup may contain earlier data. If recovery from such a backup is necessary, deletion records must be reapplied before the restored service is made available."
           ],
@@ -429,7 +440,7 @@
           "paragraphs": [
             "You must be at least {{minimumAge}} and have the legal capacity or legally required authorisation to use the service. Index is not intended for under-{{minimumAge}} users and does not provide a parental-consent flow.",
             "Use an account you control, keep your sign-in provider secure and provide honest account information. Email-code, Apple and Google sign-in are supported. Never give another person your login code. You remain responsible for your own conduct; this does not make you liable for every unauthorised act regardless of circumstances.",
-            "Visiting this website does not create an app account or record acceptance of terms. Any required acceptance must be obtained through an appropriate process."
+            "Visiting this website does not create an app account. The app asks you to accept these terms and the privacy policy before you take part, and again if they change."
           ]
         },
         {
@@ -462,7 +473,8 @@
           "title": "6. Respect other players",
           "paragraphs": [
             "Do not harass, threaten, discriminate, impersonate, expose others’ private information or use unlawful, abusive or inappropriate names or photos. Do not upload content you lack the right to share, disrupt the service, bypass access controls or scrape personal information for misuse.",
-            "Report inappropriate content or abuse by email with enough context to investigate. Index currently has no in-app reporting/blocking tool. The operator may investigate and take proportionate action within available controls and applicable law; where appropriate, concerns and reasons should be explained and a way to respond offered."
+            "On another player’s profile you can report them (offensive name, offensive photo, abusive behaviour, fake account or something else) and block them. A block hides you from each other, prevents new matches between you and cancels your pending ones; both of you stay in the rankings. You can unblock in Settings. You can also report by email.",
+            "There is no tolerance for objectionable content or abusive users. Reports are reviewed within 24 hours. The operator may reset a name, remove a photo or suspend an account. A suspended account cannot use the app and is hidden from other players; its confirmed matches and levels remain. Where appropriate, the reasons are explained and you can respond by contacting support."
           ],
           "links": [
             {
