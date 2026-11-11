@@ -81,9 +81,12 @@ for (const route of pageRoutes) {
   for (const page of ['support', 'privacy', 'terms', 'delete-account']) assert.ok(html.includes(`href="${pagePath(page, route.lang)}"`), 'Shared footer links all information pages');
   assert.ok(html.includes(`hreflang="${other}" href="${config.productionOrigin}${alternate}"`));
   if (route.page !== 'home') {
-    const expectedDraft = route.page !== 'support' || !config.supportApproved;
+    const expectedDraft = route.page === 'support'
+      ? !config.supportApproved
+      : !config.legal.approvedPublicationDate || !Object.values(config.legal.reviews).every(Boolean);
     assert.equal(html.includes('class="draft-banner"'), expectedDraft, `Draft notice must match approval: ${route.path}`);
-    assert.ok(!html.includes('Effective / last updated:') && !html.includes('Entrada en vigor / última actualización:'));
+    if (expectedDraft) assert.ok(!html.includes('Effective / last updated:') && !html.includes('Entrada en vigor / última actualización:'));
+    else if (route.page !== 'support') assert.ok(html.includes(`datetime="${config.legal.approvedPublicationDate}"`));
   }
   if (route.page === 'delete-account') {
     const c = route.lang === 'es' ? es : en;
@@ -108,7 +111,8 @@ for (const item of manifest) {
 
 const scratch = await mkdtemp(join(tmpdir(), 'index-landing-check-'));
 try {
-  await assert.rejects(() => build({ production: true, output: join(scratch, 'blocked') }), /Production requires/);
+  const unapproved = { ...config, legal: { ...config.legal, approvedPublicationDate: null } };
+  await assert.rejects(() => build({ production: true, output: join(scratch, 'blocked'), settings: unapproved }), /Production requires/);
   const production = join(scratch, 'production');
   // Synthetic fixture only: this does not approve or publish the real policies.
   const approved = { ...config, productionOrigin: 'https://example.test', legal: { ...config.legal, approvedPublicationDate: '2026-11-10', reviews: Object.fromEntries(Object.keys(config.legal.reviews).map((key) => [key, true])), website: { host: 'Test host', processingRegion: 'Test region', logRetention: 'Test schedule' }, retainedHistory: { legalBasis: 'Test basis', duration: 'Test retention' } }, downloads: { ios: 'https://apps.apple.com/example', android: null } };

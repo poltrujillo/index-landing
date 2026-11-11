@@ -39,4 +39,4 @@ Cloudflare documents separate Regional Services and Customer Metadata Boundary c
 2. In the zone’s Analytics and Events views or the GraphQL dataset settings, record the enabled request/security datasets and exact history and query windows. In Log Explorer and Logpush, record enabled datasets, fields and jobs. For each export, record the destination, region, access and deletion schedule.
 3. Record the account plan, accepted agreement and DPA version, and any Regional Services or Customer Metadata Boundary settings. If Cloudflare cannot supply an account-specific internal Pages log schedule, document that limit and use its published retention criteria in the policy.
 
-The website hosting and provider-contract review fields remain open for the account-specific facts above. Zoho and the app providers have their own processing terms and retention schedules.
+The operator approved publication of wording that describes the documented hosting and transfer terms and these evidence limits. The review flags record that wording approval. Account-specific settings above remain unverified. Zoho and the app providers have their own processing terms and retention schedules.

@@ -1,6 +1,6 @@
 {
   "url": "https://draft-preview.index-landing-3yn.pages.dev",
   "expectedSourceCommit": null,
-  "note": "Browser checks wait for the deployed stylesheet and Support approval state to match the checkout before testing this moving alias.",
-  "reviewAttempt": 5
+  "note": "Browser checks wait for the deployed stylesheet and complete Spanish privacy policy to match this checkout before testing the moving alias.",
+  "reviewAttempt": 6
 }

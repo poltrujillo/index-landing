@@ -1,13 +1,13 @@
-name: Test a Cloudflare draft preview
+name: Test deployed website
 
 on:
   push:
-    branches: [draft-preview]
-    paths: [qa/preview-target.json]
+    branches: [draft-preview, main]
+    paths: ['content/**', 'src/**', 'public/**', 'scripts/**', 'qa/**', 'site.config.mjs', '.github/workflows/browser-preview.yml']
   workflow_dispatch:
     inputs:
       preview_url:
-        description: Immutable draft preview URL from the Cloudflare Pages deployment
+        description: Website origin in this Cloudflare Pages project
         required: true
         type: string
 
@@ -31,17 +31,19 @@ jobs:
         run: node qa/node_modules/@playwright/test/cli.js install --with-deps chromium
       - name: Check deployed draft
         env:
-          PREVIEW_URL: ${{ inputs.preview_url }}
+          PREVIEW_URL: ${{ inputs.preview_url || (github.ref_name == 'main' && 'https://index-landing-3yn.pages.dev' || '') }}
+          SITE_ENV: ${{ github.ref_name == 'main' && 'production' || 'preview' }}
         run: npm run check:browser
-      - name: Inspect public preview settings
+      - name: Inspect public settings
         env:
-          PREVIEW_URL: ${{ inputs.preview_url }}
+          PREVIEW_URL: ${{ inputs.preview_url || (github.ref_name == 'main' && 'https://index-landing-3yn.pages.dev' || '') }}
+          SITE_ENV: ${{ github.ref_name == 'main' && 'production' || 'preview' }}
         run: node qa/preview-settings.mjs
       - name: Save screenshots and results
         if: always()
         uses: actions/upload-artifact@v7.0.2
         with:
-          name: cloudflare-preview-browser-results
+          name: cloudflare-website-browser-results
           path: artifacts/browser/
           retention-days: 7
           if-no-files-found: ignore

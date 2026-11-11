@@ -1,41 +1,34 @@
-# Launch checklist
+# Website release checklist
 
-The site has complete local Spanish/English Support, Privacy, Terms and Delete Account drafts. Default builds are noindex. A draft is deployed and browser-tested; production has not been published. See `docs/preview-review.md`.
+The operator authorized publication on 11 November 2026. Spanish and English Support, Privacy, Terms and Delete Account contain approved public copy. The effective policy date is 11 November 2026. Production uses `npm run build:production`, with canonical URLs at `https://indextennis.com`.
 
-On 11 November 2026, the owner approved Support in both languages and confirmed that `support@indextennis.com` sends and receives mail. Support appears without a draft banner on the preview. Privacy, Terms and Delete Account await the staging deletion rehearsal and the enforced retention details before publication.
+## Completed source and content review
 
-## Confirmed on 10 November 2026
+- [x] Confirm individual operator Pol Trujillo Albert, Spain, brand Index Tennis, minimum age 14 and working support/privacy inbox `support@indextennis.com`.
+- [x] Incorporate the completed staging deletion report, including both deletion paths, session refusal, photo-folder cleanup and participant-only retained results.
+- [x] Replace the old one-month completion promise with the rights-response deadline measured from receipt.
+- [x] Describe current retained-history necessity criteria and legitimate-interest basis, with erasure/objection rights and the disabled automatic-expiry limitation. Keep candidate 30/45/90-day settings out of public promises.
+- [x] Document provider roles, processing-location and retention limits, including Cloudflare’s published transfer terms and account-level unknowns.
+- [x] Remove draft banners and review notes from the approved policy output. Preserve bilingual navigation, accessible deletion mail links and copy-address feedback.
+- [x] Prepare the Git-integrated Pages build, Node 22, `dist`, and separate production/preview contexts.
+- [x] Run repository checks and `npm run build:production` successfully.
+- [x] Prepare the DNS change set, including the active Squarespace DNSSEC DS record and preservation of all six known Zoho records.
 
-- Operator/controller: Pol Trujillo Albert, individual in Spain, without a registered company. No postal address supplied for publication.
-- Working support/privacy address: `support@indextennis.com`. Zoho email, with DNS verification finishing.
-- Domain: `https://indextennis.com`, bought through Squarespace. Cloudflare Pages is now selected as host; Zoho mail stays in place. Six supplied mail records are recorded in `ops/known-mail-dns.json`.
-- Minimum age: 14; no parental-consent feature.
-- One-month rights-response deadline and normal target for verified deletion, with lawful extensions explained. Not a guarantee of instant external cleanup.
-- Existing logo, six language-matched screenshots and Coming soon downloads remain.
+## Deployment and final domain
 
-## Before publication
+- [ ] Verify the release on the Pages preview, then publish the reviewed commit through `main` and confirm the native Pages production deployment.
+- [ ] Run production browser verification on the real production hostname, including all ten canonical pages, counterpart links, mail templates, keyboard controls, clipboard denial, no-JS deletion, metadata, robots, sitemap and 404.
+- [ ] Obtain authenticated Cloudflare and Squarespace access and the full current zone export. No credentials or supported authenticated account connection are available in this session.
+- [ ] Reconcile the complete imported zone, confirm the assigned Cloudflare nameserver pair and follow the DNSSEC sequence in [DNS migration](dns-migration.md).
+- [ ] Add apex and `www` through Pages Custom domains, replace only the intended website records, confirm certificates and redirect `www` to the apex while preserving path/query.
+- [ ] Verify public and authoritative Zoho MX/SPF/DKIM/verification records after cutover, plus final website routes and HTTPS. The operator already confirmed current mail delivery.
 
-- [ ] Review and approve the complete bilingual copy, including retained records and public-read photo URLs. See [legal-review.md](legal-review.md).
-- [ ] Resolve legally required operator/service-address disclosures without inventing or publishing a private address without instruction.
-- [x] Select Cloudflare Pages and prepare the GitHub build/preview workflow with `dist` output.
-- [x] Connect GitHub and Pages and run the deployed-preview browser workflow: 40 route/viewport combinations passed.
-- [x] Verify public preview security headers and query live DNS. Prepare the reviewable website cutover and Zoho preservation plan. See [DNS migration](dns-migration.md).
-- [ ] Complete the account-level Cloudflare logging, cookie/analytics configuration and transfer review; passing anonymous browser checks does not verify provider-internal settings. See `docs/cloudflare-privacy.md`.
-- [ ] Verify production app-provider regions, signed processor contracts, subprocessors/transfer safeguards, Zoho region and diagnostic settings. EU staging is not proof of all processing locations.
-- [ ] Approve and implement retention/minimisation for de-identified match/rating history, remaining player/club/request data, private match statuses, deletion queues, logs, backups, errors and correspondence. No fixed history cutoff is currently enforced.
-- [ ] Establish the verified-email deletion fulfilment workflow/tooling and retry monitoring. The mailto route requests deletion; the static website does not perform it.
-- [ ] Review valid incorporation/acceptance of Terms. Publishing a page does not prove existing users accepted it.
-- [x] Complete automated Chromium route/layout checks at 320, 390, 768 and 1440px, keyboard skip/FAQ controls, clipboard denial/success, no-JS deletion and rendered assets.
-- [ ] Finish manual visual/accessibility review, including 200% zoom and any additional browser/device coverage.
-- [ ] Set the actual approved publication date, then mark only completed decisions in `legal.reviews`. Run `npm run check` and `npm run build:production`.
-- [ ] Publish the approved `main` branch through the Pages dispatcher, which must run `npm run build:production`. Connect the domain using `docs/dns-migration.md`, preserving all Zoho and unrelated DNS records. Verify HTTPS, redirects, MIME types, security headers, indexes and the real 404; no SPA fallback.
-- [ ] Verify stable URLs directly without login/app installation, language counterparts, email delivery, sitemap and robots on the deployed host. Preserve `/privacidad/` as an alias.
-- [ ] Update separate app/backend privacy texts, contacts, settings links, store listings and any required terms-acceptance flow.
+The obsolete Workers build connection is separate cleanup. The correct Pages deployment is the release authority.
 
-## Verification in this workspace
+## Separate app/backend follow-ups
 
-`npm run build` and `npm run check` pass. Checks cover generated routes/content/links/metadata and request-handler/clipboard behavior without a socket. JavaScript syntax and generated HTML nesting are checked during implementation. No lint/typecheck scripts or TypeScript toolchain are configured.
+The basic deletion rehearsal and operator tooling are completed. Remaining work concerns Apple grants, continuous worker availability, older-backup recovery and activation of finite retention. The old backend privacy HTML and mobile contact/links still need migration to the published domain. See [review evidence](legal-review.md) for the current scope and exact limitations.
 
-Actual HTTP preview was retried, but binding `127.0.0.1:4173` failed with `EPERM`. Firefox's Snap launcher also cannot start. GitHub-hosted Chromium subsequently passed live draft checks, including layouts, keyboard/clipboard and no-JS deletion. Local browser restrictions remain; manual visual/zoom review and Lighthouse measurements are still separate. See `docs/preview-review.md`.
+## Verification limits
 
-`npm run build:production` intentionally rejects the real draft configuration and reports the pending decisions. Temporary synthetic fixtures test approved production output without approving or publishing these drafts.
+There are no lint/typecheck scripts or TypeScript toolchain in this repository. `npm run check` covers translation parity, generated routes, links, original assets, metadata, release guards, contrast, request-handler and clipboard behavior. Chromium in GitHub Actions checks four widths and saves screenshots. Additional manual accessibility/zoom and device review can extend that coverage.

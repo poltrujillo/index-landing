@@ -1,6 +1,6 @@
 # GitHub → Cloudflare Pages
 
-Prepared 10 November 2026 for `https://github.com/poltrujillo/index-landing.git`. The Git-integrated Pages project is `index-landing-3yn`; `draft-preview` is deployed at https://draft-preview.index-landing-3yn.pages.dev and has passed live Chromium checks. Production remains blocked by the legal review gate. No DNS migration has been performed. See [preview-review.md](preview-review.md) for deployment evidence and limits.
+Prepared 10 November 2026 for `https://github.com/poltrujillo/index-landing.git`. The Git-integrated Pages project is `index-landing-3yn`; `draft-preview` is deployed at https://draft-preview.index-landing-3yn.pages.dev and has passed live Chromium checks. The operator approved the final wording and authorized production publication on 11 November 2026. No DNS migration has been performed. See [preview-review.md](preview-review.md) for deployment evidence and limits.
 
 ## Build settings
 
@@ -25,9 +25,9 @@ These values are recorded in `cloudflare-pages.config.mjs`, including the verifi
 The dispatcher uses Cloudflare’s supplied `CF_PAGES=1` and `CF_PAGES_BRANCH`, and cross-checks the environment-scoped `INDEX_DEPLOYMENT_CONTEXT`. A mismatch or missing context stops the build; changing the dashboard’s production branch cannot silently publish draft output. It runs `npm run check` first, then:
 
 - `main`: **`npm run build:production`**. There is no fallback to a draft on failure.
-- Any other branch: `npm run build`, a visibly labelled legal draft with noindex metadata, robots restrictions and `X-Robots-Tag` headers.
+- Any other branch uses `npm run build`, with noindex metadata, robots restrictions and `X-Robots-Tag` headers. Approved policy pages keep their final wording on previews.
 
-The current production build must fail because legal/operational approvals remain open. Do not change the Pages production branch to bypass that gate, remove review checks, or point the custom domain at a preview. The first failed `main` build is expected; preview branches can be deployed for review while the production project has no successful release. If automatic production deployment is disabled in the dashboard during review, keep the declared production branch `main` and re-enable it only for the approved release.
+The approved configuration now passes production checks. Keep `main` as the production branch and the dispatcher as the build command. Unapproved future policy changes must pass their own review before updating publication configuration.
 
 No dependencies are needed for the site build. Browser tooling lives separately in `qa/` and is not installed for Pages production builds.
 
@@ -39,7 +39,7 @@ Select the real preview deployment in Pages and record its immutable HTTPS hash 
 
 ## Browser review of the deployed draft
 
-Changes to `qa/preview-target.json` on `draft-preview` trigger **Test a Cloudflare draft preview** against the recorded URL. Once the workflow is on the default branch, **Actions → Test a Cloudflare draft preview → Run workflow** also accepts an immutable preview URL. The workflow has read-only repository permissions, accepts only HTTPS hash/branch `pages.dev` origins in the configured project, and does not deploy or touch DNS. It waits for the deployed stylesheet to match the checkout before browser assertions.
+The **Test deployed website** workflow runs on relevant pushes to `draft-preview` and `main`. Preview checks use the branch alias. Production checks use `https://index-landing-3yn.pages.dev`. The manual workflow accepts the configured custom domain once connected. The QA target allowlist is restricted to this Pages project and the configured canonical origin. Tests wait for both the stylesheet and complete rendered privacy policy to match the checkout.
 
 It installs isolated, version-pinned Playwright QA tooling, launches Chromium and checks all ten canonical routes at 320, 390, 768 and 1440px. Checks include draft headers/metadata, no injected analytics beacon, titles/language, loaded logo/screenshots, page overflow, keyboard skip/FAQ controls, footer and counterpart links, deletion mail templates, clipboard success/denial, no-JS deletion routes and a genuine 404. Desktop/mobile screenshots and a JSON result are saved as a seven-day GitHub artifact. Review the images manually for text layout and zoom; automation is not a complete accessibility audit.
 
@@ -55,7 +55,7 @@ The hostname above illustrates the URL shape; use a real URL from Pages. The pac
 
 ## Production publication
 
-Complete factual/legal review in `docs/legal-review.md`, including account-specific hosting/logging/cookie checks. Set real retention details and the approved publication date, and approve only completed review decisions in `site.config.mjs`. `npm run build:production` must succeed. Merge/push the approved source to `main`; the Pages dispatcher reruns checks and the same production command before deployment. No draft output is promoted in its place.
+The release decisions and account-specific evidence limits are recorded in `docs/legal-review.md`. The approved date and truthful current retention criteria are in `site.config.mjs`. Run `npm run check` and `npm run build:production` before publication. Merge/push the approved source to `main`; the Pages dispatcher reruns checks and the same production command before deployment. No draft output is promoted in its place.
 
 Only after this release should the custom domain be connected using [dns-migration.md](dns-migration.md). Verify the deployed HTTPS site, canonical/language metadata, sitemap, contact and deletion routes, 404, cookies and response headers. Keep preview noindex; do not add a wildcard `pages.dev` redirect that breaks preview review. A redirect of the production Pages hostname to the canonical custom domain can be configured separately after domain activation.
 

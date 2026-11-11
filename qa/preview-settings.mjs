@@ -1,18 +1,12 @@
 // Public-edge observations only. This cannot inspect Cloudflare account options,
 // internal log retention, contracts, analytics toggles or transfer safeguards.
 import assert from 'node:assert/strict';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { chromium, request } from '@playwright/test';
 import { routes, aliases } from '../src/routes.mjs';
-import deployment from '../cloudflare-pages.config.mjs';
 import config from '../site.config.mjs';
+import { origin, production, legalDraft } from './target.mjs';
 
-const recorded = JSON.parse(await readFile(new URL('./preview-target.json', import.meta.url), 'utf8'));
-const target = new URL(process.env.PREVIEW_URL || recorded.url);
-assert.ok(target.protocol === 'https:' && /^[a-z0-9-]+\.[a-z0-9-]+\.pages\.dev$/.test(target.hostname));
-assert.ok(!target.username && !target.password && target.pathname === '/' && !target.search && !target.hash);
-assert.ok(target.hostname.endsWith('.' + deployment.projectName + '.pages.dev'));
-const origin = target.origin;
 const directory = new URL('../artifacts/browser/', import.meta.url);
 await mkdir(directory, { recursive: true });
 const report = { origin, checkedAt: new Date().toISOString(), passed: false, responses: [], redirects: [], cookieNames: [], externalRequestHosts: [], storageKeys: [], unverified: ['Cloudflare account settings and analytics toggles', 'Internal access/security log retention and exports', 'Contract/DPA acceptance and transfer/regional controls'], failure: null };
@@ -22,7 +16,8 @@ const api = await request.newContext({ baseURL: origin, ignoreHTTPSErrors: false
 let browser;
 
 function validateHeaders(headers, label) {
-  assert.match(headers['x-robots-tag'] || '', /noindex/i, `${label}: preview indexing header`);
+  if (!production) assert.match(headers['x-robots-tag'] || '', /noindex/i, `${label}: preview indexing header`);
+  if (production && new URL(origin).hostname === new URL(config.productionOrigin).hostname) assert.ok(!/noindex/i.test(headers['x-robots-tag'] || ''), `${label}: custom domain permits indexing`);
   assert.equal(headers['x-content-type-options'], 'nosniff', `${label}: nosniff`);
   assert.equal(headers['x-frame-options']?.toUpperCase(), 'DENY', `${label}: framing`);
   assert.equal(headers['referrer-policy'], 'strict-origin-when-cross-origin', `${label}: referrer`);
@@ -64,7 +59,7 @@ try {
     for (const header of await response.headersArray()) if (header.name.toLowerCase() === 'set-cookie') cookieNames.add(header.value.split('=', 1)[0]);
     const body = await response.text();
     assert.ok(!/static\.cloudflareinsights\.com|data-cf-beacon|googletagmanager\.com|google-analytics\.com/i.test(body), 'No analytics injection');
-    if (['privacy', 'terms', 'delete-account'].includes(route.page)) assert.ok(body.includes('class="draft-banner"'), 'Legal pages must remain drafts');
+    if (['privacy', 'terms', 'delete-account'].includes(route.page)) assert.equal(body.includes('class="draft-banner"'), legalDraft, 'Legal publication state matches approved configuration');
     if (route.page === 'support') assert.equal(body.includes('class="draft-banner"'), !config.supportApproved, 'Support approval must be reflected in both languages');
     report.responses.push({ path: route.path, status: response.status(), robots: headers['x-robots-tag'], csp: headers['content-security-policy'], referrerPolicy: headers['referrer-policy'], permissionsPolicy: headers['permissions-policy'], cacheControl: headers['cache-control'] || null, hsts: headers['strict-transport-security'] || null, server: headers.server });
     if (route.page !== 'home') {
@@ -77,9 +72,13 @@ try {
   }
   const robots = await api.get('/robots.txt');
   assert.equal(robots.status(), 200);
-  assert.match(await robots.text(), /Disallow:\s*\/\s*(?:\n|$)/);
+  assert.match(await robots.text(), production ? /Allow:\s*\/\s*(?:\n|$)/ : /Disallow:\s*\/\s*(?:\n|$)/);
   const sitemap = await api.get('/sitemap.xml');
-  assert.equal(sitemap.status(), 404, 'A draft must not expose a production sitemap');
+  assert.equal(sitemap.status(), production ? 200 : 404, 'Sitemap matches deployment environment');
+  if (production) {
+    const xml = await sitemap.text();
+    for (const route of routes) assert.ok(xml.includes(`<loc>${config.productionOrigin}${route.path}</loc>`), 'Sitemap contains each canonical page');
+  }
   const missing = await api.get('/not-a-real-settings-audit-page');
   assert.equal(missing.status(), 404);
   validateHeaders(missing.headers(), '404');
@@ -104,7 +103,7 @@ try {
   report.publicDns = await inspectPublicDns();
   console.log('PUBLIC_DNS_BASELINE ' + JSON.stringify(report.publicDns));
   report.passed = true;
-  console.log('PREVIEW_SETTINGS_SUMMARY ' + JSON.stringify({ origin, passed: true, responses: report.responses.length, slashRedirects: report.redirects.length, noindex: true, csp: true, analyticsBeaconDetected: false, cookieNames: report.cookieNames, externalRequestHosts: report.externalRequestHosts, browserStorageKeys: 0, legalPagesRemainDrafts: true }));
+  console.log('WEBSITE_SETTINGS_SUMMARY ' + JSON.stringify({ origin, production, passed: true, responses: report.responses.length, slashRedirects: report.redirects.length, noindex: !production, csp: true, analyticsBeaconDetected: false, cookieNames: report.cookieNames, externalRequestHosts: report.externalRequestHosts, browserStorageKeys: 0, legalDraft }));
 } catch (error) {
   report.failure = error.message;
   throw error;

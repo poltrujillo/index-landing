@@ -1,78 +1,59 @@
-# Support and legal pages: evidence and review
+# Published support and policy wording
 
-Draft prepared 10 November 2026. Full bilingual drafts are implemented. They are not a declaration of legal compliance or store approval, and no publication/effective date has been asserted.
+The operator approved Support in both languages and confirmed that `support@indextennis.com` sends and receives email. On 11 November 2026 the operator instructed this repository to use the completed deletion report, settle the wording and publish Privacy, Terms and Delete Account. `site.config.mjs` records 11 November 2026 as their effective and last-updated date.
 
-## Confirmed details and timeframe
+## Identity and scope
 
-The developer confirmed `support@indextennis.com` works for both support/privacy; Pol Trujillo Albert remains the individual operator/controller in Spain, without a registered company; no postal address is to be published for now; minimum age remains 14. The domain is registered through Squarespace and email through Zoho; DNS verification is finishing. The developer subsequently selected Cloudflare Pages and supplied six Zoho EU mail/verification DNS records. These establish the selected host and mail-routing evidence, not universal EU-only processing or verified account retention. See `cloudflare-privacy.md` and `dns-migration.md`.
+Index Tennis is the public brand. Pol Trujillo Albert is the individual operator/controller in Spain. There is no registered company or supplied service postal address. The copy uses those confirmed details. Operator/address disclosure requirements remain a legal follow-up for the individual operator, without a fabricated company or address.
 
-The developer delegated the proposed timeframe and retention approach. The draft uses one calendar month for rights responses and as the normal target for verified deletion, with lawful complexity/volume extensions explained within the initial month. It does not promise immediate external cleanup or automatically restart deadlines during verification. See [AEPD guidance](https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos).
+The app is free, supports amateur singles matches and has a minimum age of 14. No parental-consent or terms-acceptance feature is asserted. The website remains static. Account-deletion mail links start a request handled by support.
 
-## Retained history: explicit review needed
+## Completed backend evidence
 
-Proposed purpose: preserving opponents’ confirmed results and reproducible levels. A possible legal basis is legitimate interests, subject to a documented necessity/balancing assessment, minimisation, reasonable expectations and erasure/objection rights. This is a proposal, not a conclusion that retention is mandatory or justified indefinitely.
+The evidence is `club-utr/docs/ops/deletion-rehearsal-2026-11-11.md`, checked against the current source. The final fix is commit `94805ec`, with successful staging deployment and 812 Java tests, 510 mobile tests, API drift, image smoke and readiness checks. [Staging CI](https://github.com/poltrujillo/clubrating/actions/runs/42989232278)
 
-The current backend retains confirmed matches, rating history and historical player/club references without a fixed cutoff. Choosing an arbitrary duration would invent an enforced capability. Before publication, inventory retained fields and their re-identification risk, remove unnecessary identifying/context fields, justify the shortest retention duration or defined criteria, and implement the corresponding cleanup/archive process without silently corrupting opponents’ ratings. A periodic necessity review can be an interim control but does not replace justified, enforceable retention criteria.
-
-The legal basis/duration and `retentionAndDeletion` decision deliberately remain unresolved for explicit approval. Set real schedules for private match statuses, support mail, errors, logs and backups too. The old app policy’s blanket 30-day logs/backups statement was not verified and is not copied as a promise.
-
-## Local evidence inspected read-only
-
-Sources are in `/home/poltrujillo/projects/club-utr/`:
-
-| Source | Supported behavior |
+| Behavior | Verified scope |
 | --- | --- |
-| `CLAUDE.md`, backend spec §10, mobile spec §14 | National level, four rankings, self-declared home clubs, directory, broader signed-in profile/confirmed-match visibility. |
-| Backend spec §10.6 | Unapproved club details are requester/platform-reviewer restricted; this does not make the whole requester profile private. |
-| Mobile spec §§2–3, 7–8 | Email/Apple/Google access, optional photos/push, deletion, public-read photo URLs and retry behavior. |
-| `backend/.../player/AccountDeletion.java` | Former player name, cleared auth link/photo reference, expired pending matches, removed tokens/pending notifications; retained confirmed matches/rating events. |
-| `AuthDeletions.java`, deletion jobs | External retries; deleted auth identifier held until cleanup succeeds plus two days before scheduled removal. Missing credentials/failures can delay completion. |
-| Mobile monitoring scrubber and backend `SentryConfig.java` | User/request-context scrubbing; not a guarantee that providers never collect technical connection logs. |
-| Staging runbook, ADR-005 | Frankfurt Fly/Neon/Supabase, EU Sentry and Brevo in documented staging; not proof of all production processing locations. |
-| Backend privacy HTML | Outdated ClubRating/per-club text, former email, minimum age and older retention assertions. |
-| Mobile settings contact and settings route | Still uses `poltrujialb@gmail.com` and `${apiUrl}/privacy`; website changes do not update them. |
-| Website source/config | Static local assets, no application cookies/analytics/tracking/contact backend; clipboard enhancement only. Cloudflare Pages deployment contract and preview QA are configured. Edge behavior is checked separately. |
+| In-app deletion | Deployed DELETE endpoint removes identity and refuses the old API session. |
+| Support deletion | Restricted operator command verifies a deletion-specific challenge, binds the original identity and executes the same account lifecycle. Incorrect challenges were refused. Support mailbox delivery was separately confirmed by the operator. |
+| Profile and notifications | Profile, search and ranking removal, unnecessary club-context cleanup, removal of registered notification tokens and notifications, expiry of pending matches. |
+| Photos | Live tests removed assigned photos, unassigned uploads and an object 80 folders deep. Folder cleanup repeats during the stale-token refusal period and must finish before marker retirement. |
+| Opponent results | Remaining participant keeps the same level, rated-match count and status. Retained shared former-player results are participant-only. |
+| Auth and sessions | Auth identity deletion and refusal of old access and refresh tokens passed. Staging access-token lifetime was one hour. |
+| Checkpoints and recovery | Automated post-erasure PostgreSQL dump/restore preserves saved states, pair context and continued replay while keeping erased rows absent. Recovery from older snapshots requires reapplying deletion records. |
 
-No app/backend files were edited. Their approved policy replacement and dates require the separate approval/update process documented in that repository.
+These results replace the former website checklist items describing missing deletion tooling, untested orphan cleanup and a pending basic staging rehearsal.
 
-## Current official guidance consulted
+## Retention wording chosen for publication
 
-- [Google Play account deletion](https://support.google.com/googleplay/android-developer/answer/13327111): a prominent working web request route identifying the app, without reinstalling. Email is an allowed request route. Retention needs a legitimate purpose and transparent explanation; the page does not approve indefinite retention.
-- [Apple account deletion](https://developer.apple.com/help/app-review/guideline-reference/5-1-1-account-deletion/): preserve in-app initiation; ordinary apps should not replace it with a support flow. Review Sign in with Apple token revocation and the limits on retained associated data.
-- [AEPD rights](https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos): response deadlines, lawful extensions and accessible exercise routes.
-- [Spanish information-services law](https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758), particularly operator disclosures, and [Spanish data-protection law](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673): review applicability to this individual operator. No address, company or registration number is fabricated.
+The configured automatic retention sweep is **disabled**. The 30-day private-result, 45-day confirmed-result and 90-day closed-case settings remain implementation candidates. The public copy describes the current behavior and does not promise those deadlines.
 
-## Providers: roles and limits of verification
+The chosen basis for limited retained results/history is legitimate interests under GDPR Article 6(1)(f), preserving other participants’ confirmed results and reproducible levels. The purpose is stated alongside erasure, restriction and objection rights. Names, sign-in links and unnecessary club context are cleared. Retained shared results become participant-only. Match context can still identify a former player.
 
-Providers are described by their actual role rather than all being assigned every dataset. Account-specific contracts/settings remain to verify.
+Current retention criteria are necessity for those stated purposes and individual assessment of erasure, restriction and objection requests. Automatic time-based expiry is explicitly described as disabled. A fixed final cutoff requires activation of the reviewed backend process and matching recovery builds. This is a material operating limitation for the operator to address, not an assertion that unlimited retention is required by law.
 
-| Provider | Official source and review point |
-| --- | --- |
-| Fly.io | [Security/compliance](https://fly.io/legal/security-questionnaire/), [subprocessors](https://www.fly.io/legal/sub-processors/): region selection does not establish all-processing EU residency; check logs/support/contract. |
-| Neon | [DPA](https://neon.com/pdf/DPA.pdf): database processor/subprocessor/transfer terms; verify project and backup/history/log schedules. |
-| Supabase | [Residency/transfers](https://supabase.com/legal/privacy-resources/data-residency-and-transfers-faq), [DPA](https://supabase.com/legal/customer-resources/data-processing-addendum): regional core Auth/Storage is distinguished from support, telemetry and possible global CDN processing. |
-| Brevo | [Storage location](https://help.brevo.com/hc/en-us/articles/360001005510-Data-storage-location): EU database hosting does not replace account/contract/delivery-log verification. |
-| Expo / APNs / FCM | [Expo push FAQ](https://docs.expo.dev/push-notifications/faq/): identifiers/content pass along the delivery chain; transient Expo content handling does not prove every provider has no logs. |
-| Sentry | [EU-region FAQ](https://www.sentry.help/en/articles/13964378-sentry-s-eu-region-faq): event-region choice does not apply to all account/organisation metadata. Verify region, IP prevention, retention and contract. |
-| Zoho | [Privacy policy](https://www.zoho.com/privacy.html): correspondence, technical/account information and transfers require actual account-region/entity/retention checks. No EU region is assumed from the developer’s location. |
-| Website host | Cloudflare Pages selected by the developer; global processing, logging criteria and DPA researched in `cloudflare-privacy.md`. Live account settings remain unverified. Squarespace is the registrar. |
+The preliminary necessity assessment is that removing raw confirmed inputs without the checkpoint process changes opponents’ levels. The checkpoint implementation offers a less intrusive route to later erasure. It is present and tested but the timed sweep is not enabled. The operator should activate a justified finite schedule and maintain a balancing assessment as the next retention release. This website release does not change the backend configuration.
 
-## Separate app/backend and operational changes
+The one-calendar-month wording applies to **responding to rights requests from receipt**. The former promise to normally complete a verified deletion within one month was removed. The two-day Auth refusal marker can remain longer when retries or final photo cleanup are pending.
 
-1. After approval, replace both backend privacy HTML files and real update dates, or redirect the current public endpoint to the matching language page. Preserve public access/language handling and avoid stale cached text.
-2. Change `mobile/src/settings/contact.ts` and settings links. Add Support/Terms/Delete Account links where appropriate. If valid terms acceptance requires an explicit flow, implement/version it; no existing acceptance is claimed.
-3. Establish an audited operator workflow/tool for verified email deletion requests using the same lifecycle. Self-service `DELETE /me` is not an operator administration endpoint. Do not ask for user codes or bypass photo/auth queues with ad hoc SQL. Track retries and explain outcomes/retained data.
-4. Inventory retained player/club/request records and all match statuses, implement approved minimisation/retention and tests, and verify deletion credentials and retry monitoring.
-5. Verify Apple token revocation with the actual Supabase integration: deleting a Supabase identity alone does not prove compliance with Apple’s revocation requirements. Preserve the functioning in-app deletion option.
-6. Change photo access controls if the intended promise is authenticated-only access; policy text cannot change the public-read bucket.
-7. After public deployment/verification, update store support/privacy/deletion links and Data safety/App Privacy disclosures. UGC reporting/moderation requirements may require separate app work; no report/block feature is invented here.
+## Provider wording and evidence limits
 
-Also review whether the current onboarding adequately implements the confirmed age-14 eligibility policy; the website does not introduce an age-check or parental-consent mechanism into the app.
+Providers are described by their roles. Fly.io processes API traffic, Neon holds application records, Supabase handles Auth and photo storage, Brevo delivers login emails, Expo/APNs/FCM deliver optional notifications, Sentry handles scrubbed diagnostics, Zoho handles correspondence, and Cloudflare Pages serves the website.
 
-## Publication state
+The current app environment uses documented EU regions. Global support, account information, security logs, subprocessors and delivery chains can involve other locations. Cloudflare’s published self-service terms incorporate its DPA, including DPF transfers where applicable and SCCs for restricted transfers. Account-specific agreements, exported logs, regional controls and provider backup/log/mail schedules are still unverified. The public wording uses the documented criteria and makes no blanket numeric provider-retention or EU-only claim. Details are in [Cloudflare review](cloudflare-privacy.md).
 
-`site.config.mjs` centralises identity/contact/age, prepared/publication dates and review flags. Draft builds are visibly labelled and noindex. Production builds reject missing approvals or hosting/retention details before touching output. Set an actual approved publication date only at the approved release.
+Publication review flags record operator approval of this wording and its stated limits. They do not certify account settings, signed provider agreements or app-store compliance.
 
-Cloudflare Pages is connected to GitHub and the `draft-preview` deployment has passed live Chromium tests. Cloudflare account-internal settings and legal review remain open; no production release or DNS migration has been performed. See `preview-review.md`.
+## Separate app and operational follow-ups
 
-The owner approved the Spanish and English Support copy on 11 November and confirmed mail delivery in both directions. Both Support routes show the approved copy on the preview. The owner also asked to finish publication and specified that Privacy, Terms and Delete Account stay drafts during staging deletion tests. The app's ADR-013 implementation provides an operator command and candidate retention schedules. The timed sweep defaults off and the synthetic mailbox, provider cleanup and restore rehearsal is pending. The legal copy and production settings still need the observed retention behavior before a publication date can be set.
+- Verify Sign in with Apple grant revocation with the actual integration.
+- Resolve the Fly trial shutdowns reported during testing so production cleanup can run reliably. Retrying workers require the backend to be available.
+- Rehearse recovery from older snapshots with deletion records reapplied before serving traffic.
+- Set and activate justified retention schedules, including cases, correspondence, provider logs and backups. Verify production token lifetime fits the refusal period.
+- Replace the old ClubRating/privacy HTML at the backend privacy endpoint or redirect to the published matching language. Mobile `settings/contact.ts` still uses `poltrujialb@gmail.com`, and mobile settings still use the API privacy URL. Update them together with support, privacy, terms and deletion links after the final domain works.
+- Review actual terms incorporation, minimum-age enforcement and required operator disclosures. Publishing these pages creates no recorded in-app acceptance.
+- Update store support/privacy/deletion URLs and Data safety/App Privacy declarations with the final verified domain.
+
+## Official references
+
+[Google Play deletion guidance](https://support.google.com/googleplay/android-developer/answer/13327111) · [Apple account deletion](https://developer.apple.com/help/app-review/guideline-reference/5-1-1-account-deletion/) · [AEPD rights guidance](https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos) · [Spanish information-services law](https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758) · [Spanish data-protection law](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673)

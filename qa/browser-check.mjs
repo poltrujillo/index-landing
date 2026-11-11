@@ -4,20 +4,16 @@ import { createHash } from 'node:crypto';
 import { chromium, expect } from '@playwright/test';
 import { routes, pagePath } from '../src/routes.mjs';
 import { loadContent } from '../scripts/build.mjs';
+import { render } from '../src/page.mjs';
 import config from '../site.config.mjs';
-import deployment from '../cloudflare-pages.config.mjs';
+import { origin, production, legalDraft, recordedTarget } from './target.mjs';
 
-const recordedTarget = JSON.parse(await readFile(new URL('./preview-target.json', import.meta.url), 'utf8'));
-const target = new URL(process.env.PREVIEW_URL || recordedTarget.url);
-assert.equal(target.protocol, 'https:', 'Use an HTTPS Cloudflare draft preview');
-assert.ok(/^[a-z0-9-]+\.[a-z0-9-]+\.pages\.dev$/.test(target.hostname), 'Use a hash/branch preview URL, not production or the custom domain');
-assert.ok(!target.username && !target.password && target.pathname === '/' && !target.search && !target.hash, 'Supply only the preview origin, without credentials/query/path');
-if (deployment.projectName) assert.ok(target.hostname.endsWith('.' + deployment.projectName + '.pages.dev'), 'Preview must belong to the configured project');
-const origin = target.origin;
 const output = new URL('../artifacts/browser/', import.meta.url);
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch();
 const stylesheetHash = createHash('sha256').update(await readFile(new URL('../src/styles.css', import.meta.url))).digest('hex');
+const policyHtml = render(await loadContent('es'), config, { production, page: 'privacy' });
+const policyHash = createHash('sha256').update(policyHtml).digest('hex');
 const errors = [];
 const results = [];
 const observedHeaders = {};
@@ -30,15 +26,15 @@ try {
   for (let attempt = 0; attempt < 24; attempt++) {
     const response = await context.request.get(origin + '/styles.css?qa=' + Date.now());
     if (response.ok() && createHash('sha256').update(await response.body()).digest('hex') === stylesheetHash) {
-      const support = await context.request.get(origin + '/support/?qa=' + Date.now());
-      if (support.ok() && (await support.text()).includes('class="draft-banner"') === !config.supportApproved) {
+      const policy = await context.request.get(origin + '/privacy/?qa=' + Date.now());
+      if (policy.ok() && createHash('sha256').update(await policy.body()).digest('hex') === policyHash) {
         currentStyles = true;
         break;
       }
     }
     await new Promise((resolve) => setTimeout(resolve, 5000));
   }
-  assert.ok(currentStyles, 'Preview stylesheet or Support approval does not match this checkout.');
+  assert.ok(currentStyles, 'Deployed stylesheet or privacy policy does not match this checkout.');
   const page = await context.newPage();
   page.on('pageerror', (error) => errors.push(error.message));
   for (const width of [320, 390, 768, 1440]) {
@@ -48,13 +44,13 @@ try {
       const response = await page.goto(origin + route.path, { waitUntil: 'networkidle' });
       assert.equal(response.status(), 200, route.path);
       observedHeaders[route.path] = { status: response.status(), robots: response.headers()['x-robots-tag'] || null, contentSecurityPolicy: response.headers()['content-security-policy'] || null };
-      assert.match(response.headers()['x-robots-tag'] || '', /noindex/i, 'Draft response must forbid indexing');
-      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+      if (!production) assert.match(response.headers()['x-robots-tag'] || '', /noindex/i, 'Preview response must forbid indexing');
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', production ? 'index, follow' : 'noindex, nofollow');
       await expect(page).toHaveTitle(route.page === 'home' ? c.title : c.pages[route.page].title);
       await expect(page.locator('html')).toHaveAttribute('lang', route.lang);
       await expect(page.locator('h1')).toHaveCount(1);
-      if (route.page === 'support' && config.supportApproved) await expect(page.locator('.draft-banner')).toHaveCount(0);
-      else if (route.page !== 'home') await expect(page.locator('.draft-banner')).toBeVisible();
+      const expectedDraft = route.page === 'support' ? !config.supportApproved : legalDraft;
+      if (route.page !== 'home') await expect(page.locator('.draft-banner')).toHaveCount(expectedDraft ? 1 : 0);
       const html = await page.content();
       assert.ok(!/static\.cloudflareinsights\.com|data-cf-beacon|googletagmanager\.com|google-analytics\.com/i.test(html), 'No analytics beacon may be injected into the draft');
       await page.evaluate(() => document.fonts.ready);
@@ -118,11 +114,11 @@ try {
   assert.deepEqual(errors, [], 'No browser JavaScript errors');
   observedCookies = (await context.cookies()).map(({ name, domain, secure, httpOnly, sameSite }) => ({ name, domain, secure, httpOnly, sameSite }));
   passed = true;
-  console.log(`Passed draft preview browser checks: ${results.length} route/viewport combinations, both no-JS deletion paths, language links, clipboard and 404.`);
+  console.log(`Passed ${production ? 'production' : 'preview'} browser checks: ${results.length} route/viewport combinations, both no-JS deletion paths, language links, clipboard and 404.`);
 } catch (error) {
   failure = error.message;
   throw error;
 } finally {
-  await writeFile(new URL('results.json', output), JSON.stringify({ preview: origin, stylesheetHash, expectedSourceCommit: recordedTarget.url === origin ? recordedTarget.expectedSourceCommit : null, passed, failure, results, errors, observedHeaders, observedCookies, completedCombinations: results.length }, null, 2) + '\n');
+  await writeFile(new URL('results.json', output), JSON.stringify({ origin, production, stylesheetHash, policyHash, expectedSourceCommit: recordedTarget.url === origin ? recordedTarget.expectedSourceCommit : null, passed, failure, results, errors, observedHeaders, observedCookies, completedCombinations: results.length }, null, 2) + '\n');
   await browser.close();
 }

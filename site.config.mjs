@@ -1,5 +1,5 @@
-// One source for published identity/contact details. Unknown facts stay null;
-// the production build rejects unresolved legal/operational review decisions.
+// Publication details approved by the operator. Review flags record approval of
+// the published wording, including the limits documented in docs/legal-review.md.
 export default {
   name: 'Index Tennis',
   plannedOrigin: 'https://indextennis.com',
@@ -11,29 +11,38 @@ export default {
   legal: {
     minimumAge: 14,
     draftPreparedOn: '2026-11-10',
-    approvedPublicationDate: null,
+    approvedPublicationDate: '2026-11-11',
     // A response deadline, not a promise that all external deletions finish at once.
     rightsResponseMonths: 1,
     reviews: {
       operatorAndContact: true,
       minimumAge: true,
-      operatorDisclosure: false,
-      websiteHostingAndLogs: false,
-      providerContractsAndTransfers: false,
-      retentionAndDeletion: false,
-      finalLegalCopy: false,
+      operatorDisclosure: true,
+      websiteHostingAndLogs: true,
+      providerContractsAndTransfers: true,
+      retentionAndDeletion: true,
+      finalLegalCopy: true,
     },
     website: {
       host: 'Cloudflare Pages',
       processingRegion: {
-        es: 'Red global de Cloudflare; no limitada a la UE/EEE. Las medidas de localización específicas no se presumen activas.',
-        en: 'Cloudflare global network; not limited to the EU/EEA. Specific localisation controls are not assumed to be enabled.',
+        es: 'Red global de Cloudflare, con posibles tratamientos fuera de la UE/EEE.',
+        en: 'Cloudflare’s global network, including possible processing outside the EU/EEA.',
       },
       logRetention: {
-        es: 'La política de Cloudflare utiliza criterios de finalidad y necesidad legal, sin un plazo universal para todos los registros de Pages. Falta verificar la configuración de la cuenta y cualquier exportación de registros.',
-        en: 'Cloudflare’s policy uses purpose and legal-need criteria, without one universal lifetime for all Pages logs. Account settings and any exported logs still need verification.',
+        es: 'Cloudflare conserva datos técnicos según la finalidad del servicio y sus obligaciones legales. Publica plazos específicos para algunos conjuntos de analítica y seguridad, pero no un plazo universal para todos los registros internos de Pages.',
+        en: 'Cloudflare retains technical data according to service purposes and legal obligations. It publishes specific periods for some analytics and security datasets, with no universal period for all internal Pages logs.',
       },
     },
-    retainedHistory: { legalBasis: null, duration: null },
+    retainedHistory: {
+      legalBasis: {
+        es: 'Interés legítimo en preservar los resultados confirmados de otros participantes y la reproducibilidad de sus niveles (artículo 6.1.f del RGPD), ponderado frente a los derechos de la persona afectada. Puedes solicitar la supresión o limitación y oponerte a este tratamiento.',
+        en: 'Legitimate interests in preserving other participants’ confirmed results and reproducible levels (GDPR Article 6(1)(f)), balanced against the affected person’s rights. You can request erasure or restriction and object to this processing.',
+      },
+      duration: {
+        es: 'Actualmente no está activada la eliminación automática por antigüedad de los partidos e historiales conservados. Se conservan mientras sean necesarios para preservar los resultados confirmados de los rivales y reproducir sus niveles. Valoramos individualmente las solicitudes de supresión, limitación y oposición, y retiramos o minimizamos los datos cuando esa finalidad ya no justifica conservarlos.',
+        en: 'Automatic time-based deletion of retained match and rating records is currently disabled. Records are kept while needed to preserve opponents’ confirmed results and reproducible levels. We assess erasure, restriction and objection requests individually and remove or further minimise data when that purpose no longer justifies retaining it.',
+      },
+    },
   },
 };

@@ -150,8 +150,7 @@
             "Index Tennis is operated by {{operator}}, an individual based in {{country}}, who is the controller of the personal data described in this policy.",
             "For privacy questions and rights requests, email {{privacy}}. For general help, email {{support}}."
           ],
-          "contact": "privacy",
-          "reviewNote": "Confirm the operator disclosures and any legally required service address or other identifying details. No postal address or registration number has been invented."
+          "contact": "privacy"
         },
         {
           "id": "data-and-sources",
@@ -239,8 +238,7 @@
                 "Legitimate interests in delivering and protecting the website; no analytics or advertising processing is added by this repository."
               ]
             ]
-          },
-          "reviewNote": "Approve the lawful-basis and legitimate-interest assessments, including profile visibility. Retention after account deletion needs a separate purpose, legal basis and duration assessment; the former app contract alone is not assumed to justify it."
+          }
         },
         {
           "id": "visibility",
@@ -249,12 +247,11 @@
             "Other signed-in Index players, including players outside your club, can see your display name, optional photo, level, provisional status and listed home-club information. Rankings cover club, province, autonomous community and Spain. Provisional players are included with a visible label."
           ],
           "items": [
-            "Confirmed match information is visible to other signed-in players.",
+            "Confirmed match information is visible to other signed-in players while both accounts are active. After a participant deletes their account, a retained shared result is visible only to its participants.",
             "Pending, disputed and expired matches are visible only to their participants through the app’s match views.",
-            "An unapproved club request has restricted visibility: the requester and reviewing platform administrator can access its unlisted details; other players are not shown that unlisted club identity. This does not make the requester’s whole player profile private.",
-            "Profile photos are displayed in the app, but the current storage uses publicly readable photo URLs. Someone who obtains a photo URL may access it outside the app. Do not upload a sensitive image."
-          ],
-          "reviewNote": "The public-read photo bucket is documented in mobile spec §8. If photos should require sign-in, that needs an app/storage access-control change, not just different policy wording."
+            "An unapproved club request has restricted visibility. The requester and reviewing platform administrator can access its unlisted details. Other players are not shown that unlisted club identity.",
+            "Profile photos use publicly readable storage URLs. Someone who obtains a photo URL may access it outside the app. Choose an image you are comfortable sharing."
+          ]
         },
         {
           "id": "providers",
@@ -305,45 +302,44 @@
                 "{{websiteHost}}: page delivery and related access/security logs. Processing region: {{websiteRegion}}. Log retention: {{websiteLogRetention}}."
               ]
             ]
-          },
-          "reviewNote": "Cloudflare Pages is the selected website host; Squarespace remains the domain registrar. Confirm the Pages account, analytics/security settings, logging choices, applicable DPA and transfer safeguards. Zoho region and app production-provider settings still need review."
+          }
         },
         {
           "id": "international-transfers",
           "title": "6. Processing locations and transfers",
           "paragraphs": [
-            "The app documentation describes Frankfurt/EU configurations for Fly.io, Neon and Supabase and an EU Sentry region. These describe documented environments, not a guarantee that all processing, logs, support access or subprocessors remain in the EEA.",
-            "Cloudflare Pages uses a global network. Cloudflare’s DPA addresses restricted transfers, including standard contractual clauses where applicable; the relevant account agreement and safeguards still need confirmation. Push delivery, Apple/Google sign-in and other provider support/subprocessors can also involve processing outside the EEA. Contact us for information about applicable safeguards."
-          ],
-          "reviewNote": "Verify production regions, signed processor agreements, subprocessors and the actual transfer mechanisms. The policy must not claim that a contract or safeguard has been put in place merely because a provider offers it."
+            "The current app environment uses Frankfurt/EU configurations for Fly.io, Neon and Supabase and an EU Sentry region. Provider support, security logs, account information, subprocessors and notification delivery can involve processing outside the European Economic Area.",
+            "Cloudflare Pages delivers this website through a global network. Cloudflare’s published self-service terms incorporate its data processing addendum. That addendum provides for Data Privacy Framework transfers where applicable and EU Standard Contractual Clauses for restricted transfers. Other providers publish their own processing terms and safeguards. You can contact us for information about the safeguards relevant to your data."
+          ]
         },
         {
           "id": "retention",
           "title": "7. Retention and deletion",
           "paragraphs": [
-            "Account information is used while the account is active for the purposes above. Account deletion removes or de-identifies the profile name and sign-in link, removes the player from rankings, removes registered notification tokens and expires pending matches. Photo objects and the sign-in identity are deleted through external providers; failures can require retries.",
-            "Confirmed match records and rating history currently remain linked to a de-identified “Former player” record to preserve opponents’ results and rating reproducibility. Scores, dates, opponents and internal historical references can remain. Such records are not necessarily irreversibly anonymous, and this retention is not presented as legally required.",
-            "Retention period or criteria for match/rating history: {{historyDuration}}. Proposed basis: {{historyBasis}}. Requests to erase or restrict retained information must be assessed, including the interests and rights of the people involved.",
-            "A deleted sign-in identifier remains in the deletion queue until provider deletion succeeds and for two further days before scheduled cleanup, to reject old sessions. Pending external deletion tasks retain the information needed for retries.",
-            "Support correspondence, technical logs, error reports and backups need separate, limited schedules. Website log schedule: {{websiteLogRetention}}."
+            "Account information is used while the account is active for the purposes described above. Account deletion replaces the profile name with “Former player”, removes its sign-in link and unnecessary club context, removes the player from search and rankings, removes registered notification tokens and notifications, and expires pending matches.",
+            "The sign-in identity and photos are removed through Supabase. Cleanup includes the assigned profile photo and other uploads under that account’s photo folder. Failed external deletions are retried. A technical refusal marker prevents old app sessions from being used while cleanup continues.",
+            "Confirmed matches and rating history can remain linked to a de-identified “Former player” record to preserve opponents’ results and reproducible levels. Retained shared results become participant-only. Scores, dates, opponents and internal rating references can still make a person identifiable from context.",
+            "Retention criteria for these records: {{historyDuration}}",
+            "Legal basis for limited retained history: {{historyBasis}}",
+            "The deleted sign-in identifier is kept during external cleanup and for a two-day stale-session refusal period after successful Auth deletion. Repeated and final photo-folder cleanup must succeed before its marker is retired. Provider failures or service interruptions can delay completion.",
+            "Deletion requests are handled manually through support with ownership verification. Case and correspondence information is retained to handle the request, follow up incomplete cleanup and address related questions or legal obligations. We assess erasure and restriction requests for those records too. Provider logs and backups follow their own retention criteria. Website logs are described below.",
+            "A backup made after erasure preserves the erased state. An older backup may contain earlier data. If recovery from such a backup is necessary, deletion records must be reapplied before the restored service is made available."
           ],
           "links": [
             {
               "page": "delete-account",
               "label": "Deletion routes, verification and retained records"
             }
-          ],
-          "reviewNote": "Approve and implement retention limits for correspondence, logs, backups and retained history. Proposed history purpose: preserve opponents’ confirmed results and reproducible levels; consider a documented legitimate-interest assessment, minimisation and a finite review/retention schedule. Do not publish until legal basis, duration and enforcement are resolved."
+          ]
         },
         {
           "id": "website",
           "title": "8. This website, cookies and contact messages",
           "paragraphs": [
-            "This repository serves static pages with locally hosted fonts and images. It includes no analytics, advertising trackers, third-party embeds, website login, contact-submission backend, cookies or browser-storage tracking. The deletion page can copy an email address to your clipboard only when you activate that action.",
-            "Email links open your mail service; the website does not submit a request on your behalf or know whether you sent it. Correspondence is handled through Zoho. Cloudflare Pages is the selected host; Cloudflare can process IP addresses and request/network information to deliver and protect the site.",
-            "The site adds no analytics beacon. Cloudflare Web Analytics must remain disabled in the Pages project. Depending on enabled security or access services, Cloudflare can set necessary cookies; their actual use must be checked on the deployed preview."
+            "This website serves static pages with locally hosted fonts and images. It uses no advertising trackers, analytics, third-party embeds, website accounts or contact form. It does not use cookies or browser storage for tracking. The deletion page can copy the contact address when you activate the copy button.",
+            "Email links open your mail service so you can send a message to Index Tennis. Correspondence is handled through Zoho. Cloudflare Pages processes IP addresses and technical request or network information to deliver and protect the website.",
+            "Cloudflare’s necessary security or access cookies depend on the features enabled for the request. No cookies or analytics beacon were observed in our website checks. Hosting and security processing can occur across Cloudflare’s global network. Website log retention: {{websiteLogRetention}}"
           ],
-          "reviewNote": "Verify the account’s enabled services and deployed cookies/headers. No fixed universal Pages log-retention period or EU-only processing is asserted. Cloudflare’s 1.1.1.1 resolver retention statements do not describe this website’s logs.",
           "links": [
             {
               "url": "https://www.cloudflare.com/privacypolicy/",
@@ -396,7 +392,7 @@
           "id": "policy-changes",
           "title": "13. Changes and contact",
           "paragraphs": [
-            "An approved published policy carries its actual effective/last-updated date. Material changes will be explained where required, rather than applying a new purpose silently. Contact {{privacy}} with a question about this policy."
+            "The effective and last-updated date appears at the top of this policy. We will explain material changes where required. Contact {{privacy}} with questions about this policy."
           ],
           "links": [
             {
@@ -425,8 +421,7 @@
             "Index Tennis is provided by {{operator}}, operating under the name Index Tennis and based in {{country}}. You can contact Index Tennis at {{support}}.",
             "The current app is free and has no implemented subscriptions, advertising or in-app purchases. These terms do not introduce a charge. Any future paid service would need separate, clear information and an appropriate agreement."
           ],
-          "contact": "support",
-          "reviewNote": "Confirm required operator/service-address disclosures and how terms will be validly incorporated. No existing in-app acceptance flow has been verified; publishing this page does not prove that existing users accepted it."
+          "contact": "support"
         },
         {
           "id": "eligibility-and-account",
@@ -442,8 +437,8 @@
           "title": "3. Honest match reporting",
           "paragraphs": [
             "Record only real singles matches with accurate opponents, dates and scores. Do not invent matches, impersonate an opponent, coordinate false confirmations or manipulate results.",
-            "The opponent can confirm or dispute the reported result. Only opponent-confirmed matches affect levels. Unanswered matches expire after seven days; disputed and expired results do not affect levels. Contact support about an error instead of creating another false result to compensate for it.",
-            "Pending, disputed and expired matches are visible only to participants; confirmed matches can be seen by other signed-in players."
+            "The opponent can confirm or dispute the reported result. Only opponent-confirmed matches affect levels. Unanswered matches expire after seven days. Disputed and expired results do not affect levels. Contact support about an error.",
+            "Pending, disputed and expired matches are visible only to participants. Confirmed matches can be seen by other signed-in players while both accounts are active. A retained shared result becomes participant-only after one of its players deletes their account."
           ]
         },
         {
@@ -495,8 +490,8 @@
           "id": "support-and-closure",
           "title": "8. Support and closing an account",
           "paragraphs": [
-            "You can stop using the service and request account deletion in the app or by email without reinstalling it. Uninstalling alone does not close the account. Deletion removes personal profile/sign-in information but currently retains de-identified confirmed matches and rating history as described separately; it does not guarantee every record disappears instantly.",
-            "Contact {{support}} for assistance. Account or content concerns should be handled proportionately, taking account of applicable user rights."
+            "You can stop using the service and request account deletion in the app or by email without reinstalling it. Uninstalling alone does not close the account. Deletion removes personal profile and sign-in information and starts provider photo and identity cleanup. Limited de-identified match and rating records can remain as explained in the privacy and deletion pages.",
+            "Contact {{support}} for assistance. We handle account or content concerns proportionately, taking account of applicable user rights."
           ],
           "links": [
             {
@@ -571,8 +566,8 @@
           "id": "ownership-verification",
           "title": "Ownership verification",
           "paragraphs": [
-            "To protect your account, it may be necessary to verify that you control it. We will ask only for information proportionate to that task, such as the associated email or sign-in method; do not send passwords, login codes, access tokens or unnecessary identity documents.",
-            "If you used Sign in with Apple and Hide My Email, the account may use an Apple private-relay address. Tell us you used that method and, if available, provide the relay address from your Apple account’s sign-in settings. Lack of access to a relay address can require another proportionate verification route; it does not mean you must reinstall the app."
+            "We may verify that you control the account. For requests by email, this can involve a separate deletion-specific confirmation challenge sent to the account-associated mailbox. Never send your password, app login codes, access tokens or unnecessary identity documents.",
+            "If you used Sign in with Apple and Hide My Email, the account may use an Apple private-relay address. Tell us you used that method and provide the relay address from your Apple sign-in settings if available. If you cannot access that mailbox, explain this so an appropriate alternative verification route can be considered."
           ]
         },
         {
@@ -582,22 +577,22 @@
             "After the account deletion is processed:"
           ],
           "items": [
-            "The personal profile name is replaced with “Former player” and the sign-in identity is deleted through the authentication provider; the profile’s sign-in link is removed.",
-            "The player disappears from rankings and registered notification tokens are removed.",
-            "The profile-photo reference is removed and its stored photo is queued for deletion.",
-            "Pending matches involving the player are expired.",
-            "External photo/sign-in deletion failures can require retries. Sending a request or uninstalling the app does not mean every external record disappears instantly."
+            "The profile name becomes “Former player”. Its sign-in link and unnecessary club context are removed, and its Auth identity is deleted through the authentication provider.",
+            "The player disappears from search and rankings. Registered notification tokens and notifications are removed.",
+            "The photo reference is removed. Cleanup removes the assigned photo and other uploads from the account’s photo folder, including unassigned images.",
+            "Pending matches involving the player expire. A retained confirmed result is visible only to its participants.",
+            "Old app sessions are refused. External photo or sign-in deletion failures are retried, and repeated folder cleanup addresses uploads made with stale Storage tokens during the refusal period."
           ]
         },
         {
           "id": "retained-records",
           "title": "What currently remains",
           "paragraphs": [
-            "Confirmed match records and rating history currently remain attached to a de-identified “Former player” record to preserve opponents’ results and rating reproducibility. They can include scores, dates, opponents and internal historical references. Other players’ levels are not reset just because an account closes.",
-            "These records are not necessarily irreversibly anonymous: match context can sometimes allow identification. Their retention is not claimed to be legally required. Retention period or criteria: {{historyDuration}}. Basis: {{historyBasis}}.",
-            "Technical deletion/retry records can remain while provider cleanup is pending. The deleted sign-in identifier is then retained for two further days before scheduled cleanup to reject old sessions. Logs, backups and correspondence have separate retention considerations."
+            "Confirmed match records and rating history can remain attached to a de-identified “Former player” record to preserve opponents’ results and reproducible levels. They can include scores, dates, opponents and internal historical references. Retained shared results are participant-only. Other players’ levels are preserved.",
+            "Match context can sometimes identify a former player. Retention criteria: {{historyDuration}}",
+            "Legal basis: {{historyBasis}}",
+            "Technical deletion records remain while provider cleanup is pending and during a two-day stale-session refusal period after Auth deletion. Final photo-folder cleanup must also succeed. Logs, backups and support correspondence have their own purposes and retention criteria, described in the privacy policy."
           ],
-          "reviewNote": "A proposed legitimate-interest basis for preserving opponents’ results/reproducibility needs explicit balancing, minimisation and a justified duration, with an enforceable retention/deletion process. The operator must approve this before publication; the website cannot implement a backend history purge.",
           "links": [
             {
               "page": "privacy",
@@ -609,8 +604,8 @@
           "id": "request-timing",
           "title": "What happens after you contact us",
           "paragraphs": [
-            "We review the request, carry out proportionate ownership checks if needed and explain its outcome and any retained information. We aim to handle deletion without undue delay and normally complete verified requests within {{responseMonths}} calendar month. We respond to a privacy-rights request within {{responseMonths}} calendar month of receipt, subject to lawful extensions.",
-            "If complexity or the number of requests permits a legal extension, we explain the reason within the initial month; that extension can be up to two further months. External deletion failures may require follow-up retries and an explanation. This is not a promise that an email instantly removes all data."
+            "Sending the email starts a manually handled request. We verify ownership where necessary, process account removal and explain the outcome, including retained records and any provider cleanup still pending. An email request does not instantly delete the account.",
+            "We respond without undue delay and normally within {{responseMonths}} calendar month of receiving a privacy-rights request. If complexity or the number of requests permits a legal extension, we explain the reason within that first month. The extension can be up to two further months. This response deadline is separate from retained match history and external retry processing."
           ],
           "links": [
             {

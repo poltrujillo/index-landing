@@ -150,8 +150,7 @@
             "Index Tennis lo gestiona {{operator}}, persona física que reside en {{country}} y responsable del tratamiento de los datos personales descritos en esta política.",
             "Para consultas sobre privacidad y ejercicio de derechos, escribe a {{privacy}}. Para ayuda general, escribe a {{support}}."
           ],
-          "contact": "privacy",
-          "reviewNote": "Confirma la información legal del operador y cualquier dirección de servicio u otro dato identificativo exigible. No se ha inventado una dirección postal ni un número de registro."
+          "contact": "privacy"
         },
         {
           "id": "data-and-sources",
@@ -239,8 +238,7 @@
                 "Interés legítimo en entregar y proteger la web; este repositorio no añade analítica ni tratamientos publicitarios."
               ]
             ]
-          },
-          "reviewNote": "Aprueba las bases jurídicas y ponderaciones de interés legítimo, incluida la visibilidad del perfil. Conservar datos tras eliminar una cuenta exige una evaluación propia de finalidad, base y duración; no se presume que el antiguo contrato de la app lo justifique por sí solo."
+          }
         },
         {
           "id": "visibility",
@@ -249,12 +247,11 @@
             "Otros jugadores de Index que hayan iniciado sesión, incluidos los de otros clubs, pueden ver tu nombre, foto opcional, nivel, estado provisional y datos de tu club listado. Los rankings abarcan club, provincia, comunidad y España. Los jugadores provisionales aparecen con una etiqueta visible."
           ],
           "items": [
-            "Los partidos confirmados son visibles para otros jugadores que hayan iniciado sesión.",
+            "Los partidos confirmados son visibles para otros jugadores con sesión iniciada mientras ambas cuentas estén activas. Cuando un participante elimina su cuenta, el resultado compartido que se conserve solo será visible para sus participantes.",
             "Los partidos pendientes, disputados y caducados solo son visibles para sus participantes en las vistas de partidos de la app.",
-            "Una solicitud de club sin aprobar tiene visibilidad restringida: su solicitante y el administrador de plataforma que la revisa pueden acceder a los datos no listados; los demás jugadores no ven la identidad de ese club no listado. Esto no convierte todo el perfil del solicitante en privado.",
-            "Las fotos se muestran en la app, pero el almacenamiento actual utiliza direcciones de foto de lectura pública. Quien obtenga una de esas direcciones puede acceder a la foto fuera de la app. No subas imágenes sensibles."
-          ],
-          "reviewNote": "El contenedor de fotos de lectura pública está documentado en el apartado 8 de la especificación móvil. Exigir acceso autenticado a las fotos requiere cambiar los controles de la app y el almacenamiento, no solo redactar otra política."
+            "Las solicitudes de clubes sin aprobar tienen visibilidad restringida. El solicitante y el administrador de la plataforma que las revisa pueden acceder a los datos no publicados. Otros jugadores no ven la identidad de ese club no publicado.",
+            "Las fotos de perfil utilizan direcciones de almacenamiento de lectura pública. Quien obtenga la URL de una foto puede acceder a ella fuera de la app. Elige una imagen que quieras compartir."
+          ]
         },
         {
           "id": "providers",
@@ -305,45 +302,44 @@
                 "{{websiteHost}}: entrega de páginas y registros de acceso/seguridad. Región de tratamiento: {{websiteRegion}}. Conservación de registros: {{websiteLogRetention}}."
               ]
             ]
-          },
-          "reviewNote": "Cloudflare Pages es el alojamiento elegido; Squarespace sigue siendo el registrador del dominio. Confirma la cuenta de Pages, analítica y seguridad, registros, contrato de encargo y garantías de transferencia. Faltan revisar la región de Zoho y los proveedores de producción de la app."
+          }
         },
         {
           "id": "international-transfers",
           "title": "6. Ubicaciones y transferencias",
           "paragraphs": [
-            "La documentación de la app describe configuraciones en Fráncfort/UE para Fly.io, Neon y Supabase y una región europea de Sentry. Se trata de entornos documentados, no de una garantía de que todo el tratamiento, registros, soporte o subencargados permanezcan en el EEE.",
-            "Cloudflare Pages utiliza una red global. Su contrato de tratamiento contempla transferencias restringidas, incluidas cláusulas contractuales tipo cuando corresponda; hay que confirmar el contrato y las garantías aplicables a la cuenta. Las notificaciones push, el acceso con Apple/Google y el soporte o subencargados de otros proveedores también pueden implicar tratamiento fuera del EEE. Puedes pedirnos información sobre las garantías aplicables."
-          ],
-          "reviewNote": "Verifica regiones de producción, contratos firmados con encargados, subencargados y mecanismos reales de transferencia. La política no debe afirmar que se ha formalizado una garantía solo porque el proveedor la ofrezca."
+            "El entorno actual de la app utiliza configuraciones en Fráncfort/UE para Fly.io, Neon y Supabase y una región de Sentry en la UE. El soporte, los registros de seguridad, los datos de cuenta, los subencargados y la entrega de notificaciones pueden implicar tratamientos fuera del Espacio Económico Europeo.",
+            "Cloudflare Pages distribuye esta web mediante una red global. Las condiciones públicas de autoservicio de Cloudflare incorporan su anexo de tratamiento de datos. Este contempla transferencias amparadas por el Marco de Privacidad de Datos cuando corresponda y cláusulas contractuales tipo de la UE para transferencias restringidas. Los demás proveedores publican sus propias condiciones y garantías. Puedes contactarnos para obtener información sobre las garantías aplicables a tus datos."
+          ]
         },
         {
           "id": "retention",
           "title": "7. Conservación y eliminación",
           "paragraphs": [
-            "Los datos de cuenta se utilizan mientras está activa para las finalidades anteriores. Eliminar la cuenta retira o desidentifica el nombre y el vínculo de acceso, elimina al jugador de los rankings, retira sus tokens de notificación y caduca los partidos pendientes. La foto almacenada y la identidad de acceso se eliminan mediante proveedores externos; los fallos pueden requerir reintentos.",
-            "Los partidos confirmados y el historial del nivel se conservan actualmente vinculados a un registro desidentificado de «Antiguo jugador» para preservar los resultados de los rivales y reproducir los cálculos. Pueden conservarse marcadores, fechas, rivales y referencias históricas internas. Estos datos no son necesariamente anónimos de forma irreversible y no se presenta su conservación como una obligación legal.",
-            "Plazo o criterios de conservación del historial: {{historyDuration}}. Base propuesta: {{historyBasis}}. Las solicitudes de supresión o limitación deben evaluarse, incluidos los intereses y derechos de las personas implicadas.",
-            "El identificador de acceso eliminado permanece en la cola hasta que el proveedor confirma la eliminación y durante dos días más antes de la limpieza programada, para rechazar sesiones antiguas. Las tareas externas pendientes guardan lo necesario para reintentarlas.",
-            "La correspondencia, los registros técnicos, informes de errores y copias de seguridad necesitan plazos separados y limitados. Plazo de registros de la web: {{websiteLogRetention}}."
+            "Los datos de cuenta se utilizan mientras la cuenta está activa para las finalidades descritas. Al eliminar la cuenta, el nombre pasa a ser «Antiguo jugador», se elimina el vínculo de acceso y el contexto de club innecesario, el jugador desaparece de búsquedas y clasificaciones, se eliminan los tokens y las notificaciones registrados y caducan los partidos pendientes.",
+            "La identidad de acceso y las fotos se eliminan a través de Supabase. La limpieza incluye la foto de perfil asignada y otras imágenes subidas a la carpeta de fotos de esa cuenta. Los fallos externos se reintentan. Un registro técnico de bloqueo impide usar las sesiones antiguas de la app mientras continúa la limpieza.",
+            "Los partidos confirmados y el historial de nivel pueden conservarse vinculados a un registro desidentificado de «Antiguo jugador» para preservar los resultados de los rivales y reproducir los niveles. Los resultados compartidos conservados pasan a ser visibles solo para sus participantes. Los marcadores, las fechas, los rivales y las referencias internas del cálculo aún pueden permitir identificar a una persona por el contexto.",
+            "Criterios de conservación de estos registros: {{historyDuration}}",
+            "Base jurídica de la conservación limitada del historial: {{historyBasis}}",
+            "El identificador de acceso eliminado se conserva durante la limpieza externa y un periodo de dos días de bloqueo de sesiones antiguas tras eliminar correctamente la identidad de autenticación. La limpieza repetida y final de la carpeta de fotos debe completarse antes de retirar ese registro. Los fallos de proveedores o las interrupciones pueden retrasar el proceso.",
+            "Las solicitudes por correo se atienden manualmente, con verificación de titularidad. Los datos del expediente y la correspondencia se conservan para tramitar la solicitud, seguir la limpieza pendiente y atender consultas relacionadas u obligaciones legales. También valoramos las solicitudes de supresión y limitación de esos registros. Los registros y las copias de seguridad de proveedores siguen sus propios criterios de conservación. Los registros de esta web se describen a continuación.",
+            "Una copia de seguridad realizada tras la supresión conserva el estado ya depurado. Una copia anterior puede contener datos previos. Si fuera necesario recuperarla, deben reaplicarse los registros de supresión antes de poner de nuevo el servicio a disposición de los usuarios."
           ],
           "links": [
             {
               "page": "delete-account",
               "label": "Vías de eliminación, verificación y registros conservados"
             }
-          ],
-          "reviewNote": "Aprueba e implementa límites para correspondencia, registros, copias e historial. Finalidad propuesta para el historial: preservar resultados confirmados de rivales y niveles reproducibles; valorar un interés legítimo documentado, minimización y un plazo finito de revisión/conservación. No publicar hasta resolver base, duración y aplicación efectiva."
+          ]
         },
         {
           "id": "website",
           "title": "8. Esta web, cookies y mensajes",
           "paragraphs": [
-            "Este repositorio entrega páginas estáticas con fuentes e imágenes locales. No incluye analítica, rastreadores publicitarios, contenido incrustado de terceros, acceso de usuarios en la web, servidor de envío de formularios, cookies ni seguimiento mediante almacenamiento del navegador. La página de eliminación puede copiar una dirección al portapapeles únicamente cuando activas esa acción.",
-            "Los enlaces de correo abren tu servicio de email; la web no envía la solicitud por ti ni sabe si la has enviado. Zoho gestiona la correspondencia. Cloudflare Pages es el alojamiento elegido; Cloudflare puede tratar direcciones IP e información de peticiones y red para entregar y proteger la web.",
-            "La web no añade una baliza de analítica. Cloudflare Web Analytics debe permanecer desactivado en el proyecto Pages. Según los servicios de seguridad o acceso activados, Cloudflare puede establecer cookies necesarias; su uso real debe comprobarse en la vista previa desplegada."
+            "Esta web sirve páginas estáticas con fuentes e imágenes alojadas localmente. No utiliza rastreadores publicitarios, analítica, contenido incrustado de terceros, cuentas web ni formulario de contacto. No utiliza cookies ni almacenamiento del navegador para seguimiento. La página de eliminación permite copiar la dirección de contacto al activar ese botón.",
+            "Los enlaces de correo abren tu servicio de correo para que puedas enviar un mensaje a Index Tennis. La correspondencia se gestiona mediante Zoho. Cloudflare Pages trata direcciones IP y datos técnicos de las solicitudes o de red para distribuir y proteger la web.",
+            "Las cookies necesarias de seguridad o acceso de Cloudflare dependen de las funciones activadas para cada solicitud. En nuestras comprobaciones de la web no se observaron cookies ni una baliza de analítica. El alojamiento y la seguridad pueden implicar tratamientos en la red global de Cloudflare. Conservación de registros de la web: {{websiteLogRetention}}"
           ],
-          "reviewNote": "Verifica los servicios activos y las cookies y cabeceras del despliegue. No se afirma un plazo universal de registros de Pages ni tratamiento exclusivo en la UE. Las declaraciones de conservación del resolvedor 1.1.1.1 de Cloudflare no describen los registros de esta web.",
           "links": [
             {
               "url": "https://www.cloudflare.com/privacypolicy/",
@@ -396,7 +392,7 @@
           "id": "policy-changes",
           "title": "13. Cambios y contacto",
           "paragraphs": [
-            "Una política publicada y aprobada muestra su fecha real de entrada en vigor o actualización. Los cambios importantes se explicarán cuando corresponda, sin aplicar silenciosamente una finalidad nueva. Escribe a {{privacy}} para consultas sobre esta política."
+            "La fecha de entrada en vigor y última actualización figura al inicio de esta política. Explicaremos los cambios sustanciales cuando corresponda. Puedes escribir a {{privacy}} para consultar esta política."
           ],
           "links": [
             {
@@ -425,8 +421,7 @@
             "Index Tennis lo presta {{operator}}, que opera bajo el nombre Index Tennis y reside en {{country}}. Puedes contactar con Index Tennis en {{support}}.",
             "La app actual es gratuita y no tiene suscripciones, publicidad ni compras integradas implementadas. Estas condiciones no introducen un precio. Cualquier servicio de pago futuro exigiría información clara y un acuerdo adecuado por separado."
           ],
-          "contact": "support",
-          "reviewNote": "Confirma la información y dirección de servicio exigibles y cómo se incorporarán válidamente las condiciones. No se ha verificado un flujo actual de aceptación en la app; publicar esta página no demuestra que los usuarios existentes la hayan aceptado."
+          "contact": "support"
         },
         {
           "id": "eligibility-and-account",
@@ -441,9 +436,9 @@
           "id": "match-reporting",
           "title": "3. Resultados honestos",
           "paragraphs": [
-            "Registra solo partidos individuales reales, con rivales, fechas y marcadores correctos. No inventes partidos, suplantes al rival, coordines confirmaciones falsas ni manipules resultados.",
-            "El rival puede confirmar o disputar el resultado. Solo los partidos confirmados por el rival afectan al nivel. Los que quedan sin respuesta caducan a los siete días; los disputados y caducados no afectan al nivel. Contacta con soporte ante un error en vez de crear otro resultado falso para compensarlo.",
-            "Los partidos pendientes, disputados y caducados solo son visibles para sus participantes; otros jugadores con sesión iniciada pueden ver los confirmados."
+            "Registra solo partidos individuales reales con rivales, fechas y marcadores correctos. No inventes partidos, suplantes a un rival, coordines confirmaciones falsas ni manipules resultados.",
+            "El rival puede confirmar o disputar el resultado. Solo los partidos confirmados por el rival afectan al nivel. Los partidos sin respuesta caducan a los siete días. Los resultados disputados y caducados no afectan al nivel. Contacta con soporte si hay un error.",
+            "Los partidos pendientes, disputados y caducados solo son visibles para sus participantes. Los confirmados pueden verlos otros jugadores con sesión iniciada mientras ambas cuentas estén activas. Un resultado compartido conservado pasa a ser visible solo para sus participantes cuando uno de los jugadores elimina su cuenta."
           ]
         },
         {
@@ -495,8 +490,8 @@
           "id": "support-and-closure",
           "title": "8. Soporte y cierre de cuenta",
           "paragraphs": [
-            "Puedes dejar de utilizar el servicio y solicitar la eliminación desde la app o por correo sin reinstalarla. Desinstalarla no cierra la cuenta. La eliminación retira datos personales de perfil/acceso, pero actualmente conserva partidos confirmados e historial del nivel desidentificados según se explica por separado; no garantiza que desaparezca todo al instante.",
-            "Escribe a {{support}} si necesitas ayuda. Los problemas de cuenta o contenido deben gestionarse de forma proporcionada y respetando los derechos aplicables."
+            "Puedes dejar de usar el servicio y solicitar la eliminación de tu cuenta desde la app o por correo sin reinstalarla. Desinstalar la app no cierra la cuenta. La eliminación retira los datos personales del perfil y de acceso e inicia la limpieza de fotos e identidad en los proveedores. Pueden conservarse registros limitados y desidentificados de partidos y nivel, según las páginas de privacidad y eliminación.",
+            "Contacta con {{support}} para obtener ayuda. Atendemos las incidencias de cuentas o contenido de forma proporcionada y respetando los derechos aplicables."
           ],
           "links": [
             {
@@ -571,8 +566,8 @@
           "id": "ownership-verification",
           "title": "Verificación de la titularidad",
           "paragraphs": [
-            "Para proteger tu cuenta, puede ser necesario comprobar que la controlas. Solo pediremos información proporcionada para ese fin, como el correo asociado o el método de acceso; no envíes contraseñas, códigos de acceso, tokens ni documentos de identidad innecesarios.",
-            "Si utilizaste Iniciar sesión con Apple y Ocultar mi correo, la cuenta puede tener una dirección de retransmisión privada de Apple. Indica que usaste ese método y, si puedes, facilita la dirección que aparece en los ajustes de acceso de tu cuenta de Apple. No tener acceso a esa dirección puede requerir otra vía proporcionada de verificación; no implica que debas reinstalar la app."
+            "Podemos verificar que controlas la cuenta. En las solicitudes por correo, esto puede incluir un código de confirmación específico para la eliminación enviado al buzón asociado a la cuenta. Nunca envíes tu contraseña, códigos de inicio de sesión de la app, tokens de acceso ni documentos de identidad innecesarios.",
+            "Si utilizaste Iniciar sesión con Apple y Ocultar mi correo, la cuenta puede usar una dirección de retransmisión privada de Apple. Indica que utilizaste ese método y facilita esa dirección desde los ajustes de acceso de Apple si la tienes disponible. Si no puedes acceder a ese buzón, explícalo para que podamos valorar una alternativa de verificación adecuada."
           ]
         },
         {
@@ -582,22 +577,22 @@
             "Cuando se procesa la eliminación de la cuenta:"
           ],
           "items": [
-            "El nombre personal se sustituye por «Antiguo jugador» y la identidad de acceso se elimina mediante el proveedor de autenticación; se retira el vínculo de acceso del perfil.",
-            "El jugador desaparece de los rankings y se eliminan los tokens de notificación registrados.",
-            "Se retira la referencia a la foto y se solicita la eliminación de su archivo almacenado.",
-            "Los partidos pendientes del jugador caducan.",
-            "Los fallos al eliminar fotos o identidades externas pueden requerir reintentos. Enviar una solicitud o desinstalar la app no significa que todo registro externo desaparezca al instante."
+            "El nombre del perfil pasa a ser «Antiguo jugador». Se retiran su vínculo de acceso y el contexto de club innecesario, y se elimina su identidad de autenticación a través del proveedor.",
+            "El jugador desaparece de búsquedas y clasificaciones. Se eliminan los tokens y las notificaciones registrados.",
+            "Se retira la referencia de la foto. La limpieza elimina la foto asignada y otras imágenes de la carpeta de esa cuenta, incluidas las que se subieron sin asignarlas al perfil.",
+            "Caducan los partidos pendientes en los que participa. Los resultados confirmados conservados solo son visibles para sus participantes.",
+            "Las sesiones antiguas de la app se rechazan. Los fallos externos al eliminar fotos o identidades se reintentan, y la limpieza repetida de la carpeta contempla las subidas realizadas con tokens antiguos de almacenamiento durante el periodo de bloqueo."
           ]
         },
         {
           "id": "retained-records",
           "title": "Qué se conserva actualmente",
           "paragraphs": [
-            "Los partidos confirmados y el historial del nivel se mantienen actualmente vinculados a un registro desidentificado de «Antiguo jugador» para preservar los resultados de los rivales y la reproducibilidad de los cálculos. Pueden incluir marcadores, fechas, rivales y referencias históricas internas. Cerrar una cuenta no reinicia los niveles de los demás.",
-            "Estos registros no son necesariamente anónimos de forma irreversible: el contexto de un partido puede permitir identificar a alguien. No se afirma que conservarlos sea obligatorio por ley. Plazo o criterios: {{historyDuration}}. Base: {{historyBasis}}.",
-            "Los registros técnicos de eliminación y reintento pueden permanecer mientras se completa la limpieza externa. El identificador de acceso se conserva después durante dos días más antes de la limpieza programada para rechazar sesiones antiguas. Los registros, copias y correspondencia tienen consideraciones separadas de conservación."
+            "Los partidos confirmados y el historial de nivel pueden permanecer vinculados a un registro desidentificado de «Antiguo jugador» para preservar los resultados de los rivales y reproducir los niveles. Pueden incluir marcadores, fechas, rivales y referencias históricas internas. Los resultados compartidos conservados solo son visibles para sus participantes. Los niveles de otros jugadores se mantienen.",
+            "El contexto de un partido puede permitir identificar a un antiguo jugador. Criterios de conservación: {{historyDuration}}",
+            "Base jurídica: {{historyBasis}}",
+            "Los registros técnicos de eliminación se conservan mientras esté pendiente la limpieza del proveedor y durante dos días de bloqueo de sesiones antiguas tras eliminar la identidad de autenticación. La limpieza final de la carpeta de fotos también debe completarse. Los registros técnicos, las copias de seguridad y la correspondencia tienen sus propias finalidades y criterios de conservación, descritos en la política de privacidad."
           ],
-          "reviewNote": "Proponer interés legítimo para preservar resultados de rivales y reproducibilidad exige ponderación explícita, minimización, duración justificada y un proceso efectivo de conservación/eliminación. El operador debe aprobarlo antes de publicar; la web no implementa una purga del historial del servidor.",
           "links": [
             {
               "page": "privacy",
@@ -609,8 +604,8 @@
           "id": "request-timing",
           "title": "Qué ocurre después de escribirnos",
           "paragraphs": [
-            "Revisamos la solicitud, verificamos la titularidad de forma proporcionada si hace falta y explicamos el resultado y la información conservada. Nuestro objetivo es tramitar la eliminación sin dilación indebida y normalmente completar solicitudes verificadas en {{responseMonths}} mes natural. Respondemos a las solicitudes de derechos en {{responseMonths}} mes natural desde su recepción, con las ampliaciones legales aplicables.",
-            "Si la complejidad o el número de solicitudes permiten una ampliación legal, explicamos el motivo dentro del primer mes; puede ser de hasta dos meses más. Los fallos externos pueden requerir reintentos y una explicación. Esto no promete que un correo elimine todos los datos al instante."
+            "Enviar el correo inicia una solicitud que se tramita manualmente. Verificamos la titularidad cuando sea necesario, procesamos la retirada de la cuenta y explicamos el resultado, incluidos los registros conservados y la limpieza pendiente en proveedores. El correo no elimina la cuenta al instante.",
+            "Respondemos sin dilación indebida y normalmente dentro de {{responseMonths}} mes natural desde la recepción de una solicitud de derechos. Si la complejidad o el número de solicitudes permite una prórroga legal, explicamos el motivo dentro de ese primer mes. La prórroga puede ser de hasta dos meses más. Este plazo de respuesta es independiente de la conservación del historial de partidos y de los reintentos externos."
           ],
           "links": [
             {
