@@ -2,7 +2,13 @@
 
 No DNS changes have been made. Draft testing uses the Pages preview URL, so it requires no custom-domain or mail changes. Domain registration stays at Squarespace; mail stays at Zoho.
 
-## Proposed changes for review, 11 November 2026
+## Authorized connection and current access dependency
+
+The owner authorized connecting `indextennis.com` on 11 November 2026. The production website is available at https://index-landing-3yn.pages.dev in Pages project **index-landing**. This session has no authenticated Cloudflare or Squarespace connection or API credentials, so the remaining cutover requires account access.
+
+In Cloudflare, open **Workers & Pages → index-landing → Custom domains**. Add `indextennis.com` and `www.indextennis.com` to that production project. For the apex, add the domain as a Cloudflare zone, reconcile its full DNS inventory and obtain the assigned nameserver pair. In Squarespace, open the domain’s DNSSEC and nameserver settings and apply the migration sequence below. Keep the registrar at Squarespace. The expected Pages CNAME destination is `index-landing-3yn.pages.dev`.
+
+## Proposed DNS changes, 11 November 2026
 
 The [public DNS audit](https://github.com/poltrujillo/index-landing/actions/runs/42919735556/artifacts/13811460956) found `nsa1.squarespacedns.com` through `nsa4.squarespacedns.com` as the current nameservers and confirmed all six Zoho values below. The apex has an active DS record with key tag `2417`, algorithm `8` and digest type `2`. The queried `_dmarc` name returned NXDOMAIN. Public DNS covers the queried names only. The complete Squarespace export and Cloudflare-assigned nameserver pair are still needed for the final preflight.
 

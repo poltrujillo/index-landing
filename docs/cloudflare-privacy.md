@@ -1,6 +1,6 @@
 # Cloudflare hosting, logs and transfers
 
-Reviewed on 11 November 2026 for the Git-integrated Cloudflare Pages project `index-landing-3yn`. The evidence covers its public preview and the provider’s published product and contract terms. The account plan, enabled datasets, export destinations, localisation settings and agreement accepted for this account require authenticated access.
+Reviewed on 11 November 2026 for the Git-integrated Cloudflare Pages project `index-landing`, whose production hostname is `index-landing-3yn.pages.dev`. The evidence covers its public preview and the provider’s published product and contract terms. The account plan, enabled datasets, export destinations, localisation settings and agreement accepted for this account require authenticated access.
 
 ## Observed public preview behavior
 
@@ -14,6 +14,8 @@ On 10 November 2026, [GitHub Actions run 42903346596](https://github.com/poltruj
 The artifact includes `settings-audit.json` with per-route headers and non-sensitive observations, alongside the existing forty route/viewport browser checks. Account dashboards, Logpush, retention, contracts and regional controls were not accessible to this audit.
 
 The audit was repeated after removing the draft banner from approved Support in both languages. The browser and header checks passed again, including 40 route and screen-size combinations, 11 HTML responses and nine redirects. The browser observed zero cookies, external HTTP resource requests and storage keys. [11 November audit](https://github.com/poltrujillo/index-landing/actions/runs/42919735556)
+
+The published production hostname passed the same checks on 11 November, with indexable metadata, working robots/sitemap and final policies. [Production audit](https://github.com/poltrujillo/index-landing/actions/runs/43013162815)
 
 ## Documented facts and limits
 

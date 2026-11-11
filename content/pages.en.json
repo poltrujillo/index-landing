@@ -299,7 +299,7 @@
               ],
               [
                 "Cloudflare Pages",
-                "{{websiteHost}}: page delivery and related access/security logs. Processing region: {{websiteRegion}}. Log retention: {{websiteLogRetention}}."
+                "{{websiteHost}}: page delivery and related access/security logs. Processing region: {{websiteRegion}} Log retention: {{websiteLogRetention}}"
               ]
             ]
           }

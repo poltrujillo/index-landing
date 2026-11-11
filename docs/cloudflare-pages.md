@@ -1,6 +1,6 @@
 # GitHub → Cloudflare Pages
 
-Prepared 10 November 2026 for `https://github.com/poltrujillo/index-landing.git`. The Git-integrated Pages project is `index-landing-3yn`; `draft-preview` is deployed at https://draft-preview.index-landing-3yn.pages.dev and has passed live Chromium checks. The operator approved the final wording and authorized production publication on 11 November 2026. No DNS migration has been performed. See [preview-review.md](preview-review.md) for deployment evidence and limits.
+Prepared 10 November 2026 for `https://github.com/poltrujillo/index-landing.git`. The Git-integrated Pages project is `index-landing`, with Pages subdomain `index-landing-3yn`; `draft-preview` is deployed at https://draft-preview.index-landing-3yn.pages.dev and has passed live Chromium checks. The operator approved the final wording and authorized production publication on 11 November 2026. No DNS migration has been performed. See [preview-review.md](preview-review.md) for deployment evidence and limits.
 
 ## Build settings
 
@@ -20,7 +20,7 @@ Create/select a **Pages project with Git integration**, connect the existing Git
 | Web Analytics / Zaraz | Disabled; no tracking is requested |
 | Functions / databases / bindings | None; this is a static site |
 
-These values are recorded in `cloudflare-pages.config.mjs`, including the verified project name. That file is a repository contract, **not** a manifest automatically applied by Cloudflare. Git integration builds at Cloudflare; no Cloudflare deployment token or Wrangler upload job is needed in GitHub Actions.
+These values are recorded in `cloudflare-pages.config.mjs`, including the project name and its separate Pages subdomain. That file is a repository contract, **not** a manifest automatically applied by Cloudflare. Git integration builds at Cloudflare; no Cloudflare deployment token or Wrangler upload job is needed in GitHub Actions.
 
 The dispatcher uses Cloudflare’s supplied `CF_PAGES=1` and `CF_PAGES_BRANCH`, and cross-checks the environment-scoped `INDEX_DEPLOYMENT_CONTEXT`. A mismatch or missing context stops the build; changing the dashboard’s production branch cannot silently publish draft output. It runs `npm run check` first, then:
 
@@ -33,7 +33,7 @@ No dependencies are needed for the site build. Browser tooling lives separately 
 
 ## GitHub preparation and preview
 
-The owner pushed the initial source to the existing repository. GitHub connector access subsequently became available; preview fixes and QA were committed to `draft-preview` without changing `main`. Earlier access failures are resolved for the connector. Cloudflare’s GitHub installation is independently connected to the repository, as demonstrated by successful native Pages checks. Keep generated `dist/`, `node_modules/` and browser artifacts ignored.
+Production is published at https://index-landing-3yn.pages.dev. The 11 November release passed the native Pages check and all production browser checks. The owner pushed the initial source to the existing repository. GitHub connector access subsequently became available; preview fixes and QA were committed to `draft-preview` without changing `main`. Earlier access failures are resolved for the connector. Cloudflare’s GitHub installation is independently connected to the repository, as demonstrated by successful native Pages checks. Keep generated `dist/`, `node_modules/` and browser artifacts ignored.
 
 Select the real preview deployment in Pages and record its immutable HTTPS hash URL. Cloudflare also supports moving branch aliases. Do not invent either URL before a deployment returns it. Preview URLs are normally public: `noindex` is not authentication or confidentiality. The legal drafts are visibly marked for review. If private previews are wanted later, configure Cloudflare Access deliberately and account for its authentication cookies; the final support/legal/deletion routes must remain public.
 

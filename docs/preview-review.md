@@ -1,4 +1,21 @@
-# Deployed draft review — 10 November 2026
+# Published website and historical preview review
+
+## Production release, 11 November 2026
+
+The operator authorized publication after the completed staging deletion report. Final Spanish and English Privacy, Terms and Delete Account pages were published through `main` with effective date 11 November 2026. Retention wording describes the disabled automatic sweep and the current necessity criteria, individual rights and limited visibility.
+
+- Production hostname https://index-landing-3yn.pages.dev
+- Policy paths `/privacy/`, `/terms/`, `/delete-account/` and their `/en/` counterparts
+- Native Pages release `c2d65dca5eda8ab8c75168b725e0f4447a3eeb53`, deployment `575d93e3`
+- Production verification https://github.com/poltrujillo/index-landing/actions/runs/43013162815
+- Result and screenshots https://github.com/poltrujillo/index-landing/actions/runs/43013162815/artifacts/13851671481
+
+All 40 production route/viewport combinations and both no-JS deletion routes passed. Eleven HTML responses and nine slash redirects passed the settings audit. The sitemap contains all ten canonical pages, robots permits indexing, policy draft banners are absent, CSP and other security headers are present, and no analytics beacon, cookies, external resources or browser storage were observed.
+
+The latest public DNS lookup still shows Squarespace authoritative nameservers and the existing Zoho mail values. This session has no authenticated Cloudflare or Squarespace connection or API credentials. The remaining domain steps are documented in `dns-migration.md`.
+
+## Earlier draft review, 10 November 2026
+
 
 The owner supplied `https://deaa5164.index-landing-3yn.pages.dev`, built from the initial commit. Direct search-tool fetching was unavailable, but GitHub access became available and browser testing was executed in GitHub Actions with Chromium.
 

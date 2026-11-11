@@ -7,6 +7,6 @@ export default {
   buildCommand: 'npm run build:cloudflare',
   outputDirectory: 'dist',
   nodeVersion: '22',
-  // Populate only with the project actually created in the Cloudflare account.
-  projectName: 'index-landing-3yn',
+  projectName: 'index-landing',
+  pagesSubdomain: 'index-landing-3yn',
 };

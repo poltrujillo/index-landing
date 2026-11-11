@@ -299,7 +299,7 @@
               ],
               [
                 "Cloudflare Pages",
-                "{{websiteHost}}: entrega de páginas y registros de acceso/seguridad. Región de tratamiento: {{websiteRegion}}. Conservación de registros: {{websiteLogRetention}}."
+                "{{websiteHost}}: entrega de páginas y registros de acceso/seguridad. Región de tratamiento: {{websiteRegion}} Conservación de registros: {{websiteLogRetention}}"
               ]
             ]
           }

@@ -16,8 +16,8 @@ The operator authorized publication on 11 November 2026. Spanish and English Sup
 
 ## Deployment and final domain
 
-- [ ] Verify the release on the Pages preview, then publish the reviewed commit through `main` and confirm the native Pages production deployment.
-- [ ] Run production browser verification on the real production hostname, including all ten canonical pages, counterpart links, mail templates, keyboard controls, clipboard denial, no-JS deletion, metadata, robots, sitemap and 404.
+- [x] Preview release verified and published through `main`. Native Pages production deployment succeeded for `c2d65dca5eda8ab8c75168b725e0f4447a3eeb53`.
+- [x] Production browser verification passed on `https://index-landing-3yn.pages.dev`, including all 40 route/viewport combinations, no-JS deletion, metadata, robots, sitemap and 404. [Run 43013162815](https://github.com/poltrujillo/index-landing/actions/runs/43013162815).
 - [ ] Obtain authenticated Cloudflare and Squarespace access and the full current zone export. No credentials or supported authenticated account connection are available in this session.
 - [ ] Reconcile the complete imported zone, confirm the assigned Cloudflare nameserver pair and follow the DNSSEC sequence in [DNS migration](dns-migration.md).
 - [ ] Add apex and `www` through Pages Custom domains, replace only the intended website records, confirm certificates and redirect `www` to the apex while preserving path/query.
